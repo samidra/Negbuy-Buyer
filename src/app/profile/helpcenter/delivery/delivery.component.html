@@ -1,0 +1,293 @@
+<app-mainheader></app-mainheader>
+
+<div class="container-fluid button-container" style="background-color: white;">
+
+    <div class="row m-sm-4 greeting">
+        <div class="col-12 greeting-col">
+            <h3 routerLink="/help-center">
+                Back to Help centre
+            </h3>
+        </div>
+    </div>
+
+    <div class="row p-md-4">
+
+        <div class="col-lg-8 col-md-6 p-1">
+            <div class="row mt-sm-0 mt-2 pe-sm-3">
+                <div class="col-12 DeliveryCenterData">
+                    <h3>Delivery Options</h3>
+                    <p>In collaboration with recognised logistics companies, Logistics offers dependable, multimodal
+                        transport
+                        options that are tailored to your requirements and with quick transit times and real-time cargo
+                        tracking,
+                        our service is ideal for light volume shipping. The port-to-port service offers affordable rates
+                        for
+                        shipping heavy loads of cargo around the world.</p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/HelpCenterDelivery1.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>What is Incoterm</h3>
+                    <p>International commercial terms, or Incoterms, are published by the International Chamber of
+                        Commerce (ICC) in
+                        order to ease international trade. Incoterms, which are widely accepted, eliminate
+                        misunderstandings in international commerce contracts by outlining the responsibilities of both
+                        buyers and sellers.</p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/HelpCenterDelivery2.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>What is DDP delivery</h3>
+                    <p>
+                        When goods are delivered "delivered duty paid" (DDP), the seller bears all liability, risk, and
+                        expense up until the buyer picks them up or transfers ownership at the destination
+                        port. Expenses incurred when delivery to a predetermined location in the buyer's nation,
+                        including shipping charges, export and import tariffs, insurance, and any other costs, are
+                        covered by this agreement.
+                        It is an international transportation standard contract, or incoterm.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/HelpCenterDelivery3.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>What is Ex-Work Shipping</h3>
+                    <p>
+                        Ex Works (EXW) is a phrase used in international trade to describe the situation where a seller
+                        makes a product available at a specified place, but the buyer is responsible for the costs
+                        associated with transportation. One of the 11 current Incoterms (International Commercial
+                        Terms), published by the International Chamber of Commerce, is "Ex Works" (EXW).
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/HelpCenterDelivery4.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>Who is our Delivery Partner</h3>
+                    <p>
+                        A company that aids in delivering your goods to customers is known as a delivery partner. They
+                        could aid in shipping management or they might just act as a rapid and effective courier service
+                        to deliver your goods to customers.
+                    </p>
+                    <div class="DeliveryCenterData-img1">
+                        <ul>
+                            <li>DLH (Dalsey, Hillblom and Lynn)</li>
+                            <li>ShadowFax Surface</li>
+                            <li>Expressbees Surface</li>
+                            <li>Ekart Logistics</li>
+                        </ul>
+                        <img src="assets/logo/HelpCenterDelivery5.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 pt-1 ">
+
+            <div class="row sticky-top">
+                <div class="col-12">
+                    <div class="FAq pb-2">
+                        <li class="faq-heading lifaq p-4">FAQs</li>
+
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne" (click)="toggleTextClass(0)"
+                                        [ngClass]="selectedFaq ==0?'red-text':''">
+                                        <p>How long will it take for my order to arrive? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Delivery times can vary based on your location, the shipping method chosen, and product availability. You can check the estimated delivery date during checkout. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo" (click)="toggleTextClass(1)"
+                                        [ngClass]="selectedFaq ==1?'red-text':''">
+                                        <p>What are the available shipping options? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        We offer various shipping options, including standard, express, and Ex-work and DDP Delivery in select areas. The available options depend on your location and the items in your tracker page.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree" (click)="toggleTextClass(2)"
+                                        [ngClass]="selectedFaq ==2?'red-text':''">
+                                        <p>How can I track my order? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        You can easily track your order by visiting the "Track Order" section on our website or using the tracking link provided in your order confirmation email. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour" (click)="toggleTextClass(3)"
+                                        [ngClass]="selectedFaq ==3?'red-text':''">
+                                        <p>What should I do if my order is delayed? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Occasionally, there may be delays due to unforeseen circumstances. If your order is delayed beyond the estimated delivery date, please contact our customer support team for assistance. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive" (click)="toggleTextClass(4)"
+                                        [ngClass]="selectedFaq ==4?'red-text':''">
+                                        <p>Do you offer international shipping? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Yes, we offer international shipping to select countries. During checkout, you can enter your delivery address to check if we deliver to your location. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                        aria-controls="flush-collapseSix" (click)="toggleTextClass(5)"
+                                        [ngClass]="selectedFaq ==5?'red-text':''">
+                                        <p>Is there a shipping fee? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Shipping fees vary based on your location, the shipping method, and the total order value. You can view the shipping costs during the checkout process. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSeven">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                        aria-controls="flush-collapseSeven" (click)="toggleTextClass(6)"
+                                        [ngClass]="selectedFaq ==6?'red-text':''">
+                                        <p>Can I change my delivery address after placing an order? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        In most cases, you can update your delivery address before your order is shipped. However, once the order is in transit, address changes may not be possible. Contact our support team for assistance. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingEight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseEight" aria-expanded="false"
+                                        aria-controls="flush-collapseEight" (click)="toggleTextClass(7)"
+                                        [ngClass]="selectedFaq ==7?'red-text':''">
+                                        <p>What should I do if my order is damaged upon delivery? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        If your order arrives damaged, please contact our customer support team immediately. We will arrange for a replacement or a refund, depending on your preference. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingNine">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseNine" aria-expanded="false"
+                                        aria-controls="flush-collapseNine" (click)="toggleTextClass(8)"
+                                        [ngClass]="selectedFaq ==8?'red-text':''">
+                                        <p>Do you offer contactless delivery?  </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Yes, we offer contactless delivery options. During checkout, you can request contactless delivery, and our delivery team will follow the specified instructions. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTen">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTen" aria-expanded="false"
+                                        aria-controls="flush-collapseTen" (click)="toggleTextClass(9)"
+                                        [ngClass]="selectedFaq ==9?'red-text':''">
+                                        <p>What happens if I'm not home during the delivery? </p>
+                                    </button>
+                                </li>
+
+                                <div id="flush-collapseTen" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        If you're not home, the delivery team will typically leave a note or attempt redelivery. You can also arrange for a pickup at a local delivery center or reschedule the delivery. These FAQs should help address common customer inquiries about the delivery process, ensuring a smoother shopping experience. 
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- </ul> -->
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <app-ourservices></app-ourservices>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

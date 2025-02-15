@@ -1,0 +1,26 @@
+
+
+<div class="container-fluid p-sm-5 p-2">
+
+  <ngx-slick-carousel class="carousel" 
+  #slickModal="slick-carousel" 
+  [config]="slideConfig" 
+  (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)"
+  (afterChange)="afterChange($event)"
+  (beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<div class="mainSlideDiv">
+  <img [src]='slide.path' [alt]="slide.alt" width="100%" loading="lazy">
+  <div class="SlideData " [ngClass]="slide.heading == 'ENGINEERING GOODS'?'EngineeringGoods': 
+  slide.heading == 'FABRIC AND TEXTILES'?'Fabrics': slide.heading == 'GEMS AND JEWELS'?'Gems':
+  slide.heading == 'ELECTRONICS GOODS'?'Electronics':''">
+          <h2>{{slide.heading}}</h2>
+          <p>{{ slide.para }}</p>
+          <button (click)="RouteToProductPage(slide.category, slide.category_one)"> Shop Now</button>
+  </div>
+</div>
+</div>
+</ngx-slick-carousel>
+
+</div>

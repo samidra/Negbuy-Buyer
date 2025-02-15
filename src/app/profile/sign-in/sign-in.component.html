@@ -1,0 +1,101 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7 logo p-5">
+            <img src="assets/logo/negbuylogoNew.webp" alt="" srcset="" routerLink=""  style="cursor: pointer;">
+        </div>
+        <div class="col-md-5">
+            <div class="row p-5 pt-0">
+                <div class="col-12 formside">
+                    <form action="">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-10 formside">
+                                <span class="sign-in">Sign in </span>
+                                <span class="welcome">Welcome back! Enter your details to get started.</span>
+                            </div>
+                            <div class="col-10">
+                                <div class="dropdown-container">
+                                    <div class="image-container">
+                                        <div class="image-cropper">
+                                            <img [src]="selectedCountry.flag" class="dropdown-logo-outer">
+                                        </div>
+                                    </div>
+                                    <select class="form-select" aria-label="Default select example" name="country code"
+                                        id="country-code" [(ngModel)]="selectedCountry"
+                                        (ngModelChange)="selectCountry($event)">
+                                        <option *ngFor="let country of countries" [ngValue]="country">
+                                            <img class="dropdown-logo-inner" [src]="country.flag" />{{ country.name }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-10 mt-4">
+                                <span class="inputl mt-4">Mobile Number</span>
+                                <div class="mobile-container mt-3 mb-3">
+                                    <div class="d-flex flex-row">
+                                        <span class="inputsl mx-2">{{selectedCountry.dial_code}}</span>
+                                        <input type="number" class="form-control" placeholder="Enter your phone number"
+                                            [(ngModel)]="phoneNumber" minlength="8" maxlength="15"
+                                            name="phone">
+                                    </div>
+
+                                    <div class="col-12 text-center" *ngIf="reCaptchaVerified">
+                                        <span class="resend" style="color: green;">✓ reCAPTCHA Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-10" *ngIf="otpSent">
+                                <div class="d-flex flex-row" style="justify-content: space-around;">
+                                    <ng-otp-input [config]="{ length: 6 }" [formCtrl]="verificationCode"></ng-otp-input>
+                                </div>
+                                <div class="row mt-4" *ngIf="showResend">
+                                    <div class="col-12 text-center">
+                                        <span class="resend" (click)="sendVerificationCode()">Resend</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-10 mt-4" *ngIf="!otpSent">
+                                <button class=" mt-4 mb-3" (click)="sendVerificationCode()" [disabled]="btns()"
+                                    [ngClass]="submitButton" *ngIf="!otpSent && spinnerGetOtp">
+                                    <span>Get OTP</span>
+                                </button>
+                                <button class=" mt-4 mb-3" [disabled]="btns()" [ngClass]="submitButton"
+                                    *ngIf="!otpSent && !spinnerGetOtp">
+                                    <span class=" spinner-border" style="color: rgb(238, 238, 238) !important;"
+                                        role="status"></span>
+                                </button>
+                            </div>
+
+                            <div class="col-10 mt-4" *ngIf="otpSent">
+                                <button type="submit" class="submit mt-4 mb-3" (click)=" verifyCode()"
+                                    *ngIf="otpSent && spinnerBuyNow" [disabled]="loading">
+                                    <span>Get Started</span>
+                                </button>
+
+                                <button type="submit" class="submit mt-4 mb-3" *ngIf="otpSent && !spinnerBuyNow"
+                                    [disabled]="loading">
+                                    <span class=" spinner-border" style="color: rgb(238, 238, 238) !important;"
+                                        role="status"></span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="recaptcha-container" *ngIf="showRecaptcha"></div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="loader-container" *ngIf="loadingHoleScreen">
+        <div class="loader"></div>
+        <div class="mt-2">
+            <h4 style="color: white; text-align: center;">Logging In
+            </h4>
+        </div>
+    </div>
+</div>

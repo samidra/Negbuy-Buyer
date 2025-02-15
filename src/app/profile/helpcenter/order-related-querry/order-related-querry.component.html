@@ -1,0 +1,298 @@
+<app-mainheader></app-mainheader>
+
+<div class="container-fluid button-container" style="background-color: white;">
+
+    <div class="row m-sm-4 greeting">
+        <div class="col-12 greeting-col">
+            <h3 routerLink="/help-center">
+                Back to Help centre
+            </h3>
+        </div>
+    </div>
+
+    <div class="row p-md-4">
+
+        <div class="col-lg-8 col-md-6 p-1">
+            <div class="row pe-sm-3 mt-sm-0 mt-2">
+                <div class="col-12 DeliveryCenterData">
+                    <h3>My Orders</h3>
+                    <p>Upon placing your order, it will promptly appear in the "My Orders" section, where you will find
+                        a comprehensive overview of essential details pertaining to your invoice and bill. Additionally,
+                        for your convenience, real-time shipment tracking can be
+                        accessed through the dedicated "Live Tracking" section within the order details.</p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/orderquerry1.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>What to do if order is placed for ex-work delivery ?</h3>
+                    <p>After placing your ex-work order, submit the required docket documents and numbers. After
+                        verification, pay any outstanding amount, if applicable. Then, view images of your packed order.
+                        Finally, your authorized partner collects the shipment from our specified warehouse. This
+                        ensures a seamless ex-work delivery process.</p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/orderquerry2.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>How much time it will take to deliver the order ?</h3>
+                    <p>
+                        Delivery times vary depending on the destination, domestic or international. For domestic
+                        orders, the standard delivery period is around one week. If you need expedited delivery, please
+                        (contact) our team. For international shipments, delivery times are based on the chosen shipping
+                        method and partner. You'll receive estimated delivery times accordingly. Order tracking is
+                        available for your convenience.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/orderquerry3.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>What is order Delivered and On the way </h3>
+                    <p>
+                        An order has been dispatched to your designated delivery location, and you have confirmed the
+                        receipt of the shipment. The current status indicates that the order has been dispatched from
+                        the warehouse and is en route to your specified destination. It is expected to arrive at your
+                        doorstep shortly.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/orderquerry4.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>Where can you find the Docket document and Docket number ?</h3>
+                    <p>
+                        For ex-work shipments, access your Docket document and Docket number in your order confirmation
+                        email or online account. This information is essential for tracking your delivery.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/orderquerry5.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 pt-1 ">
+
+            <div class="row sticky-top">
+                <div class="col-12">
+                    <div class="FAq pb-2">
+                        <li class="faq-heading lifaq p-4">FAQs</li>
+
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne" (click)="toggleTextClass(0)"
+                                        [ngClass]="selectedFaq ==0?'red-text':''">
+                                        <p>What does DDP mean?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">DDP stands for "Delivered Duty Paid." It means that all
+                                        import duties and taxes are
+                                        included in the product price.
+                                        You won't have to pay any additional charges upon delivery.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo" (click)="toggleTextClass(1)"
+                                        [ngClass]="selectedFaq ==1?'red-text':''">
+                                        <p>What is "Ex Works" (EXW)?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        "Ex Works" means the seller's responsibility ends once the product is made
+                                        available at their premises.
+                                        You'll need to arrange and pay for all shipping and customs-related expenses.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree" (click)="toggleTextClass(2)"
+                                        [ngClass]="selectedFaq ==2?'red-text':''">
+                                        <p>What's the estimated delivery time?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        The estimated delivery time is usually mentioned in the order confirmation
+                                        email.
+                                        It depends on the shipping method and your location.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour" (click)="toggleTextClass(3)"
+                                        [ngClass]="selectedFaq ==3?'red-text':''">
+                                        <p>Can I change my shipping address after placing the order?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Depending on the order status, you may or may not be able to change the shipping
+                                        address.
+                                        Contact our customer support for assistance.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive" (click)="toggleTextClass(4)"
+                                        [ngClass]="selectedFaq ==4?'red-text':''">
+                                        <p>Do I have to pay customs duties for international orders?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Customs duties may apply depending on your country's regulations. For DDP
+                                        orders, duties are included.
+                                        For EXW orders, you'll be responsible for customs clearance.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                        aria-controls="flush-collapseSix" (click)="toggleTextClass(5)"
+                                        [ngClass]="selectedFaq ==5?'red-text':''">
+                                        <p>Can I change the shipping method after placing the order?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Shipping method changes might be possible if your order hasn't shipped yet.
+                                        Contact us to inquire about changing the shipping method.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSeven">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                        aria-controls="flush-collapseSeven" (click)="toggleTextClass(6)"
+                                        [ngClass]="selectedFaq ==6?'red-text':''">
+                                        <p>I change items in my order after it's placed?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Unfortunately, once an order is placed, we can't modify the items.
+                                        You may need to cancel and place a new order.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingEight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseEight" aria-expanded="false"
+                                        aria-controls="flush-collapseEight" (click)="toggleTextClass(7)"
+                                        [ngClass]="selectedFaq ==7?'red-text':''">
+                                        <p>How do I know if my order has been shipped? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        You'll receive an email with tracking information once your order is shipped.
+                                        You can also track your order by clicking on "Track Order" in the "My Order"
+                                        section of your account.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingNine">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseNine" aria-expanded="false"
+                                        aria-controls="flush-collapseNine" (click)="toggleTextClass(8)"
+                                        [ngClass]="selectedFaq ==8?'red-text':''">
+                                        <p>How can I download the invoice for my order? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        You can easily download the invoice by visiting the "My Order" section in your
+                                        account,
+                                        selecting the order, and clicking on the "Download Invoice" button.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTen">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTen" aria-expanded="false"
+                                        aria-controls="flush-collapseTen" (click)="toggleTextClass(9)"
+                                        [ngClass]="selectedFaq ==9?'red-text':''">
+                                        <p>Where can I find the bill for my recent purchase? </p>
+                                    </button>
+                                </li>
+                                
+                                <div id="flush-collapseTen" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Log in to your account, navigate to the "My Order" page,
+                                        and choose the order you need the bill for. Click on "Download Invoice" 
+                                        to obtain the bill.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <app-ourservices></app-ourservices>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,50 @@
+li {
+    list-style-type: disc !important;
+}
+
+.termsandcondition {
+    padding: 80px;
+    padding-top: 40px;
+
+    h1 {
+        font-size: 30px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logoimg {
+            height: 5rem;
+        }
+    }
+
+    h5 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    h3 {
+        margin-top: 30px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    p {
+        font-weight: 500;
+    }
+
+    ul {
+        li {
+            font-weight: 500;
+            margin-top: 10px;
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+
+    .termsandcondition {
+        padding: 20px;
+        padding-top: 100px;
+    }
+}

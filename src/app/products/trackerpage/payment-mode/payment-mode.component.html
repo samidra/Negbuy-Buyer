@@ -1,0 +1,435 @@
+<div class="container-fluid navbarPayment  p-3">
+    <div class="row ">
+        <div class="col-sm-4 navbarPayment-brand"><img src="../../assets/logo/Negbuylogo23.png" class="logo"
+                routerLink=""></div>
+        <div class="col-sm-4 col-6 navbarPayment-page">Payment Page</div>
+        <div class="col-sm-4 col-6 navbarPayment-secure"> <img class="me-2" src="assets/logo/securepayment.png" alt=""
+                srcset="">
+            Secure Checkout</div>
+    </div>
+</div>
+<div class="container-fluid" *ngIf="OrderAddressDetails.payment_Mode !='Pay Later' ">
+    <div class="row" style="
+    background-color: #e6e6e6ad;
+    box-shadow: 0px 2px 6px 0px rgba(159, 152, 152, 0.1647058824);">
+        <div class="col-md-7 col-6 tracker">
+            <h1 class="mainHeading">Confirm & Pay</h1>
+            <span>Check all the Shipping details and Proceed to Payment.</span>
+        </div>
+        <div class="col-md-5 col-6 tracker1">
+           <div class="angle angle1">
+            <h2> STEP 1</h2>
+           </div>
+           <div class="angle angle2">
+            <h2> STEP 2</h2>
+           </div>
+           <div class="angle3">
+            <h2> STEP 3</h2>
+           </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ------------------------------------------------------------------------------- -->
+
+<div class="container-fluid">
+    <div class="row newDesign p-sm-5 p-2 pt-0">
+
+        <div class="col-xxl-8 col-xl-7 col-md-6 p-5 p-md-3 p-sm-2">
+
+            <div class="row billingAddressRow">
+                <div class="col-12 billingAddressRow-changeAddressTwo"
+                    *ngIf="(OrderAddressDetails.payment_Mode !='Pay Later')">
+                    <a (click)="Tobuynow()">Change</a>
+                </div>
+
+                <div class="col-12 billingAddressRow-topHeading">
+                    <h4>Billing Address</h4>
+                </div>
+
+                <div class="col-lg-6 billingAddressRow-deliveryDedtail">
+                    <h3>Address</h3>
+                    <div class="d-flex">
+
+                        <p>{{OrderAddressDetails.delivery_address}},
+                            {{OrderAddressDetails.city}} , {{OrderAddressDetails.state}},
+                            {{OrderAddressDetails.pincode}}, {{OrderAddressDetails.country}}
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 billingAddressRow-deliveryDedtail">
+                    <h3>Product Category</h3>
+                    <p>{{ BillDetail?.category}}</p>
+                </div>
+
+                <div class="col-lg-6 billingAddressRow-deliveryDedtail">
+                    <h3>Product Dimensions (length x width x height)</h3>
+                    <div class="deliveryDedtail_dimension">
+                        <p> {{BillDetail?.length}} </p> <span> X </span>
+                        <p> {{BillDetail?.width}} </p> <span> X </span>
+                        <p> {{BillDetail?.height}} </p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 billingAddressRow-deliveryDedtail">
+                    <h3>Product Weight</h3>
+                    <p>{{BillDetail?.weight}}</p>
+                </div>
+
+                <div class="col-lg-6 billingAddressRow-deliveryDedtail">
+                    <h3>Delivery Type</h3>
+                    <p *ngIf="this.shippingMode ==='DDP'">{{this.shippingMode}}</p>
+                    <p *ngIf="this.shippingMode !='DDP'">Ex-Work</p>
+                </div>
+
+                <div class="col-lg-6 billingAddressRow-deliveryDedtail">
+                    <h3>Expected Delivery</h3>
+                    <p *ngIf="this.shippingMode ==='DDP'">{{OrderAddressDetails.estimated_delivery_days}} Days
+                    </p>
+                    <p *ngIf="this.shippingMode !=='DDP'">14 Days - 20 Days</p>
+                </div>
+
+                <div class="col-12">
+
+                    <div class="row">
+
+                        <div class="col-12 selectPaymentMethod">
+
+                            <div class="row"
+                                style="width: 100%; display: flex; justify-content: space-between; margin-top: 10p;">
+
+                                <div class="col-12 mt-5 billingAddressRow-changeAddress">
+                                    <h3> Select payment Method</h3>
+                                </div>
+
+                                <div class="col-6" *ngIf="(this.shippingMode !=='DDP') && (OrderAddressDetails.payment_Mode !='Pay Later')">
+
+                                    <div class="selectPaymentMethod-checkboxCol"
+                                        [ngClass]="selected_payment_type == 1?'checkboxCol_color':'selectPaymentMethod-checkboxCol'">
+
+                                        <input type="radio" id="radio7" name="radio" value="Pay later at Delivery"
+                                            [(ngModel)]="selectedPaymentOption" (change)="logSelectedOption(1)">
+                                        <label for="radio7" class="custom-radio"></label>
+                                        <label for="radio7">Pay later at Delivery <span
+                                                style="color: rgb(241, 91, 91);">(Recommended)</span></label>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-6" *ngIf="(OrderAddressDetails.country == 'India')">
+
+                                    <div class="selectPaymentMethod-checkboxCol"
+                                        [ngClass]="selected_payment_type == 3?'checkboxCol_color':'selectPaymentMethod-checkboxCol'">
+
+                                        <input type="radio" id="radio8" name="radio" value="RazorPay"
+                                            [(ngModel)]="selectedPaymentOption" (change)="logSelectedOption(3)">
+                                        <label for="radio8" class="custom-radio"></label>
+                                        <label for="radio8">Pay with RazorPay <img src="assets/logo/razorpay.png"
+                                                alt="">
+
+                                                <span *ngIf="(this.shippingMode ==='DDP') && (OrderAddressDetails.country == 'India')"
+                                                style="color: rgb(241, 91, 91);">(Recommended)</span>
+                                        </label>
+
+                                    </div>
+
+                                </div>
+                                
+
+                                <div class="col-6" >
+
+                                    <div class=""
+                                        [ngClass]="selected_payment_type == 2?'checkboxCol_color':'selectPaymentMethod-checkboxCol'">
+                                        <input type="radio" id="radio2" name="radio" value="Paypal"
+                                            [(ngModel)]="selectedPaymentOption" (change)="logSelectedOption(2)">
+                                        <label for="radio2" class="custom-radio"></label>
+                                        <label for="radio2">Pay with Paypal <img src="assets/logo/paypal.png" alt="">
+                                            <span *ngIf="(this.shippingMode ==='DDP') && (OrderAddressDetails.country != 'India')"
+                                                style="color: rgb(241, 91, 91);">(Recommended)</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="col-12 paymentButton">
+                                    <div class="row rowx">
+                                        <div class="col-12 buttonproceed">
+
+                                            <button class="mt-5" align="center" type="button"
+                                                *ngIf="((this.selectedPaymentOption !=='Pay later at Delivery' && shippingMode != 'DDP') || 
+                                                (this.selectedPaymentOption =='Pay later at Delivery' && shippingMode != 'DDP')) && spinnerBuyNow"
+                                                (click)="(shippingMode != 'DDP' && selectedPaymentOption == 'RazorPay') ? payWithRazorEXWORK() :
+                                                         (shippingMode != 'DDP' && selectedPaymentOption == 'Credit/Debit card') ? payWithRazorEXWORK() :
+                                                         (shippingMode != 'DDP' && selectedPaymentOption == 'UPI') ? payWithRazorEXWORK() :
+                                                         (shippingMode != 'DDP' && selectedPaymentOption == 'Wallet') ? payWithRazorEXWORK() :
+                                                         (shippingMode != 'DDP' && selectedPaymentOption == 'Paypal') ? payWithPaypal(): ExWorkConfirm()">
+
+                                                <div
+                                                    *ngIf="this.selectedPaymentOption !=='Pay later at Delivery' && shippingMode != 'DDP'">
+                                                    Make Payment By {{selectedPaymentOption}} </div>
+                                                <div
+                                                    *ngIf="this.selectedPaymentOption =='Pay later at Delivery' && shippingMode != 'DDP'">
+                                                    {{selectedPaymentOption}} </div>
+                                            </button>
+
+                                            <button class="mt-5" align="center" type="button"
+                                                *ngIf="(this.selectedPaymentOption !== 'Pay later at Delivery' && shippingMode == 'DDP') && spinnerBuyNow"
+                                                (click)="(shippingMode == 'DDP' && selectedPaymentOption == 'RazorPay') ? payWithRazor() :
+                                                         (shippingMode == 'DDP' && selectedPaymentOption == 'Paypal') ? payWithPaypal() : payWithRazor()">
+                                                Make Payment By {{selectedPaymentOption}}
+                                            </button>
+
+                                            <button class="mt-5" align="center" type="button" *ngIf="!spinnerBuyNow">
+                                                <div class="spinner-border" style="color: white !important; "
+                                                    role="status">
+                                                </div>
+                                            </button>
+
+                                        </div>
+
+                                        <!-- <div class="col-12 buttonproceed">
+                                            <button class="mt-5" align="center" type="button"
+                                                *ngIf="this.selectedPaymentOption == 'Pay later at Delivery'"
+                                                (click)="ExWorkOrders()">
+                                                Confirm Your Order
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-xxl-4 col-xl-5 col-md-6 p-sm-3 p-1">
+
+            <div class="row productdetail" *ngIf="!loadingBillDetails">
+
+                <h3 class="p-3">Product Details</h3>
+
+                <div class="col-12 modalprofile p-3 mt-3">
+
+                    <div class="shimmer" style="height: 290px; width: 100%;"></div>
+
+                    <div class="shimmer" style="height: 40px; width: 100%;"></div>
+                </div>
+
+                <div class="col-12 priceDetail">
+                    <div class="row priceDetail">
+                        <div class="col-6 productdetail-head1">
+                            <h3>Quantity</h3>
+                        </div>
+                        <div class="col-6 productdetail-head2">
+                            <div class="shimmer" style="height: 20px; width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 productdetail-head1">
+                            <h3>Product Price</h3>
+                        </div>
+                        <div class="col-6 productdetail-head2">
+                            <div class="shimmer" style="height: 20px; width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 productdetail-head1">
+                            <h3>GST%</h3>
+                        </div>
+                        <div class="col-6 productdetail-head2">
+                            <div class="shimmer" style="height: 20px; width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 productdetail-head1">
+                            <h3>Service Charge</h3>
+                        </div>
+                        <div class="col-6 productdetail-head2">
+                            <div class="shimmer" style="height: 20px; width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="BillDetail?.delivery_charge">
+                        <div class="col-6 productdetail-head1">
+                            <h3> Delivery Charge</h3>
+                        </div>
+                        <div class="col-6 productdetail-head2">
+                            <div class="shimmer" style="height: 20px; width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row total">
+                        <div class="col-6">
+                            <h3>Total Amount</h3>
+                        </div>
+                        <div class="col-6">
+                            <div class="shimmer" style="height: 20px; width: 100%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row productdetail" *ngIf="loadingBillDetails">
+
+                <h3 class="p-3">Product Details</h3>
+
+                <div class="col-12 modalprofile p-3 mt-3" (click)="toProduct()" style="cursor: pointer;">
+
+                    <img src={{BillDetail.product_image}} height="200px" alt="Product Image" srcset="">
+                    {{BillDetail.product_title}}
+
+                </div>
+
+                <div class="col-12 priceDetail">
+                    <div class="row priceDetail-backClass">
+                        <div class="col-6 productdetail-head1">
+                            <h3>Quantity</h3>
+                        </div>
+                        <div class="col-6 productdetail-head2">
+                            <h5>{{BillDetail.quantity}}</h5>
+                        </div>
+                    </div>
+
+
+                    <div class="row priceDetailNew">
+                        <div class="col-12">
+                            <div class="row priceDetail-backClass">
+                                <div class="col-6 productdetail-head1">
+                                    <h3>Price as per ({{BillDetail.quantity}} Qty)</h3>
+                                </div>
+                                <div class="col-6 productdetail-head2">
+                                    <h5>{{BillDetail.price}}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row priceDetailNewrow">
+                            <div class="col-6 productdetail-head1">
+                                <h3>Item MRP</h3>
+                            </div>
+                            <div class="col-6 productdetail-head2">
+                                <h5>{{BillDetail.unit_mrp}}</h5>
+                            </div>
+
+                            <div class="col-6 productdetail-head1">
+                                <h3>Item Price (1 Qty)</h3>
+                            </div>
+                            <div class="col-6 productdetail-head2">
+                                <h5>{{BillDetail.unit_price}}</h5>
+                            </div>
+
+                            <div class="col-6 productdetail-head1">
+                                <h3>Discount</h3>
+                            </div>
+                            <div class="col-6 productdetail-head2">
+                                <h5>{{BillDetail.discount}}</h5>
+                            </div>
+
+                        </div>
+                       
+
+                    </div>
+
+                    <div class="row priceDetailNew">
+                        <div class="col-12">
+                            <div class="row priceDetail-backClass">
+                                <div class="col-6 productdetail-head1">
+                                    <h3>Charges</h3>
+                                </div>
+                                <div class="col-6 productdetail-head2">
+                                    <h5>{{BillDetail.charges}}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row priceDetailNewrow">
+                            <div class="col-6 productdetail-head1">
+                                <h3>GST {{BillDetail.gst_percent}}%</h3>
+                            </div>
+                            <div class="col-6 productdetail-head2">
+                                <h5>{{BillDetail.gst}}</h5>
+                            </div>
+
+                            <div class="col-6 productdetail-head1">
+                                <h3>Service Charges</h3>
+                            </div>
+                            <div class="col-6 productdetail-head2">
+                                <h5>{{BillDetail.service_charge}}</h5>
+                            </div>
+
+                            <div class="col-6 productdetail-head1" *ngIf="BillDetail.delivery_charge">
+                                <h3>Delivery Charges</h3>
+                            </div>
+                            <div class="col-6 productdetail-head2" *ngIf="BillDetail.delivery_charge">
+                                <h5>{{BillDetail.delivery_charge}}</h5>
+                            </div>
+
+                        </div>
+                       
+
+                    </div>
+
+                    <div class="row total">
+                        <div class="col-6">
+                            <h3>Total Amount</h3>
+                        </div>
+                        <div class="col-6">
+                            <h5>{{BillDetail.total_amount}}</h5>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row saving">
+                        <div class="col-12">
+                            <h3>Total Savings: 43,000/- (22%)</h3>
+                        </div>
+                    </div> -->
+
+                </div>
+
+            </div>
+
+            <div class="row productdetail mt-3">
+                <h3 class="p-3">MAY WE HELP?</h3>
+
+                <div class="col-12 productdetail-head1 px-3 pt-2">
+                    <h3><i class="bi bi-telephone-fill"></i> &nbsp; <a href="tel:+917836803051">+91 7836803051</a></h3>
+                </div>
+                <div class="col-12 productdetail-head1 px-3 pt-2 pb-4">
+                    <h3><i class="bi bi-envelope-fill"></i> &nbsp; <a
+                            href="mailto:contactus@negbuy.com">contactus@negbuy.com</a></h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-12">
+            <app-ourservices></app-ourservices>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

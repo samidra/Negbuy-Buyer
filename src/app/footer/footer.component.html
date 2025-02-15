@@ -1,0 +1,125 @@
+<div class="container-fluid footcont mt-4">
+  <div class="row p-sm-4 p-3">
+
+    <div class="col-lg-5 about_negbuy mt-3">
+
+      <h3>
+        About Negbuy
+      </h3>
+
+      <p>
+        Negbuy is your gateway to global trade. As an Indian e-commerce platform, we connect sellers with international
+        buyers, offering an intuitive interface and reliable ExWorks (ExW) or Delivered Duty Paid (DDP) delivery
+        options. Empower your business, reach global markets, and enjoy a seamless shopping experience with Negbuy.
+      </p>
+      <div class="newletterfoot mt-5">
+        <p>Subscribe to our<span> Newsletter </span></p>
+
+        <form class="mt-2">
+          <input type="text" [(ngModel)]="emailNewsletter" name="emailNewsletter" placeholder="Enter your Email" />
+          <button class="joinfoot " type="submit" (click)="subscribeForNewsLetter()" *ngIf="joinButtonSpinner">Join
+            Now</button>
+          <button class="joinfoot " *ngIf="!joinButtonSpinner">
+            <div class="spinner-border" style="color: white !important; " role="status"></div>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="col-lg-2 col-6 mt-3">
+      <div class="cateG">
+        <ul>
+          <li class="categoryfoot">
+            <a class="categoryfoot1"> Category </a>
+          </li>
+
+          <li *ngFor="let category of Categories">
+            <a (click)="RouteToCategoryPage(category)"> {{category}} </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-6 mt-3">
+      <div class="cateG">
+        <ul>
+          <li class="categoryfoot">
+            <a class="categoryfoot1"> Information</a>
+          </li>
+          <!-- <li>
+            <a (click)="GoToProfile()"> My Account </a>
+          </li> -->
+          <li>
+            <a routerLink="/blogs"> Blogs </a>
+          </li>
+          <li>
+            <a routerLink="/help-center/about-us"> About Negbuy </a>
+          </li>
+          <li>
+            <a href="https://tradeassurance.negbuy.com/" target="_blank"> Trade Assurance </a>
+          </li>
+
+          <li>
+            <a href="privacy_policy" target="_blank"> Privacy Policy </a>
+          </li>
+          <li>
+            <a href="terms_of_use" target="_blank"> Terms & Condition </a>
+          </li>
+          <li>
+            <a href="payment_flow" target="_blank"> Payment Flow </a>
+          </li>
+          <li>
+            <a href="refund_cancellation" target="_blank"> Refund Cancellation </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-3 mt-3">
+
+      <div class="addressfoot">
+
+        <p class="contactfoot">Contact Details</p>
+
+        <p class="addressfoot1">
+          <span><img src="assets/Footer/address.png" alt="Address" srcset=""></span>
+          G-21, Block G, Sector-16 Metro, Noida <br>
+          Sector 3, Noida,Uttar Pradesh 201301
+        </p>
+
+        <p class="text-color">
+          <span><img src="assets/Footer/phone.png" alt="Phone" srcset=""></span>
+          <a href="tel:+917836803051">+91 7836803051
+          </a>
+        </p>
+
+
+        <p class="text-color">
+          <span><img src="assets/Footer/mail.png" alt="Mail" srcset=""></span>
+          <a href="mailto:contactus@negbuy.com">{{'contactus@negbuy.com'}}
+          </a>
+        </p>
+      </div>
+
+      <div class="all_icon">
+        <h5>Follow Us</h5>
+      </div>
+      <div class="all_icon">
+
+        <a href="https://www.facebook.com/Negbuy.official" target="_blank"><img src="assets/Footer/facebook.png"
+            alt="facebook"></a>
+        <a href="https://www.instagram.com/negbuy.official/" target="_blank"><img src="assets/Footer/instagram.png"
+            alt="instagram"></a>
+        <a href="https://in.linkedin.com/company/negbuyindia" target="_blank"><img src="assets/Footer/linkedin.png"
+            alt="linkedin"></a>
+        <a href="https://www.youtube.com/negbuy" target="_blank"><img src="assets/Footer/youtube.png" alt="youtube"></a>
+        <a href="https://x.com/negbuy_official" target="_blank"><img src="assets/Footer/x.com.png" alt="twitter"></a>
+
+      </div>
+    </div>
+    <div class="col-12 mt-5 copy_right">
+      <span>&copy; 2022-2024, Negbuy Pvt Ltd, All Right Reserved.</span>
+    </div>
+  </div>
+</div>

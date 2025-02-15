@@ -1,0 +1,288 @@
+<div class="container-fluid">
+
+    <div class="row rew_return_request_style">
+
+        <div class="col-12 title">
+            <h4>Return Request
+                <span>Share Your review about this product</span>
+            </h4>
+        </div>
+
+        <div class="col-12">
+            <hr>
+        </div>
+
+        <div class="col-12 mt-1">
+            <div class="row p-1 product_details" style="width:100%;">
+                <div class="col-md-3 img_div">
+                    <img [src]="this.selected_order_data.product_image" alt="" srcset="">
+                </div>
+                <div class="col-md-9 tittle_and_more">
+                    <div class="row" style="width:100%;">
+                        <div class="col-12">
+                            <h4>Product Tittle
+                                <span>{{this.selected_order_data.product_title}}</span>
+                            </h4>
+                        </div>
+
+                        <div class="col-md-4 col-6 mt-1 tittle_and_more">
+                            <h4>Order Id
+                                <span>{{this.selected_order_data.delivery_option === 'ExWork' ? 'Ex-Work'
+                                    :'DDP'}}-{{this.selected_order_data.order_id}}</span>
+                            </h4>
+                           
+                        </div>
+                        <div class="col-md-4 col-6 mt-1 tittle_and_more">
+                            <h4>Order Date
+                                <span>{{this.selected_order_data.order_date}}</span>
+                            </h4>
+                           
+                        </div>
+                        <div class="col-md-4 col-6 mt-1 tittle_and_more">
+                            <h4>Order Type
+                                <span>{{this.selected_order_data.delivery_option === 'ExWork' ? 'Ex-Work'
+                                    :'DDP'}}</span>
+                            </h4>
+                        </div>
+                        <div class="col-md-4 col-6 mt-1 tittle_and_more">
+                          
+                            <h4>Phone Number
+                                <span>{{this.selected_order_data.phone}}</span>
+                            </h4>
+                        </div>
+                        <div class="col-md-4 col-6 mt-1 tittle_and_more">
+                    
+                            <h4>Order Delivered
+                                <span>{{this.selected_order_data.expected_delivery_date}}</span>
+                            </h4>
+                        </div>
+                        <div class="col-md-4 col-6 mt-1 tittle_and_more">
+                        
+                            <h4>Time Left
+                                <span>{{this.selected_order_data.return_time_left}} {{'days are left'}} </span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3 form_row">
+                <form #ReturnRequestForm="ngForm">
+
+                    <div class="col-md-10 col_form">
+                        <label for="">Reason For Return</label>
+                        <div class="row">
+                          <ng-container *ngFor="let reason of reasons">
+                            <div class="col-md-3 col-sm-4 col-6">
+                              <button class="return_option" 
+                                      (click)="get_reason(reason)" 
+                                      [ngClass]="{'return_option_selected': reason_for_return === reason}">
+                                {{ reason }}
+                              </button>
+                            </div>
+                          </ng-container>
+                        </div>
+                        <div class="error_message" *ngIf="Isreason_for_return">
+                          Please provide your reason.
+                        </div>
+                    </div>
+                      
+                    <div class="col-md-10 col_form">
+                        <label class="mt-3" for="reason_for_return_brief">Share Your Detailed Information</label>
+                        <textarea name="" id="reason_for_return_brief" class="reason_for_return_briefInput mt-2"
+                            placeholder="Share Your Detailed Information" rows="2" [(ngModel)]="reason_for_return_brief"
+                            #Brief="ngModel" required name="reason_for_return_brief">
+                        </textarea>
+
+                        <div *ngIf="Brief.errors && (Brief.invalid && Brief.touched) || Isreason_for_return_brief" class="error_message">
+                            Please provide your reason in brief.
+                        </div> 
+                    </div>
+
+                    <div class="col-md-10 mainReasonImage mt-3">
+                        <div class="row mainReasonImage-rowimgUpload">
+                                <label class="">Upload the images as a proof</label>
+
+                                <div class="col-md-2 col-sm-3 col-4 mt-2 me-md-2  mainImageDiv">
+                                    <div class="images-container input-row">
+                                        <div class="main-image-container">
+                                            <div class="main-image upload-box-icon">
+                                                <input type="file" #galleryFileInput name="galleryFileInput"
+                                                    accept="image/*" id="main-image-input"
+                                                    (change)="onSelectImage($event,0)" />
+                                                <label for="main-image-input" *ngIf="!proof_images[0].show.length">
+                                                    <img src="assets/logo/addImage.png" name="main_image0"
+                                                        class="upload-image-icon" alt="" />
+                                                    <i>Add Image</i>
+                                                </label>
+                                                <label for="main-image-input" *ngIf="proof_images[0].show.length">
+
+                                                    <div class="main-image-preview-div">
+
+                                                        <div class="removeImage">
+                                                            <span aria-hidden="true" class="close" aria-label="Close"
+                                                                (click)="RemoveImage(0)">
+                                                                &times;
+                                                            </span>
+                                                        </div>
+
+                                                        <img [src]="proof_images[0].show" alt="Selected Image" />
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-3 col-4 mt-2 me-md-2  mainImageDiv">
+                                    <div class="images-container input-row">
+                                        <div class="main-image-container">
+                                            <div class="main-image upload-box-icon">
+                                                <input type="file" #galleryFileInput1 name="galleryFileInput1"
+                                                    accept="image/*" id="main-image-input1"
+                                                    (change)="onSelectImage($event,1)" />
+                                                <label for="main-image-input1" *ngIf="!proof_images[1].show.length">
+                                                    <img src="assets/logo/addImage.png" name="main_image1"
+                                                        class="upload-image-icon" alt="" />
+                                                    <i>Add Image</i>
+                                                </label>
+                                                <label for="main-image-input1" *ngIf="proof_images[1].show.length">
+
+                                                    <div class="main-image-preview-div">
+
+                                                        <div class="removeImage">
+                                                            <span aria-hidden="true" class="close" aria-label="Close"
+                                                                (click)="RemoveImage(1)">
+                                                                &times;
+                                                            </span>
+                                                        </div>
+
+                                                        <img [src]="proof_images[1].show" alt="Selected Image" />
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-3 col-4 mt-2 me-md-2  mainImageDiv">
+                                    <div class="images-container input-row">
+                                        <div class="main-image-container">
+                                            <div class="main-image upload-box-icon">
+                                                <input type="file" #galleryFileInput2 name="galleryFileInput2"
+                                                    accept="image/*" id="main-image-input2"
+                                                    (change)="onSelectImage($event,2)" />
+                                                <label for="main-image-input2" *ngIf="!proof_images[2].show.length">
+                                                    <img src="assets/logo/addImage.png" name="main_image2"
+                                                        class="upload-image-icon" alt="" />
+                                                    <i>Add Image</i>
+                                                </label>
+                                                <label for="main-image-input2" *ngIf="proof_images[2].show.length">
+
+                                                    <div class="main-image-preview-div">
+
+                                                        <div class="removeImage">
+                                                            <span aria-hidden="true" class="close" aria-label="Close"
+                                                                (click)="RemoveImage(2)">
+                                                                &times;
+                                                            </span>
+                                                        </div>
+
+                                                        <img [src]="proof_images[2].show" alt="Selected Image" />
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-3 col-4 mt-2 me-md-2  mainImageDiv">
+                                    <div class="images-container input-row">
+                                        <div class="main-image-container">
+                                            <div class="main-image upload-box-icon">
+                                                <input type="file" #galleryFileInput3 name="galleryFileInput3"
+                                                    accept="image/*" id="main-image-input3"
+                                                    (change)="onSelectImage($event,3)" />
+                                                <label for="main-image-input3" *ngIf="!proof_images[3].show.length">
+                                                    <img src="assets/logo/addImage.png" name="main_image3"
+                                                        class="upload-image-icon" alt="" />
+                                                    <i>Add Image</i>
+                                                </label>
+                                                <label for="main-image-input3" *ngIf="proof_images[3].show.length">
+
+                                                    <div class="main-image-preview-div">
+
+                                                        <div class="removeImage">
+                                                            <span aria-hidden="true" class="close" aria-label="Close"
+                                                                (click)="RemoveImage(3)">
+                                                                &times;
+                                                            </span>
+                                                        </div>
+
+                                                        <img [src]="proof_images[3].show" alt="Selected Image" />
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-3 col-4 mt-2 me-md-2  mainImageDiv">
+                                    <div class="images-container input-row">
+                                        <div class="main-image-container">
+                                            <div class="main-image upload-box-icon">
+                                                <input type="file" #galleryFileInput4 name="galleryFileInput4"
+                                                    accept="image/*" id="main-image-input4"
+                                                    (change)="onSelectImage($event,4)" />
+                                                <label for="main-image-input4" *ngIf="!proof_images[4].show.length">
+                                                    <img src="assets/logo/addImage.png" name="main_image4"
+                                                        class="upload-image-icon" alt="" />
+                                                    <i>Add Image</i>
+                                                </label>
+                                                <label for="main-image-input4" *ngIf="proof_images[4].show.length">
+
+                                                    <div class="main-image-preview-div">
+
+                                                        <div class="removeImage">
+                                                            <span aria-hidden="true" class="close" aria-label="Close"
+                                                                (click)="RemoveImage(4)">
+                                                                &times;
+                                                            </span>
+                                                        </div>
+
+                                                        <img [src]="proof_images[4].show" alt="Selected Image" />
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-10 mt-3">
+                        <div class="policy">
+                        <input type="checkbox" id="return_policy" name="return_policy" [(ngModel)]="isReturnPolicyChecked" required>
+                        <label for="return_policy">I agree to the <strong>return policy</strong>. </label> 
+                        </div>
+                        <div *ngIf="!isReturnPolicyChecked" class="error_message">
+                            Please accept return policy.
+                        </div>
+                    </div>
+                    
+                
+                    <div class="col-12 mainButton" >
+                            <button type="reset" class="noBtn" (click)="onCloseHandled()">Close</button>
+                            <button type="submit" *ngIf="spinnerBuyNow" class="submit" (click)="submitReturnRequest(ReturnRequestForm)">Submit Details</button>
+                            <button *ngIf="!spinnerBuyNow" class="submit">
+                                <div class="spinner-border" style="color: rgb(255, 255, 255) !important; "
+                                    role="status"></div>
+                            </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

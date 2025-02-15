@@ -1,0 +1,194 @@
+<app-mainheader></app-mainheader>
+<hr>
+<div class="container-fluid">
+  <div class="row">
+
+
+    <div class="col-12 d-flex p-1 submenu">
+      <h3 routerLink="/help-center/about-us">About Us</h3>
+      <h3 routerLink="/help-center/about-us">Trending News</h3>
+      <h3 routerLink="/help-center/about-us" routerLink="/services">
+        Services
+      </h3>
+      <h3 routerLink="/help-center/about-us" routerLink="/help-center/delivery">
+        Delivery
+      </h3>
+      <h3 routerLink="/help-center/about-us"> Workplace</h3>
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  <div class="row mb-5">
+    <div class="col-12">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1700">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+
+            <div class=" col-12 slideImageButton">
+              <img src="assets/Carousel/BlogCarousel.webp" alt="Los Angeles" style="width:100%; height: 100%;">
+
+              <div class="slideBtn">
+                <h5>Kshitij Joshi,13 March 2023</h5>
+                <h3>All About incoterm and and modes of transportation</h3>
+                <h5>What is an Incoterm, and what should you remember when doing international business?</h5>
+                <div class="headimage">
+                  <button class="headimage-btn">INCOTERMS</button>
+                  <button class="headimage-btn">EX-Work</button>
+                  <button class="headimage-btn">DDP Delivery</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="item">
+
+            <div class=" col-12 slideImageButton">
+              <img src="assets/Carousel/BlogCarousel2.webp" alt="Los Angeles" style="width:100%;">
+
+              <div class="slideBtn">
+                <h5>Kshitij Joshi,23 April 2024</h5>
+                <h3>All about the strategies about the import processes for MSMEs .</h3>
+                <h5>What strategies we should useto improve import processes</h5>
+                <!-- <div class="headimage">
+                  <button class="headimage-btn">LOreum Ipsum</button>
+                  <button class="headimage-btn">Web</button>
+                  <button class="headimage-btn">Machine</button>
+                </div> -->
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control lytt" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control rytt" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row p-2 latest_blog">
+    <div class="col-12 latest_blog-head">
+      <h3>
+        Latest Blog
+      </h3>
+
+      <hr>
+
+      <p>Fresh from the Negbuy Community</p>
+    </div>
+
+    <div class="col-12 mt-3 latest_blog-col_carousel">
+      <ngx-slick-carousel class="carousel " #slickModal="slick-carousel" [config]="latest_blog"
+        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of get_latest_blog; let i = index" class="mainSlideDiv slide">
+          <div class="p-3">
+            <img src="{{ slide.path }}" alt="" width="100%" (click)="DetailedBlog(slide.blog_id, i)">
+            <p>{{slide.heading}}</p>
+          </div>
+          <div class="col-11 read_more">
+            <button (click)="DetailedBlog(slide.blog_id, i)">Read More</button>
+          </div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row p-2 latest_blog">
+    <div class="col-12 latest_blog-head">
+      <h3>
+        Explore by Category
+      </h3>
+
+      <hr>
+
+      <p>Read articles from your favorite category. </p>
+    </div>
+
+    <div class="col-12 mt-3 latest_blog-col_carousel explore_category">
+      <ngx-slick-carousel class="carousel " #slickModal="slick-carousel" [config]="explore_by_category_blog"
+        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of get_latest_blog; let i =index" class="slide  p-3 pt-5 pb-5">
+          <div class="mainSlideDiv">
+            <div class="">
+              <img src="{{ slide.path }}" alt="" width="100%"(click)="DetailedBlog(slide.blog_id, i)">
+              <p>{{slide.heading.substring(0, 50) + '...'}}</p>
+
+              <span>{{slide.detail_para}}</span>
+            </div>
+            <div class="col-12 read_more">
+              <button (click)="DetailedBlog(slide.blog_id, i)">Read More</button>
+            </div>
+          </div>
+
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row p-2 latest_blog">
+    <div class="col-12 latest_blog-head">
+      <h3>
+        Popular News
+      </h3>
+
+      <hr>
+
+      <p>See Whats happening in the World.</p>
+    </div>
+
+    <div class="col-12 mt-3 latest_blog-col_carousel popular_blog">
+      <ngx-slick-carousel class="carousel " #slickModal="slick-carousel" [config]="popular_blog"
+        (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of popular_blog_data; let i = index" class="mainSlideDiv slide">
+          <div class=" p-3">
+            <img src="{{ slide.path }}" alt="" width="100%" (click)="DetailedBlog(slide.blog_id, i)">
+            <p>{{slide.heading}}</p>
+          </div>
+
+        </div>
+      </ngx-slick-carousel>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <app-ourservices></app-ourservices>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<app-footer></app-footer>

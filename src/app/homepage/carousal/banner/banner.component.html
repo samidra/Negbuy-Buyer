@@ -1,0 +1,116 @@
+<div class="container-fluid pt-3 p-md-3 conFluid">
+  <!-- id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" -->
+  <div class="row">
+    <div class="col-lg-8 main_banner">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li *ngFor="let image of images; let i = index" [attr.data-target]="'#myCarousel'" [attr.data-slide-to]="i"
+            [class.active]="i === 0"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item" *ngFor="let image of images; let i = index" [class.active]="i === 0">
+            <img [src]="image.path" [alt]="image.alt" style="width: 100%;" loading="lazy">
+            <div class="carousel-caption" [ngClass]="{
+                'favorite_banner': image.heading === 'Shop Your Favorite Products Easily',
+                'EngineeringGoods': image.heading === 'Engineering Goods',
+                'Fabrics': image.heading === 'Apparel & Accessories',
+                'pet_care': image.heading === 'Animal & Petcare',
+                'Camera_Optics': image.heading === 'Camera & Optics',
+                'furniture': image.heading === 'Furniture'
+              }">
+              <h2>{{ image.heading }}</h2>
+              <p>{{ image.para }}</p>
+              <span class="mt-sm-5 mt-2">{{ image.para2 }}</span>
+              <button
+                (click)="image.heading === 'Shop Your Favorite Products Easily' ? Route_to_recommendation() :  RouteToProductPage(image.category, image.category_one)">Shop
+                Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control lytt" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control rytt" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 p-2 pt-0 postercarssss">
+      <div id="carouselExampleFade1" class="carousel slide" data-ride="carousel" data-interval="1400">
+        <!-- Indicators -->
+        <!-- Wrapper for slides -->
+        <!-- <p class="news p-2">News</p> -->
+        <ol class="carousel-indicators">
+          <li *ngFor="let data of get_latest_blog; let i = index" data-target="#carouselExampleFade1"
+            [attr.data-slide-to]="i" [class.active]="i === 0"></li>
+
+          <div class="btn_div_read_more">
+            <button (click)="goToBlog()">Read More</button>
+          </div>
+        </ol>
+        <div class="carousel-inner" (click)="goToBlog()">
+          <div class="item" *ngFor="let mydata of get_latest_blog; let i = index" [class.active]="i === 0">
+            <img src="{{mydata.path}}" alt="Carousel Image" loading="lazy" class="Image">
+            <div class="pt-2 item-detail">
+              <p class="heading p-2"> {{mydata.heading}} </p>
+              <p class="sub-text p-2"> {{mydata.description.substring(0, 270)}}..... </p>
+            </div>
+            <!-- sugesstions -->
+            <div class="p-2 item-detailaa">
+              <div *ngIf="get_latest_blog.length > 1" style="width: 50%;">
+                <div *ngIf="i > 0" style="width: 90%; border-top: 2px solid rgb(0, 0, 0); padding: 5px; display: flex;">
+                  <div class="img_div">
+                    <img src="{{get_latest_blog[i - 1].path}}" alt="Previous Blog" loading="lazy">
+                  </div>
+                  <p class="heading p-2">{{get_latest_blog[i - 1].heading.substring(0, 65)}}...</p>
+                </div>
+                <div *ngIf="i === 0"
+                  style="width: 90%; border-top: 2px solid rgb(0, 0, 0); padding: 5px; display: flex;">
+                  <div class="img_div">
+                    <img src="{{get_latest_blog[get_latest_blog.length - 1].path}}" alt="Previous Blog" loading="lazy">
+                  </div>
+                  <p class="heading p-2">{{get_latest_blog[get_latest_blog.length - 1].heading.substring(0, 65)}}...</p>
+                </div>
+              </div>
+
+              <div *ngIf="get_latest_blog.length > 1" style="width: 50%;">
+                <div *ngIf="i < get_latest_blog.length - 1"
+                  style="width: 90%; border-top: 2px solid rgb(0, 0, 0); padding: 5px; display: flex;">
+                  <div class="img_div">
+                    <img src="{{get_latest_blog[i + 1].path}}" alt="Next Blog" loading="lazy">
+                  </div>
+                  <p class="heading p-2">{{get_latest_blog[i + 1].heading.substring(0, 65)}}...</p>
+                </div>
+                <div *ngIf="i === get_latest_blog.length - 1"
+                  style="width: 90%; border-top: 2px solid rgb(0, 0, 0); padding: 5px; display: flex;">
+                  <div class="img_div">
+                    <img src="{{get_latest_blog[0].path}}" alt="Next Blog" loading="lazy">
+                  </div>
+                  <p class="heading p-2">{{get_latest_blog[0].heading.substring(0, 65)}}...</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <span class="span_news header">
+          <p class="news p-2">NegBuy Updates</p>
+        </span>
+        <span class="lytt carousel-control span_news" href="#carouselExampleFade1" data-slide="prev">
+          <img src="../../assets/News/greyleft arrow.svg" alt="">
+        </span>
+        <span class="rytt carousel-control span_news" href="#carouselExampleFade1" data-slide="next">
+          <img src="../../assets/News/grey right arrow.svg" alt="">
+        </span>
+      </div>
+    </div>
+    
+  </div>
+
+</div>

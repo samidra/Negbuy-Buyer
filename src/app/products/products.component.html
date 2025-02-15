@@ -1,0 +1,1834 @@
+<app-mainheader></app-mainheader>
+<app-subheader></app-subheader>
+<!-- <app-sub-head-product-page></app-sub-head-product-page> -->
+
+<!-- ------------------------------- LOADING SKELETON -------------------------------- -->
+
+<div class="container-fluid" *ngIf="loaderS">
+  <div class="row">
+    <div class="col-md-4 ">
+      <div class="row sticky-top">
+        <div class="col-12 productimgcol p-3">
+          <div class="shimmer" style="height: 360px;"></div>
+        </div>
+
+        <div class=" col-12 mt-3 mb-2" style="display: flex; align-items: center;flex-direction: column">
+
+          <div class="shimmer mt-2" style="height: 20px; width: 97%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 97%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 97%;"></div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 pe-md-5">
+      <div class="row">
+        <div class="col-lg-8 pt-3">
+          <div class="row detail-row">
+
+            <div class="col-12 productname mt-5">
+              <div class="shimmer mt-2" style="height: 26px;"></div>
+            </div>
+            <div class="col-lg-8 pricecol mt-3">
+              <div class="shimmer mt-2" style="height: 26px;"></div>
+              <div class="shimmer mt-2 mx-2" style="height: 26px;"></div>
+              <div class="shimmer mt-2 mx-2" style="height: 26px;"></div>
+            </div>
+
+            <div class="col-12 product-condition mt-2">
+              <div class="shimmer mt-2 mx-2" style="height: 26px; width: 30%;"></div>
+            </div>
+            <div class="col-12 product-bulk-piece mt-5">
+              <p>Price/Price per item</p>
+              <div class="productbulkprice mt-4">
+
+                <div class="productbulkInfo">
+                  <div class="shimmer mt-2 mx-2" style="height: 56px;"></div>
+                  <div class="shimmer mt-2 mx-2" style="height: 56px;"></div>
+                  <div class="shimmer mt-2 mx-2" style="height: 56px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 colorproduct mt-5">
+
+              Colour
+              <br><br>
+              <!-- <span>Brown</span> -->
+
+              <div class="shimmer mt-2 mx-2" style="height: 50px; width: 50%;"></div>
+
+            </div>
+            <div class="col-12 productssize mt-5 pt-3">
+              Size
+              <br>
+              <div class="sizeVariants">
+
+                <div class="shimmer mt-2 mx-2" style="height: 50px; width: 50%;"></div>
+
+              </div>
+            </div>
+            <div class="col-12 leadofthe mt-4">
+              <h4> Lead of Time</h4>
+              <div class="shimmer mt-2 mx-2" style="height: 60px; width: 90%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-2 pe-lg-3">
+          <div class="row border">
+            <div class="col-12 product-quantity p-3">
+              <div class="product-quantity-new">
+                <div class="shimmer m-2" style="height: 40px; width: 97%;"></div>
+
+                <div class="col-12 editQuantity">
+                  <div class="modifys increase"> - </div>
+                  <div class="shimmer" style="height: 50px; width: 97%;"></div>
+                  <div class="modifys modify increase"> + </div>
+                </div>
+
+                <div class="shimmer m-2" style="height: 40px; width: 97%;"></div>
+                <div class="shimmer m-2" style="height: 40px; width: 97%;"></div>
+                <div class="shimmer m-2" style="height: 40px; width: 97%;"></div>
+                <div class="shimmer m-2" style="height: 40px; width: 97%;"></div>
+              </div>
+
+              <div class="product-quantity-card">
+                <div class="product-quantity-card-title">Offers</div>
+                <div class="offers">
+                  <div class="shimmer mt-2 mx-2" style="height: 250px; width: 97%;"></div>
+                </div>
+                <div class="divider"></div>
+                <div class="offers">
+                  <div class="shimmer mt-2 mx-2" style="height: 250px; width: 97%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 producydesc mt-3">
+          <div class="row">
+            <div class="col-12">
+              <h3> Product Description </h3>
+            </div>
+
+            <div class="col-12 productsubhead p-3">
+              <div class="shimmer p-3" style="height: 300px; width: 100%;"></div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-12">
+              <h3> Product Details </h3>
+            </div>
+            <div class="col-12 productsubhead productimganddetail mb-5">
+              <div class="row">
+                <div class="col-md-5 sss p-2">
+
+                  <div class="shimmer" style="height: 240px; width: 100%;"></div>
+                </div>
+                <div class="col-md-7 detailproduct">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="cards-details">
+                        <div class="shimmer" style="height: 200px; width: 100%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 productimganddetail">
+
+              <div class="row">
+                <div class="col-12 p-3 mt-3 cards productsubhead" *ngFor="let imagedesc of imgDesc">
+
+                  <div class="multiMediaimg">
+                    <img src="{{imagedesc.image}}" alt="" width="100%" />
+                  </div>
+                  <div class="cards-details p-5">
+                    <div class="imghead px-5">
+                      {{imagedesc.heading}}
+                    </div>
+                    <div class="imgdescription px-5">
+                      {{imagedesc.description}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid Informationcont mt-5 pt-3" *ngIf="loaderS">
+  <h3 class="p-3">Product Information</h3>
+  <div class="row p-md-4 p-2">
+
+    <!-- Basic Information -->
+
+    <div class="col-12 px-md-4 p-3 productsubhead basicproinfo">
+      <h3>Basic Information</h3>
+      <div class="shimmer" style="height: 200px;"></div>
+    </div>
+
+    <!-- Essential Details -->
+
+    <div class="col-12 mt-4 p-3 productsubhead basicproinfo">
+      <h3>Essential Details</h3>
+      <div class="shimmer" style="height: 200px;"></div>
+    </div>
+
+    <!-- Delivery Details -->
+
+    <div class="col-12 mt-4 p-3 productsubhead basicproinfo">
+      <h3>Delivery Details</h3>
+      <div class="shimmer" style="height: 200px;"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid" *ngIf="loaderS">
+  <div class="row p-4">
+    <div class="col-lg-3 productsubhead custReview  pt-4 pb-3">
+      <div class="reviewboxhead">Customer Review</div>
+      <div class="ratingreviewbox shimmer mt-2" style="height: 40px;"></div>
+      <div class="globalreview shimmer mt-2" style="height: 40px;"></div>
+      <div class="reviews shimmer mt-3 p-3" style="height: 250px;"></div>
+
+      <div class="writeReview shimmer mt-3 p-3" style="height: 50px; "></div>
+    </div>
+
+    <div class="col-lg-9 mt-lg-0 mt-4 px-lg-4">
+      <div class="row productsubhead Reviewdata pb-3">
+        <div class="col-12">
+          <div class="row pt-3 Reviewdataheadrow">
+            <div class="col-9">
+              <h5>Reviews</h5>
+            </div>
+            <div class="col-3">
+              <select class="form-select form-select-lg mb-3 selectedaa" aria-label=".form-select-md example"
+                style="border-radius: 0px;">
+                <option selected>Top rated</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="shimmer" style="height: 200px;"></div>
+          <div class="reviewCard" *ngFor="let productReviews of productReview">
+            <div class="shimmer" style="height: 200px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------------------- Main Content -------------------------------- -->
+
+<div class="container-fluid" *ngIf="!loaderS">
+  <div class="row mt-4">
+    <div class="col-lg-4 col-md-5">
+      <div class="row sticky-top">
+        <div class="col-12 productimgcol p-sm-2 px-sm-5">
+          <!-- <img id="expandedImgs" src="{{productdata.variants[variantIndex].extra_images[extraImage]}}" /> -->
+          <img src="assets\logo\orderIconcard.webp" alt="" srcset="" class="cornerorderNow">
+
+          <lib-ngx-image-zoom [enableScrollZoom]="true"
+            [thumbImage]=productdata.variants[variantIndex].extra_images[extraImage]
+            [fullImage]=productdata.variants[variantIndex].extra_images[extraImage]
+            [magnification]="1"></lib-ngx-image-zoom>
+        </div>
+
+
+        <div class=" col-12 mt-3 px-5 pe-5 mb-2">
+          <carousel class="c" [cellWidth]="100" [height]="50">
+            <div class="carousel-cell "
+              *ngFor="let extraImg of productdata.variants[variantIndex].extra_images;let i = index">
+              <img src="{{extraImg}}" (click)="setImageSrc(i)" height="100px">
+            </div>
+          </carousel>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-7">
+      <div class="row">
+        <div class="col-lg-8 pt-3 p-md-0 p-2">
+          <div class="row detail-row">
+
+            <div class="col-12 productname mt-2">
+              {{ productdata.product_title }}
+            </div>
+
+            <div class="col-12 pricecol" *ngIf="productdata.variants[variantIndex]
+            .size_variants[sizeIndex].bulk_purchase_details.length == 0 ">
+              <div class="productdiscountedprice">
+                &#8377;
+                {{
+                productdata.variants[variantIndex].size_variants[sizeIndex].price
+                }}
+
+              </div>
+              <div class="mx-3 productactualprice">
+                (&#8377;
+                {{
+                productdata.variants[variantIndex].size_variants[sizeIndex].mrp
+                }}
+                )
+                <div class="lineThrough"></div>
+              </div>
+              <div class="productpercentageOff">
+                (
+                {{
+                productdata.variants[variantIndex].size_variants[sizeIndex]
+                .discount
+                }}% off)
+              </div>
+
+              <img src="assets/logo/27079.webp" alt="" srcset="" class="priceGuarantee">
+            </div>
+
+            <div class="col-12 product-bulk-piece mt-2 pt-2" *ngIf="productdata.variants[variantIndex]
+            .size_variants[sizeIndex].bulk_purchase_details.length != 0 ">
+              <p style="margin: 0;">Price/Price per item</p>
+              <div class="row" style="display: flex; align-items: center;">
+                <div class="col-10">
+                  <div class="productbulkprice mt-2">
+
+                    <div class="productbulkInfo">
+                      <div class="blkTableDiv" *ngFor="
+                          let bulkpurchase of productdata.variants[variantIndex]
+                            .size_variants[sizeIndex].bulk_purchase_details
+                        ">
+
+                        <div>
+                          <p>
+                            {{ bulkpurchase.min_quantity }} -
+                            {{ bulkpurchase.max_quantity }} pieces
+                          </p>
+                          <p class="blkPrice">&#8377; {{ bulkpurchase.price }}</p>
+                        </div>
+                        <img src="assets/logo/pngwing.com (2).webp" alt="" height="45px">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-12 mb-1 product-condition">
+              <div class="india_flag">
+                <img loading="lazy" class="country-img" src="../../assets/AnimalSlider/country/flag-india.png" alt="" />
+                &nbsp;<span>India</span>
+              </div>
+
+
+              <!-- <div class="NegbuyAssured">
+                <i class="bi bi-shield-fill-check"></i> Assured
+              </div> -->
+
+            </div>
+
+            <div class="col-12 colorproduct mt-3" *ngIf="productdata.variants[variantIndex].color != null">
+              Colour
+              <br>
+              <button type="button" class="btn d-inline-block me-2 mt-2" *ngFor="let color of variants; let i = index"
+                (click)="selectColor(i)" [ngClass]="variantIndex == i?'selectedColor':'buttons'">
+                <img src="{{ color.main_image }}" alt="" />
+              </button>
+            </div>
+
+            <div class="col-12 productssize mt-4"
+              *ngIf="productdata.variants[variantIndex].size_variants.length != 0  && productdata.variants[variantIndex].size_variants[0].size != null">
+              Size
+              <br>
+              <div class="sizeVariants">
+                <button type="button"
+                  *ngFor="let size of productdata.variants[variantIndex].size_variants; let i = index"
+                  (click)="selectSizeIndex(i)" [ngClass]="sizeIndex == i?'selectedSize':'productSizess'">
+                  {{ size.size }}
+                </button>
+              </div>
+            </div>
+
+            <div class="col-12 mt-3 p-2 productsubhead basicproinfo rowDescria">
+              <h3>Basic Information</h3>
+              <div class="row">
+                <div class="col-12 pb-3">
+
+                  <div class="row" *ngFor="let Info of basicInfo.slice(0,6)">
+
+                    <div class="col-lg-5 col-6">
+                      <div class="basicInfohead p-2"> {{Info.heading}} </div>
+
+                    </div>
+                    <div class="col-lg-7 col-6">
+                      <div class="basicInfodescription p-2"> {{Info.description}} </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-12" style="display: flex; justify-content: flex-end;">
+                  <h5 class="basicInfohead" style="color: #1b916d; cursor: pointer; width: 110px;"
+                    (click)="showcontent('More Details')">More Details</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 mt-3 p-2 topReviewCol" *ngIf="CheckSizeColor() && productReviewRating?.length > 0">
+              <div class="row">
+
+                <div class="col-12 TopReviewHead">
+                  <div class=" ree mt-1">
+                    <div class="product-review p-2">
+                      {{ starRate }}
+                      <span><img src="assets/productPage/star.webp" alt="" /></span>
+                    </div>
+                    <div class="ratingStats p-3">
+                      35 rating and 5 reviews
+                    </div>
+                  </div>
+                  <div class="ratingStatsViewbtn p-3 mt-2" (click)="showcontent('All Reviews Section')">
+                    view all
+                  </div>
+                </div>
+
+                <div class="col-12 mt-3">
+                  <div class="row TopReviewHeadCont">
+
+                    <div class="col-xl-6 p-md-2" *ngFor="let productReviews of productReviewRating.slice(0,2) ">
+                      <div class="TopReviewHeadContMain">
+                        <div class="row">
+                          <div class="col-12 p-2">
+                            <div class="ree mt-1 d-flex">
+                              <div class="product-review p-2">
+                                {{ productReviews.rating }}
+                                <span><img src="assets/productPage/star.webp" alt="" /></span>
+                              </div>
+                              <div class="ratingStats p-3">
+                                35 rating and 5 reviews
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 p-2">
+                            <p>{{ productReviews.description?.substring(0, 180) }}.....</p>
+                          </div>
+
+                          <div class="col-12 p-2 TopReviewFooter">
+                            <h3>{{ productReviews.user }}, {{ productReviews.city }}</h3>
+                            <h3>{{ productReviews.time }}</h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- <div class="col-12 leadofthe mt-4">
+              <h4> Lead of Time</h4>
+              <table class="table table-bordered mt-3">
+
+                <tbody>
+                  <tr>
+                    <th scope="row" class="p-3">Quantity in (Pieces)</th>
+                    <td class="p-3">01-60 pieces</td>
+                    <td class="p-3">60-120 pieces</td>
+                    <td class="p-3">120-1000 pieces</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="p-3">Time in (Days)</th>
+                    <td class="p-3">2 Days</td>
+                    <td class="p-3">5 Days</td>
+                    <td class="p-3">9 Days</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-2 px-lg-2">
+          <div class="row border">
+            <div class="col-12 product-quantity p-3 pt-1">
+              <div class="row product-quantity-new">
+                <div class="col-6 stock_detail">
+                  <h4>{{productdata.variants[variantIndex].size_variants[sizeIndex].stock != 0 ?'In stock':'Out of
+                    stock'}}</h4>
+                  <i class="bi bi-check-circle-fill" style="color: #1b916d;"
+                    *ngIf="productdata.variants[variantIndex].size_variants[sizeIndex].stock != 0"></i>
+                </div>
+                <div class="col-6 payment_mode">
+                  <img src="assets/productPage/paymentoptionimage.png" alt="" srcset="">
+                </div>
+                <div class="miniOrderDiv" [ngClass]="{'show': ShowMinimumAlert}"> <i
+                    class="bi bi-exclamation-octagon-fill"></i> Minimum Order Quantity Is {{count !== 0 ? count : 1}}
+                </div>
+                <!-- <div class="col-12 stock_detail">
+                  <h3>Quantity</h3>
+                </div> -->
+                <div class="col-12 editQuantity">
+                  <div class="modifys increase" (click)="descrease()"> - </div>
+                  <!-- <div class="quantityNow">{{ count }}</div> -->
+                  <input type="number" class="quantityNow" [value]="count !== 0 ? count : 1" [(ngModel)]="count">
+                  <div class="modifys modify increase" (click)="increase()"> + </div>
+                </div>
+
+                <div class="col-12 minimum_order"
+                  *ngIf="this.productdata.variants[this.variantIndex].size_variants[this.sizeIndex].min_order_quantity != null">
+                  <i class="bi bi-info-circle icon"></i>
+                  minimum order <p class="d-inline-block">
+                    {{productdata.variants[variantIndex].size_variants[sizeIndex].min_order_quantity}}</p> pieces
+                </div>
+
+                <div class="buyNow button" [ngClass]="buyBtnClass" (click)="BuyNow()">
+                  <a style="color: white;" *ngIf="spinnerBuyNow"><i class="bi bi-cart4" style="font-size: 20px;"></i>
+                    Buy now</a>
+                  <div class="spinner-border" style="color: white !important; " role="status" *ngIf="!spinnerBuyNow">
+                  </div>
+                </div>
+
+                <div class="addToFav button" (click)="add_remove_wishlist()" *ngIf="spinnerWishlist">
+                  <span *ngIf="productdata.wishlisted"> <i class="bi bi-trash3-fill" style="color: #1b916d;"></i> Remove
+                    from wishlist</span>
+                  <span *ngIf="!productdata.wishlisted"><i class="bi bi-heart-fill" style="color: #1b916d;"></i> Add to
+                    wishlist</span>
+                  <!-- {{productdata.wishlisted ?'Remove from wishlist' :  ' Add to wishlist'}} -->
+                </div>
+                <div class="addToFav button" *ngIf="!spinnerWishlist">
+                  <div class="spinner-border" style="color: #1b916d !important; background-color: white;" role="status">
+                  </div>
+                </div>
+
+                <div class="addToFav button" *ngIf="showFirstBtn" (click)="productChatNow()"><i
+                    class="bi bi-chat-dots-fill" style="color: #1b916d;"></i> Contact Seller
+                </div>
+
+                <div class="addToFav button" *ngIf="!showFirstBtn">
+                  <div class="spinner-border" style="color: #1b916d !important; background-color: white;" role="status">
+                  </div>
+                </div>
+
+                <div class="col-12 TopReviewHead">
+                  <div class=" ree mt-1">
+                    <div class="product-review">
+                      {{ starRate }}
+                      <span style="margin-top: -2px;"><img src="assets/productPage/star.webp" alt="" /></span>
+                    </div>
+                    <div class="ratingStats">
+                      {{ starRate }} rating and 5 reviews
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="product-quantity-card">
+                <div class="product-quantity-card-title mt-1">Offers</div>
+                <div class="offers">
+                  <span class="head">Bank Offers :</span> 10% Instant Discount up to
+                  INR 1250 on Citi Bank Credit Card Transactions. Minimum purchase
+                  value INR 5000See Details10% Instant Discount up to INR 1250 on Citi
+                  Bank Credit Card Transactions. Minimum purchase value INR 5000
+                  <span class="details">See Details</span>
+                </div>
+                <div class="divider"></div>
+                <div class="offers">
+                  <span class="head">EMI Offers :</span> 10% Instant Discount up to
+                  INR 1250 on Citi Bank Credit Card Transactions. Minimum purchase
+                  value INR 5000See Details10% Instant Discount up to INR 1250 on Citi
+                  Bank Credit Card Transactions. Minimum purchase value INR 5000
+                  <span class="details">See Details</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 producydesc mt-5">
+          <div class="row">
+            <div class="col-12 p-md-0 p-4">
+              <h3> Product Description </h3>
+            </div>
+            <div class="col-12 productsubhead rowDescria">
+              <p class="p-4"> {{productdata.detailed_desc}} </p>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-12 p-md-0 p-4">
+              <h3> Product Details </h3>
+            </div>
+
+            <div class="col-12 productsubhead productimganddetail mb-5 pe-3">
+              <div class="row p-2" *ngIf="productdata.video != null">
+                <div class="col-12 rowDescrip">
+                  <div class="row p-2">
+                    <div class="col-lg-5 sss">
+
+                      <video height="240" autoplay controls preload="metadata">
+                        <source src={{productdata.video}} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div class="col-lg-7 pt-3 detailproduct">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="cards-details p-2">
+
+                            <div class="title">
+                              <span> Demonstration of product working</span>
+                            </div>
+                            <div class="cards-details-desc">
+                              {{productdata.detailed_desc}}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row p-2">
+                <div class="col-12 rowDescrip" *ngFor="let imagedesc of imgDesc">
+                  <div class="row p-2">
+                    <div class="col-lg-5 sss">
+                      <img height="290px" src="{{imagedesc.image}}" alt="{{ variantIndex }}">
+                    </div>
+                    <div class="col-lg-7 detailproduct pt-lg-0 pt-4">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="cards-details p-2">
+                            <div class="title">
+                              {{imagedesc.heading}}
+                            </div>
+                            <div class="cards-details-desc">
+                              {{imagedesc.description}}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid Informationcont mt-sm-5 pt-3 " *ngIf="!loaderS">
+  <h3 class="p-3">Other Product in the same Category</h3>
+  <div class="row p-md-4 p-2 pb-2">
+    <div class="col-12 DealBox">
+      <div class="row rowss">
+
+        <div class="col-md-5 border pb-md-0 pb-3" *ngFor="let dealsData of dealsOfTheDayData" style="cursor: pointer;">
+          <h1 class="dealcorner" (click)="goToProduct(dealsData.main_product_id)">Deals of the Day</h1>
+          <div class="row" (click)="goToProduct(dealsData.main_product_id)">
+            <div class="col-lg-4 dealcorner-img">
+              <img src="{{dealsData.main_image.main_image}}" alt="" srcset="">
+            </div>
+
+            <div class="col-lg-8 dealcorner-detail p-3">
+              <h4>{{dealsData.product_name}}</h4>
+              <p class="mt-lg-5 mt-3">{{dealsData.about_product.substring(0, 140)}}....
+                <br>
+
+              </p>
+              <a class="mt-lg-5 mt-3" (click)="goToProduct(dealsData.main_product_id)"> Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Smiliar Product -->
+
+    <div class="col-12 mt-5 px-md-4 px-2 pt-1 basicproinfo similarproduct">
+      <h3>Similar Products</h3>
+      <!-- <app-similarslide></app-similarslide> -->
+
+      <ng-container bb *ngIf="loader">
+        <carousel class="main-cont pt-4" [autoplay]="false">
+          <div class="carousel-cell" *ngFor="let mySlider of SkeletonLoads">
+            <div class="row mb-3 p-3">
+              <div class="col-12 p-1">
+                <div class="shimmer" style="height: 90px;"></div>
+              </div>
+              <div class="col-12 p-2">
+                <div class="shimmer" style="height: 30px;"></div>
+              </div>
+              <div class="col-12 p-2">
+                <div class="shimmer" style="height: 30px;"></div>
+              </div>
+              <div class="col-12 p-2">
+                <div class="shimmer" style="height: 30px;"></div>
+              </div>
+            </div>
+          </div>
+        </carousel>
+      </ng-container>
+
+      <ng-container bb *ngIf="!loader">
+        <carousel class="main-cont pt-4" [autoplay]="false">
+          <div class="carousel-cell" *ngFor="let mySlider of getSliderOne.data let i = index"
+            (click)="goToProduct(mySlider.product_id)">
+            <div class="row mb-3">
+              <div class="col-12 carimgdiv p-2">
+                <img loading="lazy" class="card-img" src="{{ mySlider.product_image }}" alt="" loading="lazy" />
+              </div>
+              <div class="col-12 p-2">
+                <div class="row">
+                  <div class="col-7">
+                    <p class="text-heading-car">
+                      <abbr title="{{ mySlider.product_name }}">{{
+                        mySlider.product_name
+                        }}</abbr>
+                    </p>
+                  </div>
+                  <div class="col-5">
+                    <p class="sub-text1">{{ mySlider.brand }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 px-2">
+                <div class="row">
+                  <div class="col-7 mt-2">
+                    <p class="sub-text2">{{ mySlider.city }}</p>
+                  </div>
+                  <div class="col-5">
+                    <span class="country d-flex">
+                      <img loading="lazy" class="country-img" src="../../assets/AnimalSlider/country/flag-india.png"
+                        alt="" /><span class="country-text">{{ mySlider.country }}</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 px-2 mt-1">
+                <div class="row ratingRow">
+                  <div class="col-6">
+                    <p class="rating">
+                      {{ mySlider.rating }}
+                      <i class="bi bi-star-fill"></i>
+                      <!-- <img loading="lazy" src="../../assets/AnimalSlider/country/star.png" alt="" /> -->
+                    </p>
+                  </div>
+                  <div class="col-6 mb-1">
+                    <div class="NegbuyAssured">
+                      <i class="bi bi-shield-fill-check"></i> Assured
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 p-1">
+                <div class="row">
+                  <div class="col-4">
+                    <p class="price">
+                      <i class="bi bi-currency-rupee"></i>{{ mySlider.price }}
+                    </p>
+                  </div>
+                  <div class="col-4 dscol">
+                    <span class="previousPrice"><i class="bi bi-currency-rupee"></i>{{ mySlider.mrp }}</span>
+                  </div>
+                  <div class="col-4 dscol">
+                    <span class="offerpri">({{ mySlider.discount }}% Off )</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </carousel>
+      </ng-container>
+
+    </div>
+
+
+  </div>
+</div>
+
+<div class="container-fluid Informationcont mt-sm-2 pt-3 " *ngIf="!loaderS" id="More Details">
+  <h3 class="p-3">Product Information</h3>
+  <div class="row p-md-4 p-2">
+
+    <div class="col-12 px-md-4 px-2 pt-1 productsubhead basicproinfo rowDescria">
+
+      <h3>Basic Information</h3>
+      <div class="row">
+        <div class="col-lg-6 pb-3">
+
+          <div class="row" *ngFor="let Info of basicInfoPart1">
+
+            <div class="col-sm-4 col-6">
+              <div class="basicInfohead p-2"> {{Info.heading}} </div>
+
+            </div>
+            <div class="col-sm-7 col-6">
+              <div class="basicInfodescription p-2"> {{Info.description}} </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 pb-3">
+
+          <div class="row" *ngFor="let Info of basicInfoPart2">
+
+            <div class="col-sm-4 col-6">
+              <div class="basicInfohead p-2"> {{Info.heading}} </div>
+
+            </div>
+            <div class="col-sm-7 col-6">
+              <div class="basicInfodescription p-2"> {{Info.description}} </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 px-md-4 mt-4 px-2 pt-1 border NegbuyMailForm">
+      <h3>Send Enquiry </h3>
+      <h4> Submit Details for a Customized Quote </h4>
+
+      <div class="product_detail">
+        <img src="{{productdata.variants[variantIndex].extra_images[extraImage]}}" alt="" srcset="" height="100px">
+
+        <div class="mx-4">
+          <p> {{ productdata.product_title }} </p>
+          <h4> Color: <span>{{ productdata.variants[variantIndex].color }}</span> </h4>
+          <h4> Size: <span>{{ productdata.variants[variantIndex].size_variants[sizeIndex].size }}</span> </h4>
+
+        </div>
+      </div>
+      <!-- app.component.html -->
+      <form #messageTosellerForm="ngForm">
+        <div class="row formcont">
+          <div class="col-12">
+            <h4><span>*</span> Detailed Requirements: </h4>
+            <p>Enter product details such as color, size, materials, and any other requirements.</p>
+          </div>
+
+          <div class="col-12 d-flex">
+            <textarea id="message" name="message"
+              placeholder="Enter your inquiry details such as product name, color, size, etc." cols="30" rows="10"
+              [(ngModel)]="formData.message" name="message" #message="ngModel" required>
+            </textarea>
+          </div>
+
+          <div *ngIf="message.errors && message.invalid && message.touched || messageTosellerForm.submitted">
+            <div class="error_message mt-2" style="color: #F54646; font-weight: 700;" *ngIf="message.errors">
+              Please write your Requirement.
+            </div>
+          </div>
+          <div class="col-12 mt-1 checkboxDiv">
+            <label for="myfile" class="file_label">
+              <i class="bi bi-paperclip"></i> Add Attachment </label>
+            <span class="file_name_show" *ngIf="fileName != ''"><a style="color: black;"> File Name: &nbsp; </a>{{
+              fileName}}</span>
+            <input type="file" id="myfile" style="display: none;" (change)="CheckI($event)">
+
+            <div class="checkboxDivOne">
+              <input type="checkbox" id="i" name="proceed" [(ngModel)]="formData.proceed">
+              <label for="i" class="p-2 checklabel">Recommend matching suppliers if this supplier does not contact me
+                within 24 hours</label>
+            </div>
+
+            <button type="submit" class="checkboxDiv-btns" *ngIf="spinnerSellerMessage"
+              (click)="messageToSellerSubmitForm(messageTosellerForm)">Send</button>
+            <button class="checkboxDiv-btns" align="center" type="button" *ngIf="!spinnerSellerMessage">
+              <div class="spinner-border" style="color: white !important; " role="status">
+              </div>
+            </button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <!-- Essential Details -->
+
+    <!-- <div class="col-12 mt-4 px-md-4 px-2 pt-1 productsubhead basicproinfo rowDescria">
+
+      <h3>Essential Details</h3>
+      <div class="row">
+        <div class="col-md-6 pb-3">
+          <div class="row">
+            <div class="col-5">
+              <div class="basicInfohead p-2"> Size</div>
+              <div class="basicInfohead p-2"> Model Number </div>
+              <div class="basicInfohead p-2"> Model Size </div>
+              <div class="basicInfohead p-2"> Color </div>
+            </div>
+            <div class="col-7">
+              <div class="basicInfodescription p-2">Large</div>
+              <div class="basicInfodescription p-2">45354676</div>
+              <div class="basicInfodescription p-2">908986</div>
+              <div class="basicInfodescription p-2">Red</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 pb-3">
+          <div class="row">
+            <div class="col-5">
+              <div class="basicInfohead p-2"> Size</div>
+              <div class="basicInfohead p-2"> Model Number </div>
+              <div class="basicInfohead p-2"> Model Size </div>
+              <div class="basicInfohead p-2"> Color </div>
+            </div>
+            <div class="col-7">
+              <div class="basicInfodescription p-2">Large</div>
+              <div class="basicInfodescription p-2">45354676</div>
+              <div class="basicInfodescription p-2">908986</div>
+              <div class="basicInfodescription p-2">Red</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Delivery Details -->
+
+    <!-- <div class="col-12 mt-4 px-md-4 px-2 pt-1 productsubhead basicproinfo rowDescria">
+      <h3>Delivery Details</h3>
+      <div class="row">
+        <div class="col-md-6 pb-3">
+          <div class="row">
+            <div class="col-5">
+              <div class="basicInfohead p-2"> Size</div>
+              <div class="basicInfohead p-2"> Model Number </div>
+              <div class="basicInfohead p-2"> Model Size </div>
+              <div class="basicInfohead p-2"> Color </div>
+            </div>
+            <div class="col-7">
+              <div class="basicInfodescription p-2">Large</div>
+              <div class="basicInfodescription p-2">45354676</div>
+              <div class="basicInfodescription p-2">908986</div>
+              <div class="basicInfodescription p-2">Red</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 pb-3">
+          <div class="row">
+            <div class="col-5">
+              <div class="basicInfohead p-2"> Size</div>
+              <div class="basicInfohead p-2"> Model Number </div>
+              <div class="basicInfohead p-2"> Model Size </div>
+              <div class="basicInfohead p-2"> Color </div>
+            </div>
+            <div class="col-7">
+              <div class="basicInfodescription p-2">Large</div>
+              <div class="basicInfodescription p-2">45354676</div>
+              <div class="basicInfodescription p-2">908986</div>
+              <div class="basicInfodescription p-2">Red</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Recommended Products -->
+
+    <div class="col-12 mt-5 px-md-3 px-2 pt-1 basicproinfo similarproduct">
+      <h3>Recommended Products</h3>
+      <!-- <app-similarslide></app-similarslide> -->
+
+      <ng-container bb *ngIf="loader">
+        <carousel class="main-cont pt-4" [autoplay]="false">
+          <div class="carousel-cell" *ngFor="let mySlider of SkeletonLoads">
+            <div class="row mb-3 p-3">
+              <div class="col-12 p-1">
+                <div class="shimmer" style="height: 90px;"></div>
+              </div>
+              <div class="col-12 p-2">
+                <div class="shimmer" style="height: 30px;"></div>
+              </div>
+              <div class="col-12 p-2">
+                <div class="shimmer" style="height: 30px;"></div>
+              </div>
+              <div class="col-12 p-2">
+                <div class="shimmer" style="height: 30px;"></div>
+              </div>
+            </div>
+          </div>
+        </carousel>
+      </ng-container>
+
+      <ng-container bb *ngIf="!loader">
+        <carousel class="main-cont pt-4" [autoplay]="false">
+          <div class="carousel-cell" *ngFor="let mySlider of getSlider.data let i = index"
+            (click)="goToProduct(mySlider.product_id)">
+            <div class="row mb-3">
+              <div class="col-12 carimgdiv p-2">
+                <img loading="lazy" class="card-img" src="{{ mySlider.product_image }}" alt="" loading="lazy" />
+              </div>
+              <div class="col-12 p-2">
+                <div class="row">
+                  <div class="col-7">
+                    <p class="text-heading-car">
+                      <abbr title="{{ mySlider.product_name }}">{{
+                        mySlider.product_name
+                        }}</abbr>
+                    </p>
+                  </div>
+                  <div class="col-5">
+                    <p class="sub-text1">{{ mySlider.brand }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 px-2">
+                <div class="row">
+                  <div class="col-7 mt-2">
+                    <p class="sub-text2">{{ mySlider.city }}</p>
+                  </div>
+                  <div class="col-5">
+                    <span class="country d-flex">
+                      <img loading="lazy" class="country-img" src="../../assets/AnimalSlider/country/flag-india.png"
+                        alt="" /><span class="country-text">{{ mySlider.country }}</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 px-2 mt-1">
+                <div class="row ratingRow">
+                  <div class="col-6">
+                    <p class="rating">
+                      {{ mySlider.rating }}
+                      <i class="bi bi-star-fill"></i>
+                      <!-- <img loading="lazy" src="../../assets/AnimalSlider/country/star.png" alt="" /> -->
+                    </p>
+                  </div>
+                  <div class="col-6 mb-1">
+                    <div class="NegbuyAssured">
+                      <i class="bi bi-shield-fill-check"></i> Assured
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 p-1">
+                <div class="row">
+                  <div class="col-4">
+                    <p class="price">
+                      <i class="bi bi-currency-rupee"></i>{{ mySlider.price }}
+                    </p>
+                  </div>
+                  <div class="col-4 dscol">
+                    <span class="previousPrice"><i class="bi bi-currency-rupee"></i>{{ mySlider.mrp }}</span>
+                  </div>
+                  <div class="col-4 dscol">
+                    <span class="offerpri">({{ mySlider.discount }}% Off )</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </carousel>
+      </ng-container>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid p-4" *ngIf="!loaderS" id="All Reviews Section">
+
+  <div class="row p-4 review_sec">
+
+    <div class="col-12 Reviewdataheadrow">
+      <h5>Ratings & Reviews
+        <span>Real Insights from Verified Buyers</span>
+      </h5>
+    </div>
+
+    <div class="col-lg-3 productsubhead custReview  pt-4">
+      <div class="reviewboxhead">
+        Costumer Review
+        <div class="ratingreviewbox">
+          <ngb-rating [max]="5" [(rate)]="starRate" [readonly]="true" [ngStyle]="{ 'color': starRate >= 4 ? '#138808' 
+          : starRate == 3 ? '#FFC300' : '#F54646' }">
+          </ngb-rating>
+          {{starRate}} out of 5
+        </div>
+        <div class="globalreview">{{reviewAnalysis.total_ratings}} global costumer </div>
+      </div>
+
+      <div class="reviews">
+
+        <h5>Reviews</h5>
+
+        <div class="ratingDesc">
+          <label for="5star">5<span class="p-1"><i class="bi bi-star-fill" style="color:#138808"></i> </span> </label>
+
+          <progress id="5star" value={{reviewAnalysis.star5?.percent}} max="100">82%</progress>
+        </div>
+        <div class="ratingDesc">
+          <label for="4star">4<span class="p-1"><i class="bi bi-star-fill" style="color:#138808"></i></span></label>
+          <progress id="4star" value={{reviewAnalysis.star4?.percent}} max="100">60%</progress>
+        </div>
+        <div class="ratingDesc ratingDesc1">
+          <label for="3star">3<span class="p-1"><i class="bi bi-star-fill" style="color:#FFC300"></i></span></label>
+          <progress id="3star" value={{reviewAnalysis.star4?.percent}} max="100">75%</progress>
+        </div>
+        <div class="ratingDesc ratingDesc2">
+          <label for="2star">2<span class="p-1"><i class="bi bi-star-fill" style="color:#F54646"></i></span></label>
+          <progress id="2star" value={{reviewAnalysis.star4?.percent}} max="100">32%</progress>
+        </div>
+        <div class="ratingDesc ratingDesc2">
+          <label for="1star">1<span class="p-1"><i class="bi bi-star-fill" style="color:#F54646"></i></span></label>
+          <progress id="1star" value={{reviewAnalysis.star4?.percent}} max="100">45%</progress>
+        </div>
+      </div>
+      <div class="writeReview" (click)="openModal()" *ngIf="productdata.allow_review_post != false">Write a product Review</div>
+    </div>
+
+    <div class="col-lg-9 mt-lg-0 mt-4 px-lg-4">
+      <div class="row productsubhead Reviewdata pb-3">
+
+        <div class="col-12 selectedaa">
+          <select class="custom-select">
+            <option selected>Select</option>
+            <option value="1">Newest</option>
+            <option value="2">High Rated</option>
+            <option value="3">Low Rated</option>
+          </select>
+        </div>
+
+        <div class="col-12" *ngIf="productReview.length > 0">
+
+          <div class="row reviewCard"
+            *ngFor="let productReviews of productReview | paginate: { itemsPerPage: 4 , currentPage: p } ; let a = index">
+
+            <div class="col-12">
+              <div class="ratingreviewbox">
+                <ngb-rating [max]="5" [(rate)]="productReviews.rating" [readonly]="true"
+                  [ngStyle]="{ 'color': productReviews.rating >= 4 ? '#138808' : productReviews.rating == 3 ? '#FFC300' : '#F54646' }"></ngb-rating>
+              </div>
+            </div>
+
+            <div class="col-12 mt-3">
+              <h4>{{productReviews.title}}</h4>
+              <div class="commentTime"> {{productReviews.time}} </div>
+              <p>{{productReviews.description}}</p>
+            </div>
+
+            <div class="col-12  reviewCard-images" *ngIf="productReviews.files.length > 0">
+              <div class="row imgs-box">
+                <div class="col-2 imgs" *ngFor="let reviewImg of productReviews.files; let i = index;">
+                  <img src="{{reviewImg}}" alt="Image {{i + 1}}" (click)="show_selected_review_image(a, i)" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="commentTime"> {{productReviews.user}} | {{productReviews.city}} </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-12 mt-5 d-flex justify-content-center  " *ngIf="productReview.length != 0">
+          <pagination-controls (pageChange)="p = $event" style=" font-family: Montserrat; font-weight: 500;">
+          </pagination-controls>
+        </div>
+
+        <div class="col-12 noReviewImg" *ngIf="productReview.length === 0">
+
+          <img src="assets/logo/9170826.webp" alt="" srcset="">
+          <h2>No Reviews</h2>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<div class="review_image_modal">
+  <div class="modal container-fluid " tabindex="-1" role="dialog" [ngClass]="show_review_image">
+    <div class="modal-dialog modal-md row" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body col-12 ">
+
+          <div class="row reviewCard">
+
+            <div class="col-12">
+              <div class="ratingreviewbox">
+                <ngb-rating [max]="5" [(rate)]="selected_review_image_rating" [readonly]="true"
+                  [ngStyle]="{ 'color': selected_review_image_rating >= 4 ? '#138808' : selected_review_image_rating == 3 ? '#FFC300' : '#F54646' }"></ngb-rating>
+              </div>
+            </div>
+
+            <div class="col-12 mt-3">
+              <h4>{{selected_review_image?.title}}</h4>
+            </div>
+            <div class="col-12 mt-3">
+              <div class="commentTime"> {{selected_review_image?.user}} | {{selected_review_image?.city}} </div>
+            </div>
+
+            <div class="col-12 main_image mt-3">
+              <img src="{{selected_review_image?.files[selected_image]}}" />
+              </div>
+
+            <div class="col-12  reviewCard-images mt-3" *ngIf="selected_review_image?.files.length > 0">
+              <div class="row imgs-box">
+                <div class="col-2 imgs" *ngFor="let reviewImg of selected_review_image?.files; let i = index;">
+                  <img src="{{reviewImg}}" alt="Image {{i + 1}}" (click)="modal_main_image(i)"
+                  [ngStyle]="{'border': selected_image == i ? '2px solid red' : ''}"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 close_image mt-3">
+              <button class="understandbtn" (click)="hide_selected_review_image()">
+                  Close
+                </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="reviewModal">
+  <div class="modal container-fluid " tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog modal-lg row" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header col-12">
+          <div class="col-12 mdh4">
+            <h4>Write a review
+              <span>Share Your review about this product</span>
+            </h4>
+          </div>
+        </div>
+
+        <div class="col-12 px-3">
+          <hr>
+        </div>
+
+        <div class="modal-body col-12 ">
+          <div class="row ssss">
+            <form #rfqsDetails="ngForm">
+              <div class="col-md-10 col-12">
+
+                <div class="row mt-2">
+                  <div class="col-12 formcollabel">
+
+                    <label for="validationCustom055" class="form-label">Rate this product </label>
+                  </div>
+                  <div class="col-12 mt-2 d-flex">
+
+                    <ng-rating-bar [(ngModel)]="SubmitYourReview.starvalue" [(value)]="SubmitYourReview.starvalue"
+                      name="starvalue" required #starvalue="ngModel" [ratingCount]="5"></ng-rating-bar>
+
+                    <div class="rateeviewSelect" *ngIf="SubmitYourReview.starvalue == 1 "
+                      [ngStyle]="{'color': SubmitYourReview.starvalue === 1  ? 'red' : 'inherit'}">
+                      Very Bad
+                    </div>
+                    <div class="rateeviewSelect" *ngIf="SubmitYourReview.starvalue == 2 "
+                      [ngStyle]="{'color': SubmitYourReview.starvalue === 2  ? 'orange' : 'inherit'}">
+                      Bad
+                    </div>
+                    <div class="rateeviewSelect" *ngIf="SubmitYourReview.starvalue == 3 "
+                      [ngStyle]="{'color': SubmitYourReview.starvalue === 3  ? 'green' : 'inherit'}">
+                      Good
+                    </div>
+                    <div class="rateeviewSelect" *ngIf="SubmitYourReview.starvalue == 4 "
+                      [ngStyle]="{'color': SubmitYourReview.starvalue === 4  ? 'green' : 'inherit'}">
+                      Very Good
+                    </div>
+                    <div class="rateeviewSelect" *ngIf="SubmitYourReview.starvalue == 5 "
+                      [ngStyle]="{'color': SubmitYourReview.starvalue === 5  ? 'green' : 'inherit'}">
+                      Excellent
+                    </div>
+
+                  </div>
+                  <div *ngIf="SubmitYourReview.starvalue == 0 && starvalidtext == true ">
+                    <div class="error_message" style="color: #F54646; font-weight: 500;">
+                      Please rate to the product.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt-2">
+                  <div class="col-12 formcollabel">
+
+                    <label for="validationCustom05" class="form-label">Give Your Review a Title</label>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <input type="text" class="form-control" id="validationCustom05"
+                      placeholder="Give Your Review a Title..." [(ngModel)]="SubmitYourReview.ReviewHeadling"
+                      name="ReviewHeadling" #ReviewHeadling="ngModel" required>
+
+                    <div
+                      *ngIf="ReviewHeadling.errors && ReviewHeadling.invalid && ReviewHeadling.touched || rfqsDetails.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;"
+                        *ngIf="ReviewHeadling.errors">
+                        Please write review title.
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="row mt-2">
+                  <div class="col-12 formcollabel">
+                    <label for="validationCustom01" class="form-label">Share Your Detailed Review</label>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <textarea type="text" rows="5" class="form-control p-2" placeholder="Share Your Detailed Review...."
+                      [(ngModel)]="SubmitYourReview.ReviewDetail" name="ReviewDetail" #ReviewDetail="ngModel"
+                      id="validationCustom01" required></textarea>
+
+                    <div
+                      *ngIf="ReviewDetail.errors && ReviewDetail.invalid && ReviewDetail.touched || rfqsDetails.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="ReviewDetail.errors">
+                        Please write review in detail.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt-3">
+
+                  <div class="col-12 mainReasonImage">
+                    <div class="row labelStyleRow" style="width: 100%;">
+                      <label class="mb-3">Upload the images as a proof</label>
+
+                      <div class="col-md-2 col-sm-3 col-4 mainImageDiv">
+                        <div class="images-container input-row">
+                          <div class="main-image-container">
+                            <div class="main-image upload-box-icon">
+                              <input type="file" #galleryFileInput name="galleryFileInput" accept="image/*"
+                                id="main-image-input" (change)="onSelectImage($event,0)" />
+                              <label for="main-image-input" *ngIf="!proof_images[0].show.length" class="labelStyle">
+                                <img src="assets/logo/addImage.png" name="main_image0" class="upload-image-icon"
+                                  alt="" />
+                                <i>Add Image</i>
+                              </label>
+                              <label for="main-image-input" *ngIf="proof_images[0].show.length">
+
+                                <div class="main-image-preview-div">
+
+                                  <div class="removeImage">
+                                    <span aria-hidden="true" class="close" aria-label="Close" (click)="RemoveImage(0)">
+                                      &times;
+                                    </span>
+                                  </div>
+
+                                  <img [src]="proof_images[0].show" alt="Selected Image" />
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 col-sm-3 col-4 mainImageDiv">
+                        <div class="images-container input-row">
+                          <div class="main-image-container">
+                            <div class="main-image upload-box-icon">
+                              <input type="file" #galleryFileInput1 name="galleryFileInput1" accept="image/*"
+                                id="main-image-input1" (change)="onSelectImage($event,1)" />
+                              <label for="main-image-input1" *ngIf="!proof_images[1].show.length" class="labelStyle">
+                                <img src="assets/logo/addImage.png" name="main_image1" class="upload-image-icon"
+                                  alt="" />
+                                <i>Add Image</i>
+                              </label>
+                              <label for="main-image-input1" *ngIf="proof_images[1].show.length">
+
+                                <div class="main-image-preview-div">
+
+                                  <div class="removeImage">
+                                    <span aria-hidden="true" class="close" aria-label="Close" (click)="RemoveImage(1)">
+                                      &times;
+                                    </span>
+                                  </div>
+
+                                  <img [src]="proof_images[1].show" alt="Selected Image" />
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 col-sm-3 col-4 mainImageDiv">
+                        <div class="images-container input-row">
+                          <div class="main-image-container">
+                            <div class="main-image upload-box-icon">
+                              <input type="file" #galleryFileInput2 name="galleryFileInput2" accept="image/*"
+                                id="main-image-input2" (change)="onSelectImage($event,2)" />
+                              <label for="main-image-input2" *ngIf="!proof_images[2].show.length" class="labelStyle">
+                                <img src="assets/logo/addImage.png" name="main_image2" class="upload-image-icon"
+                                  alt="" />
+                                <i>Add Image</i>
+                              </label>
+                              <label for="main-image-input2" *ngIf="proof_images[2].show.length">
+
+                                <div class="main-image-preview-div">
+
+                                  <div class="removeImage">
+                                    <span aria-hidden="true" class="close" aria-label="Close" (click)="RemoveImage(2)">
+                                      &times;
+                                    </span>
+                                  </div>
+
+                                  <img [src]="proof_images[2].show" alt="Selected Image" />
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 col-sm-3 col-4 mainImageDiv">
+                        <div class="images-container input-row">
+                          <div class="main-image-container">
+                            <div class="main-image upload-box-icon">
+                              <input type="file" #galleryFileInput3 name="galleryFileInput3" accept="image/*"
+                                id="main-image-input3" (change)="onSelectImage($event,3)" />
+                              <label for="main-image-input3" *ngIf="!proof_images[3].show.length" class="labelStyle">
+                                <img src="assets/logo/addImage.png" name="main_image3" class="upload-image-icon"
+                                  alt="" />
+                                <i>Add Image</i>
+                              </label>
+                              <label for="main-image-input3" *ngIf="proof_images[3].show.length">
+
+                                <div class="main-image-preview-div">
+
+                                  <div class="removeImage">
+                                    <span aria-hidden="true" class="close" aria-label="Close" (click)="RemoveImage(3)">
+                                      &times;
+                                    </span>
+                                  </div>
+
+                                  <img [src]="proof_images[3].show" alt="Selected Image" />
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 col-sm-3 col-4 mainImageDiv">
+                        <div class="images-container input-row">
+                          <div class="main-image-container">
+                            <div class="main-image upload-box-icon">
+                              <input type="file" #galleryFileInput4 name="galleryFileInput4" accept="image/*"
+                                id="main-image-input4" (change)="onSelectImage($event,4)" />
+                              <label for="main-image-input4" *ngIf="!proof_images[4].show.length" class="labelStyle">
+                                <img src="assets/logo/addImage.png" name="main_image4" class="upload-image-icon"
+                                  alt="" />
+                                <i>Add Image</i>
+                              </label>
+                              <label for="main-image-input4" *ngIf="proof_images[4].show.length">
+
+                                <div class="main-image-preview-div">
+
+                                  <div class="removeImage">
+                                    <span aria-hidden="true" class="close" aria-label="Close" (click)="RemoveImage(4)">
+                                      &times;
+                                    </span>
+                                  </div>
+
+                                  <img [src]="proof_images[4].show" alt="Selected Image" />
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div>
+
+              <div class="col-lg-12 btnbtn">
+
+                <button type="reset" class="understandbtn" (click)="onCloseHandled(rfqsDetails)">
+                  Cancel
+                </button>
+
+                <button class="btnsubmit " type="submit" (click)="submitReview(rfqsDetails)" *ngIf="spinnerBuyNowz">
+                  Submit
+                </button>
+
+                <button class="btnsubmit" align="center" type="button" *ngIf="!spinnerBuyNowz">
+                  <div class="spinner-border" style="color: white !important; " role="status">
+                  </div>
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="addressModal">
+  <div class="modal container-fluid " tabindex="-1" role="dialog" [ngClass]="addressVerification">
+    <div class="modal-dialog modal-lg row" role="document">
+      <div class="modal-content">
+        <div class="modal-body col-12 ">
+          <div class="row ssss">
+            <form #profileDeta="ngForm">
+              <div class="col-12 p-2 profiledatacontainer ">
+                <div class="row">
+                  <div class="col-10">
+                    <h4>Personal Information</h4>
+
+                  </div>
+                  <div class="col-2" style="display: flex; justify-content: flex-end;"> <i class="bi bi-x-circle"
+                      style="font-size: 20px; font-weight: 500; cursor: pointer;" (click)="closeModalAddress()"></i>
+                  </div>
+
+                  <div class="col-12">
+                    <hr>
+                  </div>
+                </div>
+
+                <div class="row form-input">
+                  <div class="col-sm-5">
+                    <label for="FirstName">First Name</label> <br />
+                    <input id="FirstName" type="text" class="w-100 mt-2" placeholder="Enter your First Name"
+                      [(ngModel)]="ProfileFormData.FirstName" #FirstName="ngModel" required name="FirstName" />
+                    <div *ngIf="FirstName.errors && FirstName.invalid && FirstName.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="FirstName.errors">
+                        Please enter your first name.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-5">
+                    <label for="LastName">Last Name</label> <br />
+                    <input id="LastName" type="text" class="w-100 mt-2" placeholder="Enter your Last Name"
+                      [(ngModel)]="ProfileFormData.LastName" #LastName="ngModel" required name="LastName" />
+                    <div *ngIf="LastName.errors && LastName.invalid && LastName.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="LastName.errors">
+                        Please enter your last name.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="row">
+                      <div class="col-sm-2 col-6" *ngFor="let Gender of GenderArray"
+                        style="display: flex; align-items: center ;">
+                        <input class="mx-2" [id]="Gender.value" [value]="Gender.value" type="radio"
+                          [(ngModel)]="ProfileFormData.Gender" name="gender">
+                        <label [for]="Gender.value" style="margin-left: 5px; height: 15px;">{{Gender.gender}}</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-5 mt-2">
+                    <label for="Email">Email Address</label> <br />
+                    <input id="Email" type="email" class="w-100 mt-2" [(ngModel)]="ProfileFormData.Email"
+                      #Email="ngModel" placeholder="Enter your Email Address" required name="Email" />
+                    <div *ngIf="Email.errors && Email.invalid && Email.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="Email.errors">
+                        Please enter your Email Address.
+                      </div>
+                    </div>
+                    <div class="verify_btn">
+                      <Button class="mt-2" type="button" (click)=" VerifyEmail()">Verify</Button>
+                    </div>
+                  </div>
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-5 mt-2">
+                    <label for="ContactNumber">Contact Number</label> <br />
+                    <input id="ContactNumber" type="text" class="w-100 mt-2" [(ngModel)]="ProfileFormData.ContactNumber"
+                      #ContactNumber="ngModel" placeholder="Enter your Contact Number" required name="ContactNumber"
+                      minlength="10" pattern="[9-0]{10}" />
+                    <div
+                      *ngIf="ContactNumber.errors && ContactNumber.invalid && ContactNumber.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="ContactNumber.errors">
+                        Please enter your Contact Number with country code.
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="col-12 mt-2 p-2 profiledatacontainer ">
+                <h4>Address</h4>
+                <hr>
+                <div class="row form-input">
+                  <div class="col-sm-5 mt-2">
+                    <label for="Addpincode">Pincode</label> <br />
+                    <input id="Addpincode" type="text" class="w-100 mt-2" placeholder="  Pin code of your area"
+                      [(ngModel)]="ProfileFormData.Address.pincode" #pincode="ngModel" required name="pincode"
+                      minlength="3" maxlength="6" (change)="getAddByPin()" />
+                    <div *ngIf="pincode.errors && pincode.invalid && pincode.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="pincode.errors">
+                        Please enter a valid 6-digit pincode.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-5 mt-2" *ngIf="spinneraddpin">
+                    <label for="Addcity">City</label> <br />
+                    <input id="Addcity" type="text" class="w-100 mt-2" placeholder="  Enter your city name"
+                      [(ngModel)]="ProfileFormData.Address.city" #city="ngModel" name="city" required />
+
+                    <div *ngIf="city.errors && city.invalid && city.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="city.errors">
+                        Please enter city.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-5 mt-2" *ngIf="!spinneraddpin">
+                    <label for="Addcity">City</label> <br />
+                    <div class="spinner-border mt-3" style="color: rgb(218, 89, 89) !important; " role="status"></div>
+                  </div>
+
+                  <div class="col-sm-5 mt-2" *ngIf="spinneraddpin">
+                    <label for="Addstate">State</label> <br />
+                    <input id="Addstate" type="text" class="w-100 mt-2" placeholder="  Enter name of your state"
+                      [(ngModel)]="ProfileFormData.Address.state" #state="ngModel" name="state" required />
+
+                    <div *ngIf="state.errors && state.invalid && state.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="state.errors">
+                        Please enter state.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-5 mt-2" *ngIf="!spinneraddpin">
+                    <label for="Addcity">State</label> <br />
+                    <div class="spinner-border mt-3" style="color: rgb(218, 89, 89) !important; " role="status"></div>
+                  </div>
+
+                  <div class="col-sm-5 mt-2" *ngIf="spinneraddpin">
+                    <label for="Addcountry">Country</label> <br />
+                    <select id="Addcountry" class="form-select form-select-lg mt-2 mb-3" name="country"
+                      [(ngModel)]="ProfileFormData.Address.country" #country="ngModel"
+                      [value]="ProfileFormData.Address.country" required>
+
+                      <option value="">Select your Country</option>
+                      <option *ngFor="let country of countries" [value]="country.name">{{country.name}}
+                      </option>
+                    </select>
+
+                    <div *ngIf="country.errors && country.invalid && country.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="country.errors">
+                        Please select country.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-5 mt-2" *ngIf="!spinneraddpin">
+                    <label for="Addcity">Country</label> <br />
+                    <div class="spinner-border mt-3" style="color: rgb(218, 89, 89) !important; " role="status"></div>
+                  </div>
+
+                  <div class="col-7 mt-2">
+                    <label for="full-address">Enter Full Address</label>
+                    <textarea id="full-address" rows="5" cols="20" name="comment" form="usrform"
+                      [(ngModel)]="ProfileFormData.Address.FullAddress" #FullAddress="ngModel" name="FullAddress"
+                      required></textarea>
+
+                    <div
+                      *ngIf="FullAddress.errors && FullAddress.invalid && FullAddress.touched || profileDeta.submitted">
+                      <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="FullAddress.errors">
+                        Please enter FullAddress.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 saveBtn">
+                    <button type="submit" (click)="SaveData(profileDeta)">Save</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- openChatNow -->
+
+<div class="chatModal ">
+  <div class="modal container-fluid " tabindex="-1" role="dialog" [ngClass]="openChatNow">
+    <div class="modal-dialog modal-md row" role="document">
+      <div class="modal-content">
+        <div class="modal-body col-12 ">
+          <div class="row chatScreen">
+            <div class="col-12 chatScreen-mainHeading">
+              <h4 *ngIf="showFirstmsg">{{startChatResponse?.product_title.substring(0, 25)}}...<br>
+                <span>{{startChatResponse?.chat_started_at}}</span>
+              </h4>
+
+              <i class="bi bi-x-circle" style="font-size: 20px; font-weight: 500; padding-right: 8px; cursor: pointer;"
+                (click)="closeChatNow()">
+              </i>
+            </div>
+
+            <div class="col-12 chatScreen-Timesection">
+              <h5>Monday, 20 June 2024</h5>
+            </div>
+
+            <div class="col-12 conversationBox mt-3 chat-container" #chatContainer>
+
+              <div class="flexDone">
+                <img src="assets/logo/RectangleExwork.png" alt="" height="20px" align="left">
+                <div class="bot-message" *ngIf="showFirstmsg">
+                  <p>Hey there!</p>
+                  <p>Thank you for your interest in our products. I am here to help you from Negbuy.</p>
+                  <p>We are pleased to offer you the <strong>{{ startChatResponse?.product_title }}</strong> in the
+                    <strong>{{
+                      startChatResponse?.product_category }}</strong> category.
+                  </p>
+                  <p>If you have any questions or need further assistance, please do not hesitate to ask.</p>
+
+                  <p (click)="toggleOrderDetails('item1')"
+                    style="cursor: pointer;font-weight: 800;margin: 0;padding: 0;">
+                    Click here to see more similar product
+                  </p>
+                  <div class="order-details" [ngClass]="{'open': isOrderDetailsOpen('item1')}">
+
+                    <div class="row similarProduct-Dropdown"
+                      *ngFor="let product of startChatResponse?.similar_products">
+                      <div class="col-4">
+                        <div class="dropDownData">
+                          <img src="{{product.product.product_image}}" alt="" srcset="" height="80%" width="80%">
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <span class="mainSpan"> {{product.product.product_title.substring(0, 35) }}...
+                          <span>{{ product.product.price | currency }}</span>
+                        </span>
+                      </div>
+
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              <div *ngFor="let message of chatHistoryData">
+                <div
+                  [ngClass]="{'flexDone': message.msg_sender != 'Buyer', 'user-message': message.msg_sender == 'Buyer'}">
+                  <img *ngIf="message.msg_sender != 'Buyer'" src="assets/logo/RectangleExwork.png" alt="" height="20px"
+                    align="left">
+                  <div [ngClass]="{'message': true, 'bot-message': message.msg_sender != 'Buyer'}">
+                    {{ message.msg_text }}
+                  </div>
+                  <div *ngIf="message.msg_photo != null" class="attached-image">
+                    <img src="{{message.msg_photo}}" alt="Attached image" height="100px" style="border-radius: 5px;">
+                  </div>
+                </div>
+                <div align="right" class="message_time" *ngIf=" message.msg_sender == 'Buyer'">{{message.msg_time}}
+                </div>
+                <div align="left" class="message_time" *ngIf=" message.msg_sender != 'Buyer'">{{message.msg_time}}</div>
+              </div>
+
+              <div *ngFor="let message of messagesChat">
+                <div
+                  [ngClass]="{'flexDone': message.msg_sender != 'Buyer', 'user-message': message.msg_sender == 'Buyer'}">
+                  <img *ngIf="message.msg_sender != 'Buyer' && this.reply != null" src="assets/logo/RectangleExwork.png"
+                    alt="" height="20px" align="left">
+                  <div
+                    [ngClass]="{'message': true, 'bot-message': (message.msg_sender != 'Buyer' && this.reply != null)}">
+                    {{ message.msg_text }}
+                  </div>
+                  <div *ngIf="message.imageUrl" class="attached-image">
+                    <img [src]="message.imageUrl" alt="Attached image" height="100px" style="border-radius: 5px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12" *ngIf="chat_images.length > 0" (click)="removeAttachedImages()" style="
+                  font-size: 14px;
+                  font-family: 'Montserrat';
+                  font-weight: 500;
+                  color: red;
+                  padding: 5px;
+                  cursor: pointer;">
+              <img [src]="showImage" alt="Attached image" height="60px"> Change attached image <i class="bi bi-x-circle"
+                style="font-size: 16px; font-weight: 500; margin-left: 7px"></i>
+            </div>
+
+            <div class="col-12 modalfooter">
+              <div class="row p-1" style="width: 100%; background-color: rgba(230, 229, 229, 0.767);">
+                <div class="col-10"> <input [(ngModel)]="userInput" placeholder="Type a message..."
+                    (input)="cfdfdf()" />
+                  <div class="error_message" style="color: #F54646; font-weight: 500; text-align: left; padding: 4px;"
+                    *ngIf="userInputValue">
+                    Please enter your message.
+                  </div>
+                </div>
+
+                <div class="col-2 sendAttach">
+                  <div>
+                    <input type="file" accept="image/*" id="fileInput" style="display: none"
+                      (change)="handleFileInput($event)" />
+                    <label for="fileInput" class="custom-file-upload">
+                      <i class="bi bi-paperclip"></i>
+                    </label>
+                  </div>
+
+                  <div> <i class="bi bi-send" *ngIf="sendMsgBtn" (click)="sendMessage(startChatResponse?.chat_id)"></i>
+                  </div>
+                  <div class="addToFav button" *ngIf="!sendMsgBtn">
+                    <div class="spinner-border" style="color: #1b916d !important; background-color: white;"
+                      role="status"></div>
+                  </div>
+                </div>
+                <!-- [ngStyle]="{'display': displaysendIcon}" -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

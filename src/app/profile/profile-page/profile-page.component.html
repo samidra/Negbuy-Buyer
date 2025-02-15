@@ -1,0 +1,433 @@
+<app-mainheader></app-mainheader>
+<div class="container-fluid">
+  <div class="row p-md-3 p-2 pt-3">
+
+    <div class="col-lg-7 p-3" *ngIf="!dataLoader">
+      
+      <div class="row">
+        <div class="d-flex">
+          <div class="shimmer mt-2" style="height: 50px; width: 51px; border-radius: 50%; margin-right: 10px;"></div>
+            <h3>Hi.!! <br>
+              <div class="shimmer mt-2" style="height: 20px; width: 100px;"></div>
+            </h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <form #profileDeta="ngForm">
+          <div class="col-12 border mt-3 p-md-5 p-4 profiledatacontainer ">
+            <h4>Personal Information</h4>
+            <div class="row mt-4 form-input">
+              <div class="col-md-4">
+                <label>First Name</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+              <div class="col-md-4 mt-md-0 mt-5">
+                <label>Last Name</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+
+              <div class="col-12 mt-5" >
+                <label>Gender</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 50%;"></div>
+            </div>
+
+              <div class="col-md-5 mt-5">
+                <label>Email Address</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+              
+             
+              <div class="col-md-4 mt-5">
+                <label>Contact Number</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-12 border mt-3 p-md-5 p-4 profiledatacontainer ">
+            <h4>Address</h4>
+            <div class="row mt-4 form-input">
+              <div class="col-md-4">
+                <label for="Addpincode">Pincode</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+              <div class="col-md-4 mt-md-0 mt-5" *ngIf="spinneraddpin">
+                <label for="Addcity">City</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+
+              <div class="col-12"></div>
+              <div class="col-md-4 mt-5" *ngIf="spinneraddpin">
+                <label for="Addstate">State</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+
+              <div class="col-md-4 mt-5" *ngIf="spinneraddpin">
+                <label for="Addcountry">Country</label> <br />
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+
+              <div class="col-md-8 mt-5">
+                <label for="full-address">Enter Full Address</label>
+                <div class="shimmer mt-2" style="height: 50px; width: 100%;"></div>
+              </div>
+              <div class="col-md-4 mt-5 saveBtn">
+                <button class="" >Save</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-7 p-3" *ngIf="dataLoader">
+      
+      <div class="row">
+        <div class="col-12  p-1 greeting">
+          <!-- <img src="{{BuyerAddressDelivery.profile_pic}}" alt=""> -->
+          <div>
+            <!-- Display the profile picture -->
+            <img [src]="profilePicUrl" alt="Profile Picture" (click)="triggerFileInput()" style="cursor: pointer;">
+            
+            <!-- Hidden file input -->
+            <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+          </div>
+          <h3>Hi.!! <br>
+             <span>{{ProfileFormData.FirstName}}</span>
+          
+          </h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <form #profileDeta="ngForm">
+          <div class="col-12 border mt-3 p-md-5 p-4 profiledatacontainer ">
+            <h4>Personal Information</h4>
+            <div class="row mt-4 form-input">
+              <div class="col-md-4">
+                <label for="FirstName">First Name</label> <br />
+                <input id="FirstName" type="text" class="w-100" placeholder="Enter your First Name"
+                  [(ngModel)]="ProfileFormData.FirstName" #FirstName="ngModel" required name="FirstName"/>
+                <div *ngIf="FirstName.errors && FirstName.invalid && FirstName.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="FirstName.errors">
+                    Please enter your first name.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mt-md-0 mt-5">
+                <label for="LastName">Last Name</label> <br />
+                <input id="LastName" type="text" class="w-100" placeholder="Enter your Last Name"
+                  [(ngModel)]="ProfileFormData.LastName" #LastName="ngModel" required name="LastName" />
+                <div *ngIf="LastName.errors && LastName.invalid && LastName.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="LastName.errors">
+                    Please enter your last name.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mt-5" >
+                <div class="row">
+                <div class="col-2" *ngFor="let Gender of GenderArray">
+                <input  [id]="Gender.value" [value]="Gender.value" type="radio" [(ngModel)]="ProfileFormData.Gender"
+                  name="gender">
+                <label [for]="Gender.value" style="margin-left: 5px; height: 15px;">{{Gender.gender}}</label>
+              </div>
+            </div>
+          </div>
+
+              <div class="col-md-5 mt-5">
+                <label for="Email">Email Address</label> <br />
+                <input id="Email" type="email" class="w-100" [(ngModel)]="ProfileFormData.Email" #Email="ngModel"
+                  placeholder="Enter your Email Address" required name="Email" />
+                <div *ngIf="Email.errors && Email.invalid && Email.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="Email.errors">
+                    Please enter your Email Address.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mt-5 pt-md-5" *ngIf="ProfileFormData.Email != this.BuyerAddressDelivery.email">
+                <Button type="button" (click)=" VerifyEmail()" *ngIf="!spinnerVerifyEmail">Verify</Button>
+                <Button type="button" *ngIf="spinnerVerifyEmail">
+                  <div class="spinner-border spinner" style="color: rgb(255, 255, 255) !important; " role="status"  >
+                </div></Button>
+              </div>
+              <div class="col-md-6 mt-5 pt-md-5" *ngIf="ProfileFormData.Email === this.BuyerAddressDelivery.email">
+                <div class="emailVerifyDiv"><i class="bi bi-patch-check"></i> Email Verifed </div>
+              </div>
+              <div class="col-md-4 mt-5">
+                <label for="ContactNumber">Contact Number</label> <br />
+                <input id="ContactNumber" type="text" class="w-100" [(ngModel)]="ProfileFormData.ContactNumber"
+                  #ContactNumber="ngModel" placeholder="Enter your Contact Number" required name="ContactNumber"
+                  minlength="10" pattern="[9-0]{10}" />
+                <div
+                  *ngIf="ContactNumber.errors && ContactNumber.invalid && ContactNumber.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="ContactNumber.errors">
+                    Please enter your Contact Number with country code.
+                  </div>
+               
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-12 border mt-3 p-md-5 p-4 profiledatacontainer ">
+            <h4>Address</h4>
+            <div class="row mt-4 form-input">
+              <div class="col-md-4">
+                <label for="Addpincode">Pincode</label> <br />
+                <input id="Addpincode" type="text" class="w-100" placeholder="  Pin code of your area"
+                  [(ngModel)]="ProfileFormData.Address.pincode" #pincode="ngModel" required name="pincode" minlength="3"
+                  maxlength="6" (change)="getAddByPin()" />
+                <div *ngIf="pincode.errors && pincode.invalid && pincode.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="pincode.errors">
+                    Please enter a valid 6-digit pincode.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mt-md-0 mt-5" *ngIf="spinneraddpin">
+                <label for="Addcity">City</label> <br />
+                <input id="Addcity" type="text" class="w-100" placeholder="  Enter your city name"
+                  [(ngModel)]="ProfileFormData.Address.city" #city="ngModel" name="city" required />
+
+                <div *ngIf="city.errors && city.invalid && city.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="city.errors">
+                    Please enter city.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4" *ngIf="!spinneraddpin">
+                <label for="Addcity">City</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(218, 89, 89) !important; " role="status"></div>
+              </div>
+
+              <div class="col-12"></div>
+              <div class="col-md-4 mt-5" *ngIf="spinneraddpin">
+                <label for="Addstate">State</label> <br />
+                <input id="Addstate" type="text" class="w-100" placeholder="  Enter name of your state"
+                  [(ngModel)]="ProfileFormData.Address.state" #state="ngModel" name="state" required />
+
+                <div *ngIf="state.errors && state.invalid && state.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="state.errors">
+                    Please enter state.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mt-5" *ngIf="!spinneraddpin">
+                <label for="Addcity">State</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(218, 89, 89) !important; " role="status"></div>
+              </div>
+
+              <div class="col-md-4 mt-5" *ngIf="spinneraddpin">
+                <label for="Addcountry">Country</label> <br />
+                <select id="Addcountry" class="form-select form-select-lg mb-3" name="country"
+                  [(ngModel)]="ProfileFormData.Address.country" #country="ngModel"
+                  [value]="ProfileFormData.Address.country" required>
+
+                  <option value="">Select your Country</option>
+                  <option *ngFor="let country of countries" [value]="country.name">{{country.name}}
+                  </option>
+                </select>
+
+                <div *ngIf="country.errors && country.invalid && country.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="country.errors">
+                    Please select country.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mt-5" *ngIf="!spinneraddpin">
+                <label for="Addcity">Country</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(218, 89, 89) !important; " role="status"></div>
+              </div>
+
+              <div class="col-md-8 mt-5">
+                <label for="full-address">Enter Full Address</label>
+                <textarea id="full-address" rows="8" cols="57" name="comment" form="usrform"
+                  [(ngModel)]="ProfileFormData.Address.FullAddress" #FullAddress="ngModel" name="FullAddress"
+                  required></textarea>
+
+                <div *ngIf="FullAddress.errors && FullAddress.invalid && FullAddress.touched || profileDeta.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="FullAddress.errors">
+                    Please enter FullAddress.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mt-5 saveBtn">
+                <button class="" type="submit" (click)="SaveData(profileDeta)" *ngIf="!spinnerSubmit">Save</button>
+                <button type="button" *ngIf="spinnerSubmit"><div class="spinner-border spinner" style="color: rgb(255, 255, 255) !important; " role="status"  ></div></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-5 p-3 ">
+      <div class="row sticky-top">
+        <div class="col-12">
+          <div class="FAq pb-2">
+            <li class="faq-heading lifaq p-4">FAQs</li>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
+                    (click)="toggleTextClass(0)" [ngClass]="selectedFaq ==0?'red-text':''">
+                    <p>Is my personal information safe on your platform?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Absolutely. We have implemented robust security measures to ensure the confidentiality of your personal details.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"
+                    (click)="toggleTextClass(1)" [ngClass]="selectedFaq ==1?'red-text':''">
+                    <p>How do you use my email address?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Your email address is used solely for communication purposes related to your account and platform updates. We never share it with third parties.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"
+                    (click)="toggleTextClass(2)" [ngClass]="selectedFaq ==2?'red-text':''">
+                    <p>What about my contact number? Is it secure?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, your contact number is secure. It is only used for account-related notifications and verification purposes.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour"
+                    (click)="toggleTextClass(3)" [ngClass]="selectedFaq ==3?'red-text':''">
+                    <p>Can others see my address and personal details?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    No, your personal information, including your address, is completely private. Only authorized personnel have access to such information.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive"
+                    (click)="toggleTextClass(4)" [ngClass]="selectedFaq ==4?'red-text':''">
+                    <p>How is my address used?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Your address is primarily used for shipping purposes if you make purchases on our platform. It is never shared with anyone else.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix"
+                    (click)="toggleTextClass(5)" [ngClass]="selectedFaq ==5?'red-text':''">
+                    <p>Do you sell or share my information with advertisers?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    No, we do not sell or share your personal information with any advertisers or third parties for marketing purposes.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven"
+                    (click)="toggleTextClass(6)" [ngClass]="selectedFaq ==6?'red-text':''">
+                    <p>Is my data covered by a privacy policy?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, we have a comprehensive privacy policy that outlines how your data is collected, used, and protected. You can find it on our website.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingEight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight"
+                    (click)="toggleTextClass(7)" [ngClass]="selectedFaq ==7?'red-text':''">
+                    <p>How can I update or modify my personal details?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    You can easily update or modify your personal details by navigating to your profile settings on the platform.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingNine">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine"
+                    (click)="toggleTextClass(8)" [ngClass]="selectedFaq ==8?'red-text':''">
+                    <p>What should I do if I suspect any unauthorized activity on my account?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">   If you notice any unusual activity, contact our support team immediately. We take swift action to address security concerns.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <app-ourservices></app-ourservices>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

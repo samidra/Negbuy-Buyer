@@ -1,0 +1,21 @@
+<div class="container-fluid pt-3 mb-5 citycont">
+    <h4>Supplier By Region</h4>
+</div>
+
+
+<div class="container-fluid mt-5">
+
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+        (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <div class="citycolss" style="padding: 20px;">
+                <div class="imagediv">
+                    <img src="{{ slide.path }}" [alt]="slide.heading">
+                    <h2>{{slide.heading}}</h2>
+
+                </div>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+
+</div>

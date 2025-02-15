@@ -1,0 +1,287 @@
+<app-mainheader></app-mainheader>
+
+<div class="container-fluid button-container" style="background-color: white;">
+
+    <div class="row m-sm-4 greeting">
+        <div class="col-12 greeting-col">
+            <h3 routerLink="/help-center">
+                Back to Help centre
+            </h3>
+        </div>
+    </div>
+
+    <div class="row p-md-4">
+
+        <div class="col-lg-8 col-md-6 p-1">
+            <div class="row pe-sm-3 mt-sm-0 mt-2">
+
+                <div class="col-12 DeliveryCenterData">
+                    <h3>RFQ (Request for Quotation)</h3>
+                    <p>Request for Quote, or RFQ, is an abbreviation that aids in locating the best suppliers. If your
+                        bids are matched with suppliers, they will respond to your quotes. You might submit an RFQ to
+                        suppliers to specify exactly what you are searching for. The status might be seen from</p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/rfq1.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>How to file Request for Quotation ?</h3>
+                    <p>
+                        Please take the following actions to file an RFQ in PC: Logging into your account is the first
+                        step. Filling out the template and submitting it is the second. Once we receive a lead, our
+                        staff will notify you. You don't need to worry; our team will handle everything.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/rfq2.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>When my Buying request will be approved</h3>
+                    <p>
+                        Please be aware that it will take 24 working hours following submission for your RFQ to be
+                        distributed. If you have not heard anything about it, you can get in touch with our staff. The
+                        Purchasing Request will typically be accepted in 24 hours. It will be posted online within 24
+                        hours of receiving approval. Please be patient as well as You can actively search for the item
+                        on our Negbuy home page as well.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/rfq3.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>Why did I receive very less Quotation ?</h3>
+                    <p>
+                        Please be advised that Negbuy does not issue quotations; merchants do If you receive few or no
+                        quotes, please follow these steps: 1. Use our home page to search for the goods you wish to
+                        purchase. You can also call our team and ask them to place your estimate on priority for a
+                        reasonable fee, which will enable our team to assist you in receiving the best quotation.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/rfq4.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>Why is my Quotation is kept under verification mode ?</h3>
+                    <p>
+                        Our team will analyse your quotation and get back to you with all of the options. We will assist
+                        you in choosing the best quote so that you can have the best product not only inexpensively but
+                        also quickly and with the highest quality.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/rfq5.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 pt-1 ">
+
+            <div class="row sticky-top">
+                <div class="col-12">
+                    <div class="FAq pb-2">
+                        <li class="faq-heading lifaq p-4">FAQs</li>
+
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne" (click)="toggleTextClass(0)"
+                                        [ngClass]="selectedFaq ==0?'red-text':''">
+                                        <p>What is an RFQ?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        An RFQ is a formal request made by a buyer to potential suppliers for quotations or bids for specific products or services. It's a standard procurement process to gather pricing and terms from suppliers.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo" (click)="toggleTextClass(1)"
+                                        [ngClass]="selectedFaq ==1?'red-text':''">
+                                        <p>Why should I use an RFQ?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        RFQs help buyers compare quotes from multiple suppliers, ensuring they get the best value for their purchase. It also provides a structured way to communicate requirements.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree" (click)="toggleTextClass(2)"
+                                        [ngClass]="selectedFaq ==2?'red-text':''">
+                                        <p>How do I create an RFQ?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Typically, you create an RFQ document outlining your requirements, including specifications, quantities, delivery terms, and any other relevant details. Then, you send this document to selected suppliers.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour" (click)="toggleTextClass(3)"
+                                        [ngClass]="selectedFaq ==3?'red-text':''">
+                                        <p>What information should be included in an RFQ?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        A well-prepared RFQ includes clear product or service descriptions, quantity, quality standards, delivery timelines, and any specific terms or conditions.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive" (click)="toggleTextClass(4)"
+                                        [ngClass]="selectedFaq ==4?'red-text':''">
+                                        <p>Is an RFQ legally binding?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        No, an RFQ is usually not legally binding. It's a solicitation for offers, and it becomes binding when you accept a supplier's quotation and create a purchase order.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                        aria-controls="flush-collapseSix" (click)="toggleTextClass(5)"
+                                        [ngClass]="selectedFaq ==5?'red-text':''">
+                                        <p>How do I select the right supplier from RFQ responses?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Evaluate responses based on factors like price, quality, delivery times, supplier reputation, and terms. Choose the supplier that best meets your needs.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSeven">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                        aria-controls="flush-collapseSeven" (click)="toggleTextClass(6)"
+                                        [ngClass]="selectedFaq ==6?'red-text':''">
+                                        <p>What's the difference between an RFQ and an RFP (Request for Proposal)?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        While an RFQ focuses on pricing and specific product details, an RFP is a more comprehensive request that includes details about the project or service and seeks a solution or proposal from suppliers.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingEight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseEight" aria-expanded="false"
+                                        aria-controls="flush-collapseEight" (click)="toggleTextClass(7)"
+                                        [ngClass]="selectedFaq ==7?'red-text':''">
+                                        <p>Can I negotiate with suppliers after receiving RFQ responses?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Yes, you can negotiate terms and conditions with suppliers, especially if you have specific requirements or need adjustments to their quotations.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingNine">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseNine" aria-expanded="false"
+                                        aria-controls="flush-collapseNine" (click)="toggleTextClass(8)"
+                                        [ngClass]="selectedFaq ==8?'red-text':''">
+                                        <p>What happens after I accept an RFQ response?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        After accepting a supplier's quote, you typically create a purchase order (PO) with the agreed-upon terms, initiating the purchase process.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTen">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTen" aria-expanded="false"
+                                        aria-controls="flush-collapseTen" (click)="toggleTextClass(9)"
+                                        [ngClass]="selectedFaq ==9?'red-text':''">
+                                        <p>Do I have to accept any of the RFQ responses?</p>
+                                    </button>
+                                </li>
+                                
+                                <div id="flush-collapseTen" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        No, you are not obligated to accept any of the responses. You can choose to decline all offers if they do not meet your requirements or expectations.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+  
+
+</div>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <app-ourservices></app-ourservices>
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

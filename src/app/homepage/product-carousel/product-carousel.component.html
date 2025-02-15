@@ -1,0 +1,225 @@
+<p class="animal-heading mt-5">{{category}}</p>
+
+<div class="container-fluid mb-1" *ngIf="loader">
+
+    <ng-container bb>
+      <carousel class="main-cont pt-4" [autoplay]="false">
+        <div class="carousel-cell mt-5" *ngFor="let mySlider of products">
+          <div class="row mb-3 p-3">
+            <div class="col-12 p-1">
+              <div class="shimmer" style="height: 90px;"></div>
+            </div>
+            <div class="col-12 p-2">
+              <div class="shimmer" style="height: 30px;"></div>
+            </div>
+            <div class="col-12 p-2">
+              <div class="shimmer" style="height: 30px;"></div>
+            </div>
+            <div class="col-12 p-2">
+              <div class="shimmer" style="height: 30px;"></div>
+            </div>
+          </div>
+        </div>
+      </carousel>
+    </ng-container>
+  
+    <ng-container bb>
+      <carousel class="main-cont pt-4" [autoplay]="false">
+        <div class="carousel-cell mt-5" *ngFor="let mySlider of products">
+          <div class="row mb-1 p-3">
+            <div class="col-12 p-1">
+              <div class="shimmer" style="height: 90px;"></div>
+            </div>
+            <div class="col-12 p-2">
+              <div class="shimmer" style="height: 30px;"></div>
+            </div>
+            <div class="col-12 p-2">
+              <div class="shimmer" style="height: 30px;"></div>
+            </div>
+            <div class="col-12 p-2">
+              <div class="shimmer" style="height: 30px;"></div>
+            </div>
+          </div>
+        </div>
+      </carousel>
+    </ng-container>
+  
+  </div>
+  
+  <div class="container-fluid" *ngIf="!loader">
+  
+
+    <ng-container bb>
+      <carousel class="main-cont pt-4" [autoplay]="false">
+        <div class="carousel-cell mt-5" *ngFor="let product of products">
+          <div class="row">
+            <div class="col-12 p-2 carimgdiv">
+              <img loading="lazy" class="card-img" src="{{ product.product_image }}" alt=""
+                (click)="goToProduct(product.product_id)" loading="progressive" />
+              <div *ngIf="!spinnerBuyNow[product.product_id]">
+                <i *ngIf="userlogin === true" class="bi bi-heart-fill"
+                  [ngClass]="product?.wishlisted == true?'iconColor':'icon'"
+                  (click)="add_remove_wishlist(product)"></i>
+              </div>
+              <div class="spinner-border spinner" style="color: rgb(255, 0, 0) !important; " role="status"
+                *ngIf="spinnerBuyNow[product.product_id]">
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3" (click)="goToProduct(product.product_id)">
+            <div class="col-12 p-2">
+              <div class="row">
+                <div class="col-7">
+                  <p class="text-heading-car">
+                    <abbr title="{{ product.product_name }}">{{
+                      product.product_name
+                      }}</abbr>
+                  </p>
+                </div>
+                <div class="col-5">
+                  <p class="sub-text1">{{ product.brand }}</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 px-2">
+              <div class="row">
+                <div class="col-7 mt-2">
+                  <p class="sub-text2">{{ product.city }}</p>
+                </div>
+                <div class="col-5">
+                  <span class="country d-flex">
+                    <img loading="lazy" class="country-img"
+                      src="../../assets/AnimalSlider/country/flag-india.png" alt="" /><span
+                      class="country-text">{{ product.country }}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 px-2 mt-1">
+              <div class="row ratingRow">
+                <div class="col-6">
+                  <p class="rating">
+                    {{ product.rating }}
+                    <i class="bi bi-star-fill"></i>
+                  </p>
+                </div>
+                <div class="col-6 mb-1">
+                  <div class="NegbuyAssured">
+                    <i class="bi bi-shield-fill-check"></i> Assured
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 p-1">
+              <div class="row">
+                <div class="col-4">
+                  <p class="price">
+                    <i class="bi bi-currency-rupee"></i>{{ product.price }}
+                  </p>
+                </div>
+                <div class="col-4 dscol">
+                  <span class="previousPrice"><i class="bi bi-currency-rupee"></i>{{ product.mrp }}</span>
+                </div>
+                <div class="col-4 dscol">
+                  <span class="offerpri">({{ product.discount }}% Off )</span>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </carousel>
+    </ng-container>
+  
+    <ng-container bb>
+      <carousel class="main-cont pt-2" [autoplay]="false">
+        <div class="carousel-cell mt-5" *ngFor="let product of products_two">
+          <div class="row">
+            <div class="col-12 p-2 carimgdiv">
+              <img loading="lazy" class="card-img" src="{{ product.product_image }}" alt=""
+                (click)="goToProduct(product.product_id)" loading="progressive" />
+              <div *ngIf="!spinnerBuyNow[product.product_id]">
+                <i *ngIf="userlogin === true" class="bi bi-heart-fill"
+                  [ngClass]="product?.wishlisted == true ?'iconColor':'icon'"
+                  (click)="add_remove_wishlist(product)"></i>
+              </div>
+              <div class="spinner-border spinner" style="color: rgb(255, 0, 0) !important; " role="status"
+                *ngIf="spinnerBuyNow[product.product_id]">
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3" (click)="goToProduct(product.product_id)">
+            <div class="col-12 p-2">
+              <div class="row">
+                <div class="col-7">
+                  <p class="text-heading-car">
+                    <abbr title="{{ product.product_name }}">{{
+                      product.product_name
+                      }}</abbr>
+                  </p>
+                </div>
+                <div class="col-5">
+                  <p class="sub-text1">{{ product.brand }}</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 px-2">
+              <div class="row">
+                <div class="col-7 mt-2">
+                  <p class="sub-text2">{{ product.city }}</p>
+                </div>
+                <div class="col-5">
+                  <span class="country d-flex">
+                    <img loading="lazy" class="country-img"
+                      src="../../assets/AnimalSlider/country/flag-india.png" alt="" /><span
+                      class="country-text">{{ product.country }}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 px-2 mt-1">
+              <div class="row ratingRow">
+                <div class="col-6">
+                  <p class="rating">
+                    {{ product.rating }}
+                    <i class="bi bi-star-fill"></i>
+                  </p>
+                </div>
+                <div class="col-6 mb-1">
+                  <div class="NegbuyAssured">
+                    <i class="bi bi-shield-fill-check"></i> Assured
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 p-1">
+              <div class="row">
+                <div class="col-4">
+                  <p class="price">
+                    <i class="bi bi-currency-rupee"></i>{{ product.price }}
+                  </p>
+                </div>
+                <div class="col-4 dscol">
+                  <span class="previousPrice"><i class="bi bi-currency-rupee"></i>{{ product.mrp }}</span>
+                </div>
+                <div class="col-4 dscol">
+                  <span class="offerpri">({{ product.discount }}% Off )</span>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </carousel>
+    </ng-container>
+  
+  </div>
+  

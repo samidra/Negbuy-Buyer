@@ -1,0 +1,303 @@
+$color_1: #f54646;
+$color_2: #5a5a5a;
+$background-color_1: #fff;
+$background-color_2: #f1f1f1;
+
+* {
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: white;
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(210, 210, 210);
+	border-radius: 50px;
+
+	&:hover {
+		background: rgb(210, 210, 210);
+	}
+}
+
+.subheadcol {
+	z-index: 10;
+	
+}
+
+.imgIcon{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}    
+
+.heading {
+	text-align: center;
+	
+	font-size: 0.99rem;
+	font-weight: 700;
+	line-height: 10px;
+	letter-spacing: 0em;
+	cursor: pointer;
+}
+
+.hovercol {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 70vh;
+	overflow: scroll;
+	background-color: $background-color_1;
+}
+
+.hoverHeading {
+	margin: 0.5% 1% 0% 0;
+
+	a {
+		&:hover {
+			text-decoration: underline !important;
+		}
+
+		
+		font-size: 1.3rem;
+		font-weight: 700;
+		line-height: 23px;
+		letter-spacing: 0em;
+		text-align: left;
+		
+		color: #000000;
+		cursor: default;
+	}
+}
+
+.hoverText {
+	margin: 0.4% 1% 0% 0;
+
+	a {
+		
+		font-size: 1.2rem;
+		font-weight: 600;
+		letter-spacing: 0em;
+		text-align: left;
+		color: $color_2;
+		
+		font-style: normal;
+		line-height: 25px;
+		color: #000000;
+
+		&:hover {
+			color:#1b916d;
+		}
+	}
+}
+
+.hr {
+	margin: 1% 0 1% 0;
+	width: 80%;
+	border: 0.5px solid rgba(130, 130, 130, 0.35);
+}
+
+.BabyToddlerHovers,
+.PetCareHovers,
+.ElectronicHovers,
+.MechanicalHovers,
+.FabricHovers,
+.AutomobileHovers,
+.HealthCareHovers,
+.AllcategoriesHovers {
+	opacity: 0;
+	height: 0;
+	transition: opacity 0.3s ease, height 0.3s ease;
+	overflow: hidden;
+	/* Hide any content that might overflow */
+	z-index: -1;
+}
+
+.BabyToddlerHovers.show,
+.PetCareHovers.show,
+.ElectronicHovers.show,
+.MechanicalHovers.show,
+.FabricHovers.show,
+.AutomobileHovers.show,
+.HealthCareHovers.show,
+.AllcategoriesHovers.show {
+
+	opacity: 1;
+	height: auto;
+	/* Adjust as necessary */
+}
+
+.AllcategoriesCol:hover,
+.HealthCareCol:hover,
+.AutomobileCol:hover,
+.FabricCol:hover,
+.MechanicalCol:hover,
+.ElectricalCol:hover,
+.PetCol:hover,
+.BabyCol:hover {
+	// border-bottom: 5px solid #F54646;
+
+	.BabyHover,
+	.PetHover,
+	.ElectronicHover,
+	.MechanicalHover,
+	.FabricHover,
+	.AutomobileHover,
+	.HealthCareHover,
+	.AllcategoresHover {
+		opacity: 1;
+		height: auto;
+		transition-delay: 0.3s;
+	}
+
+	p {
+		width: 100%;
+	}
+}
+
+
+
+.HealthCareHovers,
+.BabyToddlerHovers,
+.PetCareHovers,
+.ElectronicHovers,
+.MechanicalHovers,
+.FabricHovers,
+.AutomobileHovers,
+.AllcategoriesHovers {
+	overflow: auto;
+	width: 98.3%;
+	position: absolute;
+	left: 0.85%;
+	top: 182.5px;
+	background: #FFFCFC;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color: $background-color_1;
+}
+
+@media screen and (max-width: 1336px) {
+
+	.HealthCareHovers,
+	.BabyToddlerHovers,
+	.PetCareHovers,
+	.ElectronicHovers,
+	.MechanicalHovers,
+	.FabricHovers,
+	.AutomobileHovers,
+	.AllcategoriesHovers {
+		top: 188.5px;
+	}
+
+}
+
+@media (max-width:947px) {
+	.subheadcol {
+
+		.img {
+			width: 100%;
+		}
+
+		.heading {
+			display: none;
+		}
+	}
+
+
+	.HealthCareHovers,
+	.BabyToddlerHovers,
+	.PetCareHovers,
+	.ElectronicHovers,
+	.MechanicalHovers,
+	.FabricHovers,
+	.AutomobileHovers,
+	.AllcategoriesHovers {
+		overflow: auto;
+		width: 98.3%;
+		position: absolute;
+		left: 0.85%;
+		top: 165.5px;
+		background: #FFFCFC;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		background-color: $background-color_1;
+	}
+}
+
+@media (max-width:700px) {
+
+	.subheadrow {
+		.toHide {
+			display: none;
+		}
+	}
+
+	.HealthCareHovers,
+	.BabyToddlerHovers,
+	.PetCareHovers,
+	.ElectronicHovers,
+	.MechanicalHovers,
+	.FabricHovers,
+	.AutomobileHovers,
+	.AllcategoriesHovers {
+		top: 153.5px;
+	}
+}
+
+@media (max-width:575px) {
+
+	.HealthCareHovers,
+	.BabyToddlerHovers,
+	.PetCareHovers,
+	.ElectronicHovers,
+	.MechanicalHovers,
+	.FabricHovers,
+	.AutomobileHovers,
+	.AllcategoriesHovers {
+		top: 135.5px;
+	}
+}
+
+@media (max-width:380px) {
+
+	.HealthCareHovers,
+	.BabyToddlerHovers,
+	.PetCareHovers,
+	.ElectronicHovers,
+	.MechanicalHovers,
+	.FabricHovers,
+	.AutomobileHovers,
+	.AllcategoriesHovers {
+		top: 117.5px;
+	}
+}
+
+.isOpen{
+	opacity: 1;
+	height: auto;
+}
+
+.OpenIconHide{
+	display: none;
+}
+
+.OpenIconShow{
+	display: block;
+	font-size: 16px;
+	margin-left: 5px;
+	color: #1b916d;
+}
+
+.borderOnClick{
+	border-bottom: 5px solid #1b916d;
+}
+
+.noborderOnClick{
+ border-bottom: none ;
+}

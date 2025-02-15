@@ -1,0 +1,440 @@
+<app-mainheader></app-mainheader>
+
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-12 headImage1">
+            <img src="assets/Sponsored Page Image/baner.webp" alt="" srcset="">
+
+            <div class="carousel-caption">
+                <div class="div">
+                    <h2>Negbuy</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sit labore ullam rem
+                        inventore
+                        hic odit saepe nam placeat ut earum corrupti nulla nostrum non in veniam, explicabo ipsa et.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-md-4 p-2 pb-2" *ngIf="dealsOfTheDayLoader">
+        <div class="col-12 DealBox">
+            <div class="row rowss">
+
+                <div class="col-md-5 border pb-md-0 pb-3">
+                    <h2 class="dealcorner">Deals of the Day</h2>
+                    <div class="row">
+                        <div class="col-lg-4 dealcorner-img">
+                            <div class="shimmer" style="height: 70%; width: 60%; border-radius: 50%;"></div>
+                        </div>
+
+                        <div class="col-lg-8 p-3">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mt-2 shimmer" style="height: 30px"></div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+
+                                </div>
+                                <div class="col-4">
+                                    <div class="mt-2 shimmer" style="height: 30px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 border pb-md-0 pb-3">
+                    <h2 class="dealcorner">Deals of the Day</h2>
+                    <div class="row">
+                        <div class="col-lg-4 dealcorner-img">
+                            <div class="shimmer" style="height: 70%; width: 60%; border-radius: 50%;"></div>
+                        </div>
+
+                        <div class="col-lg-8 p-3">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mt-2 shimmer" style="height: 30px"></div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+                                    <div class="mt-3 shimmer" style="height: 15px"></div>
+
+                                </div>
+                                <div class="col-4">
+                                    <div class="mt-2 shimmer" style="height: 30px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row p-md-4 p-2 pb-2 mt-3">
+        <div class="col-12 DealBox">
+            <div class="row rowss">
+
+                <div class="col-md-5 border pb-md-0 pb-3" *ngFor="let dealsData of dealsOfTheDayData"
+                    style="cursor: pointer;">
+                    <h2 class="dealcorner" (click)="goToProduct(dealsData.main_product_id)">Deals of the Day</h2>
+                    <div class="row" (click)="goToProduct(dealsData.main_product_id)">
+                        <div class="col-lg-4 dealcorner-img">
+                            <img src="{{dealsData.main_image.main_image}}" alt="" srcset="">
+                        </div>
+
+                        <div class="col-lg-8 dealcorner-detail p-3">
+                            <h4>{{dealsData.product_name}}</h4>
+                            <p class="mt-lg-5 mt-3">{{dealsData.about_product.substring(0, 140)}}....
+                                <br>
+
+                            </p>
+                            <a class="mt-lg-5 mt-3" (click)="goToProduct(dealsData.main_product_id)"> Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-md-4 p-2 pb-2 mt-3 Slider">
+
+        <div class="col-12 mb-1" *ngIf="loader">
+            <ng-container bb>
+                <carousel class="main-cont pt-4" [autoplay]="false">
+                    <div class="carousel-cell mt-5" *ngFor="let mySlider of SkeletonLoads">
+                        <div class="row mb-1 p-3">
+                            <div class="col-12 p-1">
+                                <div class="shimmer" style="height: 90px;"></div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="shimmer" style="height: 30px;"></div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="shimmer" style="height: 30px;"></div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="shimmer" style="height: 30px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </carousel>
+            </ng-container>
+        </div>
+
+        <div class="col-12" *ngIf="!loader">
+            <ng-container bb>
+                <carousel class="main-cont pt-4" [autoplay]="false">
+                  <div class="carousel-cell mt-5" *ngFor="let product of products_slide.data let i = index">
+                    <div class="row ">
+                      <div class="col-12 p-2 carimgdiv">
+                        <!-- <i *ngIf="userlogin === true" class="bi bi-heart-fill" [ngClass]="WishListIcon(product.product_id)?'iconColor':'icon'"
+                        (click)="add_remove_wishlist(product.product_id)"></i> -->
+                        <img loading="lazy" class="card-img" src="{{ product.product_image }}" alt=""
+                          (click)="goToProduct(product.product_id)" loading="progressive" />
+                        <div *ngIf="!spinnerBuyNow[product.product_id]">
+                          <i *ngIf="userlogin === true" class="bi bi-heart-fill"
+                            [ngClass]="product?.wishlisted == true?'iconColor':'icon'" (click)="add_remove_wishlist(product)"></i>
+                        </div>
+                        <div class="spinner-border spinner" style="color: rgb(255, 0, 0) !important; " role="status"
+                          *ngIf="spinnerBuyNow[product.product_id]">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3" (click)="goToProduct(product.product_id)">
+                      <div class="col-12 p-2">
+                        <div class="row">
+                          <div class="col-7">
+                            <p class="text-heading-car">
+                              <abbr title="{{ product.product_name }}">{{
+                                product.product_name
+                                }}</abbr>
+                            </p>
+                          </div>
+                          <div class="col-5">
+                            <p class="sub-text1">{{ product.brand }}</p>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-12 px-2">
+                        <div class="row">
+                          <div class="col-7 mt-2">
+                            <p class="sub-text2">{{ product.city }}</p>
+                          </div>
+                          <div class="col-5">
+                            <span class="country d-flex">
+                              <img loading="lazy" class="country-img" src="../../assets/AnimalSlider/country/flag-india.png"
+                                alt="" /><span class="country-text">{{ product.country }}</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-12 px-2 mt-1">
+                        <div class="row ratingRow">
+                          <div class="col-6">
+                            <p class="rating">
+                              {{ product.rating }}
+                              <i class="bi bi-star-fill"></i>
+                              <!-- <img loading="lazy" src="../../assets/AnimalSlider/country/star.png" alt="" /> -->
+                            </p>
+                          </div>
+                          <div class="col-6 mb-1">
+                            <div class="NegbuyAssured">
+                              <i class="bi bi-shield-fill-check"></i> Assured
+                            </div>
+            
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-12 p-1">
+                        <div class="row">
+                          <div class="col-4">
+                            <p class="price">
+                              <i class="bi bi-currency-rupee"></i>{{ product.price }}
+                            </p>
+                          </div>
+                          <div class="col-4 dscol">
+                            <span class="previousPrice"><i class="bi bi-currency-rupee"></i>{{ product.mrp }}</span>
+                          </div>
+                          <div class="col-4 dscol">
+                            <span class="offerpri">({{ product.discount }}% Off )</span>
+                          </div>
+                        </div>
+                      </div>
+            
+                    </div>
+                  </div>
+                </carousel>
+              </ng-container>
+            
+        </div>
+
+    </div>
+
+    <div class="row p-md-4 p-5 mt-3 ">
+        <div class="col-12 headImage2">
+            <img src="assets/Sponsored Page Image/Stay Connected.webp" alt="" srcset="">
+
+            <div class="carousel-caption">
+                <div class="div">
+                    <h2>Lorem, ipsum.</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sit labore ullam rem inventore
+                        hic odit saepe nam placeat ut earum corrupti nulla nostrum non in veniam, explicabo ipsa et.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sit labore ullam rem
+                        inventore
+                        hic odit saepe nam placeat ut earum corrupti nulla nostrum non in veniam, explicabo ipsa et.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sit labore ullam rem
+                        inventore
+                        hic odit saepe nam placeat ut earum corrupti nulla nostrum non in veniam, explicabo ipsa et.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-md-4 p-5 mt-3 ">
+        <div class="col-12 headImage3">
+            <img src="assets/Sponsored Page Image/offer.webp" alt="" srcset="">
+
+            <div class="carousel-caption">
+                <div class="div">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sit labore ullam rem
+                        inventore.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-md-4 p-2 pb-2 mt-3 Slider">
+        <div class="container-fluid mb-1" *ngIf="loader">
+
+            <ng-container bb>
+                <carousel class="main-cont pt-4" [autoplay]="false">
+                    <div class="carousel-cell mt-5" *ngFor="let mySlider of SkeletonLoads">
+                        <div class="row mb-1 p-3">
+                            <div class="col-12 p-1">
+                                <div class="shimmer" style="height: 90px;"></div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="shimmer" style="height: 30px;"></div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="shimmer" style="height: 30px;"></div>
+                            </div>
+                            <div class="col-12 p-2">
+                                <div class="shimmer" style="height: 30px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </carousel>
+            </ng-container>
+
+        </div>
+
+        <div class="container-fluid" *ngIf="!loader">
+
+            <ng-container bb>
+                <carousel class="main-cont pt-4" [autoplay]="false">
+                  <div class="carousel-cell mt-5" *ngFor="let product of products_slide.data let i = index">
+                    <div class="row ">
+                      <div class="col-12 p-2 carimgdiv">
+                        <!-- <i *ngIf="userlogin === true" class="bi bi-heart-fill" [ngClass]="WishListIcon(product.product_id)?'iconColor':'icon'"
+                        (click)="add_remove_wishlist(product.product_id)"></i> -->
+                        <img loading="lazy" class="card-img" src="{{ product.product_image }}" alt=""
+                          (click)="goToProduct(product.product_id)" loading="progressive" />
+                        <div *ngIf="!spinnerBuyNow[product.product_id]">
+                          <i *ngIf="userlogin === true" class="bi bi-heart-fill"
+                            [ngClass]="product?.wishlisted == true?'iconColor':'icon'" (click)="add_remove_wishlist(product)"></i>
+                        </div>
+                        <div class="spinner-border spinner" style="color: rgb(255, 0, 0) !important; " role="status"
+                          *ngIf="spinnerBuyNow[product.product_id]">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3" (click)="goToProduct(product.product_id)">
+                      <div class="col-12 p-2">
+                        <div class="row">
+                          <div class="col-7">
+                            <p class="text-heading-car">
+                              <abbr title="{{ product.product_name }}">{{
+                                product.product_name
+                                }}</abbr>
+                            </p>
+                          </div>
+                          <div class="col-5">
+                            <p class="sub-text1">{{ product.brand }}</p>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-12 px-2">
+                        <div class="row">
+                          <div class="col-7 mt-2">
+                            <p class="sub-text2">{{ product.city }}</p>
+                          </div>
+                          <div class="col-5">
+                            <span class="country d-flex">
+                              <img loading="lazy" class="country-img" src="../../assets/AnimalSlider/country/flag-india.png"
+                                alt="" /><span class="country-text">{{ product.country }}</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-12 px-2 mt-1">
+                        <div class="row ratingRow">
+                          <div class="col-6">
+                            <p class="rating">
+                              {{ product.rating }}
+                              <i class="bi bi-star-fill"></i>
+                              <!-- <img loading="lazy" src="../../assets/AnimalSlider/country/star.png" alt="" /> -->
+                            </p>
+                          </div>
+                          <div class="col-6 mb-1">
+                            <div class="NegbuyAssured">
+                              <i class="bi bi-shield-fill-check"></i> Assured
+                            </div>
+            
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-12 p-1">
+                        <div class="row">
+                          <div class="col-4">
+                            <p class="price">
+                              <i class="bi bi-currency-rupee"></i>{{ product.price }}
+                            </p>
+                          </div>
+                          <div class="col-4 dscol">
+                            <span class="previousPrice"><i class="bi bi-currency-rupee"></i>{{ product.mrp }}</span>
+                          </div>
+                          <div class="col-4 dscol">
+                            <span class="offerpri">({{ product.discount }}% Off )</span>
+                          </div>
+                        </div>
+                      </div>
+            
+                    </div>
+                  </div>
+                </carousel>
+              </ng-container>
+            
+
+        </div>
+    </div>
+
+    <div class=" row p-md-4 p-5 mt-3 ">
+        <div class="col-12 ">
+            <div class="row headImage4">
+                <div class="col-lg-6 col-md-5 headImage4-part1">
+                    <h2>Lorem ipsum dolor, sit amet</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sit labore ullam rem inventore
+                        hic odit saepe nam placeat ut earum corrupti nulla nostrum non in veniam, explicabo ipsa et.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="row headImage4-part2">
+                        <div class="col-12 colorDiv">
+
+                            <div class="row">
+                                <div class="col-4 p-4">
+                                    <div class="smallOne">
+                                        Lorem Quae quis mollitia placeat error nihil dolorem, facilis amet maxime ab
+                                        enim dolorum reiciendis, dolore consequuntur maiores eos hic tempora commodi id
+                                        quas iusto a minima ipsum! Quos eligendi cum aspernatur alias sint est dolores
+                                        inventore molestias, rerum sapiente saepe, beatae numquam velit unde rem
+                                        temporibus.
+                                    </div>
+                                </div>
+
+                                <div class="col-4 p-4">
+                                    <div class="smallOne">
+                                        Lorem Quae quis mollitia placeat error nihil dolorem, facilis amet maxime ab
+                                        enim dolorum reiciendis, dolore consequuntur maiores eos hic tempora commodi id
+                                        quas iusto a minima ipsum! Quos eligendi cum aspernatur alias sint est dolores
+                                        inventore molestias, rerum sapiente saepe, beatae numquam velit unde rem
+                                        temporibus.
+                                    </div>
+                                </div>
+
+                                <div class="col-4 p-4">
+                                    <div class="smallOne">
+                                        Lorem Quae quis mollitia placeat error nihil dolorem, facilis amet maxime ab
+                                        enim dolorum reiciendis, dolore consequuntur maiores eos hic tempora commodi id
+                                        quas iusto a minima ipsum! Quos eligendi cum aspernatur alias sint est dolores
+                                        inventore molestias, rerum sapiente saepe, beatae numquam velit unde rem
+                                        temporibus.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<app-footer></app-footer>

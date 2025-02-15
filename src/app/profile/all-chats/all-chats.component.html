@@ -1,0 +1,334 @@
+<app-mainheader></app-mainheader>
+<div class="container-fluid" style="background-color: #F5F4F4">
+
+  <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+    <button class="filterHide" (click)="openNav()"> All Chats <i class="bi bi-list"
+        style="font-size: 25px; margin-left: 5px;"></i></button>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <div class="row">
+      <div class="col-12">
+        <p style="
+        font-size: 19px;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        padding: 6px;
+        margin: 0;">All Chats</p>
+      </div>
+
+      <div class="row allChat  p-1">
+
+        <div class="col-12  mt-3" *ngFor="let getchats of getAllChatsResponse">
+
+          <div class="chatName row" (click)="showcontent(getchats.chat_id)"
+            [ngClass]="sectionLoaded == getchats.chat_id?'activemode':''">
+            <div class="col-lg-12 chatName-imgText">
+              <div class="img_div_size">
+                <img src={{getchats.product_image}} alt="" srcset="">
+              </div>
+              <p>{{getchats.product_title.substring(0, 35)}}... <br>
+                <span>
+                  {{getchats.recent_msg.substring(0, 40)}}...
+                </span>
+                <small class="chatName-timeSide">{{getchats.last_modified_date}}</small>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row p-2" *ngIf="mainLoader">
+    <div class="col-lg-3 col-5 slidemenu"
+      style="height: 544px; background-color: white; border: 1px solid rgb(243, 243, 243);">
+      <div class="row allChat sticky-top">
+        <div class="col-12">
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+          <div class="shimmer mt-2" style="height: 50px; width: 100%; border-radius: 5px;"></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-9 col-sm-7 px-2" style="z-index: 16;">
+
+      <div class="row chatScreen p-3">
+        <div class="col-12">
+          <div class="shimmer mt-1" style="height: 20px; width: 30%; border-radius: 5px;"></div>
+        </div>
+        <div class="col-12">
+          <div class="shimmer mt-2" style="height: 20px; width: 20%; border-radius: 5px;"></div>
+        </div>
+
+        <div class="col-12 chatScreen-Timesection">
+          <div class="shimmer mt-2" style="height: 30px; width: 10%; border-radius: 5px;"></div>
+        </div>
+
+        <div class="col-12 conversationBox mt-3 chat-container">
+
+          <div class="loader-container2">
+            <div class="loader2"></div>
+            <div class="mt-2">
+              <h4 style="color: white; text-align: center;">Loading
+              </h4>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row p-2" *ngIf="!mainLoader">
+    <div class="col-xl-4 col-5 slidemenu">
+      <div class="row allChat sticky-top">
+
+        <div class="col-12 p-2 search_col">
+
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Search...">
+
+        </div>
+
+        <div class="col-12">
+          <div class="row chat_filter_row">
+            <div class="col-4">
+              <div class="chat_filter" (click)="chatstatus_filter('all')"
+                [ngClass]="this.status_filter === 'all' ? 'staus_fliter': ''">
+                All
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="chat_filter" (click)="chatstatus_filter('read')"
+                [ngClass]="this.status_filter === 'read' ? 'staus_fliter': ''">
+                Read
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="chat_filter chat_filter3" (click)="chatstatus_filter('unread')"
+                [ngClass]="this.status_filter === 'unread' ? 'staus_fliter': ''">
+                Unread
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 scroll_div" *ngIf="getAllChatsResponse1.length != 0">
+          <div class="row">
+
+            <div class="col-12 chat_filter mt-4"
+              *ngIf="this.unreadChats.length === 0 && this.status_filter === 'unread'">No
+              conversation here </div>
+            <div class="col-12  mt-3" *ngFor="let getchats of getAllChatsResponse">
+              <div class="chatName row" (click)="showcontent(getchats.chat_id)"
+                [ngClass]="sectionLoaded == getchats.chat_id ? 'activemode' : (getchats.chat_opened === false ? 'unreadBox' : '')">
+                <div class="col-12 chatName-imgText">
+                  <div class="img_div_size">
+                    <img src={{getchats.product_image}} alt="" srcset="">
+                  </div>
+                  <p>{{getchats.product_title.substring(0, 53)}}... <br>
+                    <span>
+                      {{getchats.recent_msg.substring(0, 50)}}...
+                    </span>
+
+                    <small class="chatName-timeSide">{{getchats.last_modified_date}}, {{getchats.last_modified_time}}
+                      <span [ngClass]="{'unreadChats': getchats.chat_opened === false}"
+                        *ngIf="getchats.chat_opened === false">Unread</span></small>
+                  </p>
+
+                  <!-- <div class="chatName-timeSide">
+                      {{getchats.last_modified_date}} <br>
+                      {{getchats.last_modified_time}}
+                      <span [ngClass]="{'unreadChats': getchats.chat_opened === false}"
+                        *ngIf="getchats.chat_opened === false">Unread</span>
+                    </div> -->
+
+                </div>
+                <!-- <div class="col-lg-2 chatName-timeSide">
+                  {{getchats.last_modified_date}} <br>
+                  {{getchats.last_modified_time}}
+                  <span [ngClass]="{'unreadChats': getchats.chat_opened === false}"
+                    *ngIf="getchats.chat_opened === false">Unread</span>
+                </div> -->
+              </div>
+              <hr class="mt-2">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="getAllChatsResponse1.length != 0" class="col-xl-8 col-sm-7 px-2 main_chat_col" style="z-index: 16;">
+
+      <div class="row chatScreen" *ngIf="sectionLoaded == chat_id">
+        <div class="col-12 chatScreen-mainHeading">
+          <img src={{chatHistoryData?.product_image}} alt="" srcset="" height="50px" width="50px">
+          <h4>{{chatHistoryData?.product_name.substring(0, 85)}}....</h4>
+        </div>
+
+        <div class="col-12 chatScreen-Timesection">
+          <!-- <h5>{{chatHistoryData?.chat_started_at}}</h5> -->
+
+          <h5><i class="bi bi-shield-fill-check"></i> Secure your orders: Always use Negbuy.com website for
+            communication</h5>
+        </div>
+
+        <div class="col-12 conversationBox mt-3 chat-container" #chatContainer>
+
+          <div *ngFor="let message of chatHistoryData?.data">
+            <div [ngClass]="{'flexDone': message.msg_sender != 'Buyer', 'user-message': message.msg_sender == 'Buyer'}">
+              
+              <img *ngIf="message.msg_sender != 'Buyer'" src="assets/logo/Seller_profile.png" alt="" height="20px"
+                align="left" style="margin-top: 20px;">
+
+              <div *ngIf="message.msg_sender != 'Buyer'">
+
+                <div align="left" class="message_time_seller" *ngIf=" message.msg_sender != 'Buyer'">{{message.msg_time}}</div>
+                <div [ngClass]="{'message': true, 'bot-message': message.msg_sender != 'Buyer'}">
+                  {{ message.msg_text }}
+                </div>
+
+              </div>
+
+              <img *ngIf="message.msg_sender == 'Buyer'" src="assets/logo/buyer_profile.png" alt="" height="20px"
+                align="right" style="margin-top: 20px;">
+              <div *ngIf="message.msg_sender == 'Buyer'">
+
+                <div align="right" class="message_time_buyer" *ngIf=" message.msg_sender == 'Buyer'">{{message.msg_time}}
+                </div>
+      
+                <div class="buyer-message">
+                  <div *ngIf="message.msg_photo != null" class="attached-image">
+                    <img src="{{message.msg_photo}}" alt="Attached image" height="100%" width="193px"
+                      style="border-radius: 5px;">
+                  </div>
+                  {{ message.msg_text }}
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div *ngFor="let message of messagesChat">
+            <div [ngClass]="{'flexDone': message.msg_sender != 'Buyer', 'user-message': message.msg_sender == 'Buyer'}">
+             
+             
+
+              <img *ngIf="message.msg_sender != 'Buyer'" src="assets/logo/RectangleExwork.png" alt="" height="20px"
+                align="left">
+
+                <div *ngIf="message.msg_sender != 'Buyer'">
+                  <div [ngClass]="{'message': true, 'bot-message': message.msg_sender != 'Buyer'}">
+                    {{ message.msg_text }}
+                  </div>
+  
+                </div>
+  
+                <div *ngIf="message.msg_sender == 'Buyer'">
+  
+                  <div class="buyer-message">
+  
+                    <div *ngIf="message.imageUrl" class="attached-image">
+                      <img [src]="message.imageUrl" alt="Attached image" height="100%" width="100%"
+                        style="border-radius: 5px;">
+                    </div>
+
+                    {{ message.msg_text }}
+                  </div>
+  
+                </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12" *ngIf="chat_images.length > 0" (click)="removeAttachedImages()" style="
+                    font-size: 14px;
+                    font-family: 'Montserrat';
+                    font-weight: 500;
+                    color: red;
+                    padding: 5px;
+                    cursor: pointer;">
+          <img [src]="showImage" alt="Attached image" height="60px"> Change attached image <i class="bi bi-x-circle"
+            style="font-size: 16px; font-weight: 500; margin-left: 7px"></i>
+        </div>
+
+        <div class="col-12 modalfooter">
+
+          <div class="row p-1 row_input">
+            <div class="col-12">
+              <textarea [(ngModel)]="userInput"  placeholder="Type a message..." rows="2" (input)="cfdfdf()"></textarea>
+              <div class="error_message" style="color: #F54646; font-weight: 500; text-align: left; padding-top: 2px;"
+                *ngIf="userInputValue">
+                Please enter your message.
+              </div>
+            </div>
+
+            <div class="col-12 sendAttach">
+                <input type="file" accept="image/*" id="fileInput" style="display: none"
+                  (change)="handleFileInput($event)" />
+                <label for="fileInput" class="custom-file-upload">
+                  <i class="bi bi-paperclip"></i> <span>Attachment</span>
+                </label>
+
+                <button *ngIf="sendMsgBtn" (click)="sendMessage()">
+                  Send
+                </button>
+  
+                <button  *ngIf="!sendMsgBtn">
+                  <div class="spinner-border" style="color: #1B916D !important; background-color: white;"
+                    role="status"></div>
+                </button>
+
+            </div>
+
+            <div class="col-12 btn_alert">
+              <p>Press enter for send, ‘Cmd+Enter’ to for new line</p>
+          </div>
+
+            <!-- (click)="sendMessage(chat.id)" -->
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-12 mt-4" *ngIf="getAllChatsResponse1.length === 0 && this.status_filter === 'all'"
+      style="display:flex; justify-content: center; align-items: center;">
+      <img src="assets/logo/NoConversationYet!.webp" alt="" srcset="" height="400px">
+    </div>
+  </div>
+
+</div>
+
+<app-ourservices></app-ourservices>
+<app-footer></app-footer>
+
+<div>
+  <div class="loader-container" *ngIf="loadingHoleScreen">
+    <div class="loader"></div>
+    <div class="mt-2">
+      <h4 style="color: white; text-align: center;">Loading
+      </h4>
+    </div>
+  </div>
+</div>

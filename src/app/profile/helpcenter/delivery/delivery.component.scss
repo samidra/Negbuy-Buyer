@@ -1,0 +1,336 @@
+.red-text {
+    p {
+        color: #F54646 !important;
+    }
+}
+
+.sticky-top {
+    top: 70px;
+    position: sticky;
+    z-index: 1 !important;
+}
+
+* {
+    z-index: 0 !important;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.accordion-button {
+    background-color: transparent !important;
+}
+
+.accordion-header {
+    padding: 10px 5px 0px 5px;
+
+    button {
+        p {
+            border: none !important;
+
+        }
+    }
+}
+
+
+::-webkit-scrollbar {
+    height: 8px;
+}
+
+::-moz-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #91919159;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(12 111 81);
+    border-radius: 10px;
+}
+
+$textColor: #f54646;
+$fontSize: 15px;
+$fontSize2: 20px;
+
+input.ng-invalid.ng-touched {
+    border: 1px solid #d70000 !important;
+    /*change color if you want*/
+    color: #d70000 !important;
+}
+
+.activeradio {
+    border: 1px solid rgb(245, 164, 169) !important;
+    box-shadow: 0px 2px 6px 0px #0000001F;
+
+    span {
+        color: #F54646;
+    }
+}
+
+@mixin fontstyle($font-size, $font-weight) {
+    font-style: normal;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: 115.9%;
+    /* or 21px */
+    color: rgba(38, 38, 38, 0.8);
+}
+
+@mixin showdow {
+    // background: #ffffff;
+    box-shadow: 0px 2px 16px 0px #9F989820;
+    border: 2px solid #0000000D;
+}
+
+@mixin selction {
+    border: 1px solid rgba(38, 38, 38, 0.23);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+}
+
+@mixin inputbox {
+    border: 1px solid rgba(216, 216, 216, 0.81);
+    border-radius: 1px;
+}
+
+.activemode {
+    padding-left: 0 !important;
+    margin: 0;
+
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 7px;
+    padding: 10px 5px 10px 5px;
+    padding-bottom: 20px;
+    color: #F54646 !important;
+    border-bottom: 2px solid #F54646 !important;
+    cursor: pointer;
+}
+
+.greeting {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 56px;
+    border: 1px solid #ff4a4a40;
+    box-shadow: 0px 13px 16px 0px #F546460F;
+    background-color: white;
+
+    h3 {
+
+        font-size: 1em;
+        font-weight: 600;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #F54646;
+        height: 100%;
+        margin: 0;
+        padding-left: 10px;
+        cursor: pointer;
+    }
+
+    &-col {
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(81 74 74 / 25%);
+    box-shadow: 0px 3px 6px 0px rgba(167, 163, 163, 0.25);
+    background-color: white;
+
+    h3 {
+        display: flex;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #634040;
+        height: 45px;
+        margin: 0;
+        align-items: center;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    &-col {
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.DeliveryCenterData {
+    padding: 20px 20px 10px 20px;
+    box-shadow: 0px 3px 6px 0px #00000012;
+    border: 1px solid #E3E3E3CF;
+
+    h3 {
+        margin: 0;
+
+        font-size: 1.2em;
+        font-weight: 600;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #262626;
+    }
+
+    p {
+        margin: 0;
+        width: 97%;
+        margin-top: 9px;
+
+        font-size: 0.9em;
+        font-weight: 500;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #262626ED;
+    }
+
+    &-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &-img1 {
+        display: flex;
+
+        ul {
+            margin-top: 10px;
+
+            li {
+                margin-bottom: 3px;
+
+                font-size: 0.9em;
+                font-weight: 700;
+                line-height: 19px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #262626CF;
+            }
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+
+.FAq {
+    @include showdow();
+    height: auto;
+
+    .faq-heading {
+        padding: 2.2%;
+
+    }
+
+    .lifaq {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+    }
+
+    .accordion-header {
+        border-top: 1px solid #57555512;
+
+        button {
+            padding: 5px 12px 0 12px;
+            padding-bottom: 0;
+            border: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 50px;
+
+            p {
+
+                font-size: 1.4em;
+                font-weight: 451;
+                line-height: 19px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #262626;
+            }
+        }
+    }
+
+    .accordion-body {
+        border-top: 1px solid #57555512;
+        padding: 5px 12px 0 12px;
+
+        .accordion-body {
+
+            font-size: 1.4em;
+            font-weight: 451;
+            line-height: 19px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #262626;
+        }
+    }
+
+    li:nth-child(1) {
+        @include fontstyle(20px, 600);
+        color: black;
+    }
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr auto;
+    /* "auto" column will push the button to the right */
+    padding: 10px;
+    /* Optional padding */
+}
+
+@media screen and (max-width:700px) {
+    .DeliveryCenterData {
+        padding: 10px;
+
+        p {
+            width: 100%;
+        }
+
+        .img {
+            margin-top: 20px;
+        }
+
+        &-img1 {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

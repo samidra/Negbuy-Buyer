@@ -1,0 +1,99 @@
+<app-header></app-header>
+<app-subheader></app-subheader>
+<div class="container-fluid p-3">
+
+  <div class="row show_section_zero">
+
+    <div class="col-12">
+      <app-banner></app-banner>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <app-electroni-equipment></app-electroni-equipment>
+    <div class="col-12"  *ngIf="show_section_zero_slide">
+      <app-sec-zero-homepage></app-sec-zero-homepage>
+    </div>
+
+  </div>
+
+  <div class="col-12 conFluid rForm show_section_first " id="requirementForm">
+    <app-requirement-form></app-requirement-form>
+  </div>
+
+  <div class="row show_section_second">
+
+    <div class="col-12 conFluid" *ngIf="show_section_first_slide">
+      <app-sec-one-homepage></app-sec-one-homepage>
+    </div>
+
+  </div>
+
+  <div class="row show_section_third">
+
+    <div class="col-12 conFluid" *ngIf="show_section_second_slide">
+      <app-sec-two-homepage></app-sec-two-homepage>
+    </div>
+
+  </div>
+
+  <div class="col-12 conFluid">
+    <app-search-by-brand></app-search-by-brand>
+  </div>
+
+  <div class="row show_section_forth">
+
+    <div class="col-12 " *ngIf="show_section_third_slide">
+      <app-sec-three-homepage></app-sec-three-homepage>
+    </div>
+
+  </div>
+
+  <div class="row show_section_fifth">
+
+    <div class="col-12" *ngIf="show_section_forth_slide">
+      <app-sec-four-homepage></app-sec-four-homepage>
+    </div>
+
+  </div>
+
+  <div class="row show_section_sixth">
+
+    <div class="col-12" *ngIf="show_section_fifth_slide">
+      <app-sec-five-homepage></app-sec-five-homepage>
+    </div>
+
+  </div>
+
+  <div class="col-12 conFluid">
+    <app-supplier-city></app-supplier-city>
+  </div>
+
+  <div class="row show_section_seventh">
+
+    <div class="col-12 " *ngIf="show_section_sixth_slide">
+      <app-sec-six-homepage></app-sec-six-homepage>
+    </div>
+
+  </div>
+
+  <div class="row ">
+
+    <div class="col-12 conFluid" *ngIf="show_section_seventh_slide">
+      <app-sec-seven-homepage></app-sec-seven-homepage>
+    </div>
+
+  </div>
+
+  <div class="col-12 conFluid">
+    <app-poster-carousel></app-poster-carousel>
+  </div>
+
+  <div class="col-12 conFluid">
+    <app-ourservices></app-ourservices>
+  </div>
+
+
+</div>
+<app-footer></app-footer>

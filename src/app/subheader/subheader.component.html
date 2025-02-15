@@ -1,0 +1,1270 @@
+<div class="container-fluid">
+  
+  <div class="row subheadrow">
+
+    <div class="col-1 subheadcol p-sm-3 BabyCol" (click)="toggleOrderDetails(1)"
+      [ngClass]="{'borderOnClick': selectedOrderIndex === 1, 'noborderOnClick': selectedOrderIndex !== 1}">
+
+      <div class="imgIcon">
+        <img src="../../assets/subheader/baby.jpg" alt="Shop baby and toddler essentials – clothing, toys, and more "
+          srcset="" class="subheadimage" width="70px">
+        <i class="bi bi-chevron-down" style="font-size: 16px;"
+          [ngClass]="{'OpenIconShow': selectedOrderIndex === 1, 'OpenIconHide': selectedOrderIndex !== 1}"></i>
+      </div>
+
+      <div>
+        <p class="heading mt-2">
+          Baby & Toddler
+        </p>
+      </div>
+      <div class="BabyToddlerHovers " [ngClass]="{'isOpen': isOrderDetailsOpen(1)}">
+        <ul class="hovercol ">
+
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Baby & Toddler')" id="dev"> Baby Bathing </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Bathtubs & Bath Seats</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Bathing Shower Visors</a></li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a> Baby Cleaning </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Wipes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Changing Mat & Tray Covers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Changing Mats & Trays</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Diapers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Diaper Kits</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Diaper Liners</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Diaper Organizers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Diaper Pails</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Diaper Pail Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Diaper Rash Treatments</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Diaper Wet Bags</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Baby Health </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Health & Grooming Kits</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Nasal Aspirators</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Pacifier Clips & Holders</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Pacifiers & Teethers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Pacifier Wipes</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Baby Safety </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Safety Locks & Guards</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Monitors</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby & Pet Gate Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby & Pet Gates</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Safety Harnesses & Leashes</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Safety Rails</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Baby & Toddler Clothing</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby One-Pieces</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Bottoms</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Diaper
+              Covers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Dresses</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Outfits</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Outerwear</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Sleepwear</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Socks &
+              Tights</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Swimwear</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Tops</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Baby & Toddler Winterwear</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Toddler Underwear</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a> Baby Toys & Activity Equipment </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Alphabet Toys</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Activity Toys</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Bouncers & Rockers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Jumpers & Swings</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Mobile Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Mobiles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Soothers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Walkers & Entertainers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Play Mats & Gyms</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Play Yards</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Push & Pull Toys</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Rattles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Sorting & Stacking Toys</a></li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Nursing & Feeding </a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Bibs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Burp Cloths</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Bottles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Bottle Nipples & Liners</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby Care Timers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Breast Milk Storage Containers</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Baby & Toddler Food</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Breast Pumps</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Breast Pump Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Bottle Warmers & Sterilizers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Nursing Covers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Nursing Pads & Shields</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Nursing Pillow Covers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Nursing Pillows</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Baby & Toddler')">Sippy Cups</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>School Supplies</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Stationary</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">School Bags</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Lunch Boxes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Water Bottles</a></li>
+
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Baby & Toddler')" style="cursor: pointer;">View
+              All</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- (mouseover)="onHoverIn('pet')" (mouseout)="onHoverOut('pet')" -->
+    <!-- [class.show]="hoveredCategory === 'pet'" -->
+
+    <div class="col-1 subheadcol p-sm-3 PetCol" (click)="toggleOrderDetails(2)"
+      [ngClass]="{'borderOnClick': selectedOrderIndex === 2, 'noborderOnClick': selectedOrderIndex !== 2}">
+      <div class="imgIcon"><img src="../../assets/subheader/petcare.jpg"
+          alt="Pet care products – food, grooming, and accessories for pets" srcset="" class="subheadimage"> <i
+          class="bi bi-chevron-down" style="font-size: 16px;"
+          [ngClass]="{'OpenIconShow': selectedOrderIndex === 2, 'OpenIconHide': selectedOrderIndex !== 2}"></i></div>
+      <div>
+        <p class="heading mt-2">
+          Pet Care
+        </p>
+      </div>
+      <div class="PetCareHovers" [ngClass]="{'isOpen': isOrderDetailsOpen(2)}">
+        <ul class="hovercol ">
+          <li class="hoverHeading"><a> Bird Supplies </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')">Bird Food</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Bird Toys</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Bird Treats </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Birds Cages Accessories </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Bird Cages & Stands </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Bird Gyms & Playstands </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Bird Ladders & Perches </a>
+          </li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Cat Supplies </a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Cat Apparel </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Cat Beds </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Cat Food </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Cat Toys </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Cat Treats</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a> Dog Supplies </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Beds </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Diapers </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Food </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Houses </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Toys </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Treats </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Treadmills </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Diaper Pads & Liners
+            </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Kennels & Runs </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Dog Kennel & Run Accessories
+            </a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a> Fish Supplies </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquariums </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Decor </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Filters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Fish Nets </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Lighting </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Stands </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Cleaning Supplies
+            </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Gravel & Substrates
+            </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Overflow Boxes </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquatic Plant Fertilizers
+            </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium & Pond Tubing </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Temperature
+              Controllers </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Water
+              Treatments</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Aquarium Air Stones &
+              Diffusers </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Fish Feeders </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Fish Food </a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Pet Grooming Supplies </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Wipes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Hair Dryers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Nail Polish</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Nail Tools</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Combs & Brushes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Shampoo &
+              Conditioner</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Fragrances & Deodorizing
+              Sprays</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Hair Clippers &
+              Trimmers</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Pet Training Aids </a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Traning Pads</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Traning Pad Holders</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Traning Sprays &
+              Solutions</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Pet Traning Clickers & Treat
+              Dispensers</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a>Reptile & Amphibian Supplies </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Reptile & Amphibian Food</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Reptile & Amphibian
+              Habitats</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Reptile & Amphibian
+              Substrates</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Reptile & Amphibian Habitat
+              Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')"> Reptile & Amphibian Habitat
+              Heating & Lighting</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Small Animal Supplies</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')">Small Animal Bedding</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')">Small Animal Food</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')">Small Animal Treats</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')">Small Animal Habitat
+              Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')">Small Animal Habitats &
+              Cages</a></li>
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Animals & Pet Supplies')">View All</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-1 subheadcol p-sm-3 ElectricalCol" (click)="toggleOrderDetails(3)"
+      [ngClass]="{'borderOnClick': selectedOrderIndex === 3, 'noborderOnClick': selectedOrderIndex !== 3}">
+
+      <div class="imgIcon">
+        <img src="../../assets/subheader/electronic.jpg"
+          alt="Latest electronic goods – gadgets, home appliances, and accessories" srcset="" class="subheadimage">
+        <i class="bi bi-chevron-down" style="font-size: 16px;"
+          [ngClass]="{'OpenIconShow': selectedOrderIndex === 3, 'OpenIconHide': selectedOrderIndex !== 3}"></i>
+      </div>
+      <div>
+        <p class="heading mt-2">
+          Electronic Goods
+        </p>
+      </div>
+      <div class="ElectronicHovers" [ngClass]="{'isOpen': isOrderDetailsOpen(3)}">
+        <ul class="hovercol">
+          <li class="hoverHeading"><a> Arcade Equipment </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Pinball Machines</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Pinball Machines</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Skee-Ball Machines</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Basketball Arcade Games</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Pinball Machine Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Video Game Arcade Cabinets</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Video Game Arcade Cabinet Accessories</a>
+          </li>
+          <li class="hoverText">
+
+            <div class="hr"></div>
+
+          </li>
+
+          <li class="hoverHeading"><a> Audio Accessories </a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Audio Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Microphone Stands</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Speaker Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Speaker Accessories</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Speaker Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Turntable Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">MP3 Player Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">MP3 Player Accessories </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">MP3 Player Accessories </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Microphone Accessories </a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Karaoke System Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Satellite Radio Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Headphone & Headset Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Audio & Video Receiver Accessories</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Audio Components</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Microphones</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Direct Boxes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Audio Mixers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Channel Strips</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Audio Amplifiers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Signal Processors</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Audio Transmitters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Headphones & Headsets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Audio & Video Receivers</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a> Audio Players & Recorders </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Radios </a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Jukeboxes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Boomboxes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">MP3 Players</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Stereo Systems</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Voice Recorders</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Karaoke Systems</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Multitrack Recorders</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Home Theater Systems</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">CD Players & Recorders</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Turntables & Record Players</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Cassette Players & Recorders</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">MiniDisc Players & Recorders</a>
+          </li>
+          <li>
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a>Circuit Boards & Components </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Semiconductors</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Electronic Filters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Circuit Prototyping</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Printed Circuit Boards</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Circuit Board Accessories</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Passive Circuit Components</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Circuit Decoders & Encoders</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a>Communications</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Pagers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Telephone</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Intercoms</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Caller IDs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Video Conferencing</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Answering Machines</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Communication Radios</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Intercom Accessories</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Communication Radio Accessories</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading">
+            <a>Components</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Splitters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Converters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Modulators</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Accelerometers</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Electronics')">Electronics Component Connectors</a>
+          </li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Computers</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Laptops</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Smart Glasses</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Computer Servers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Handheld Devices</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Tablet Computers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Desktop Computers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Barebone Computers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Interactive Kiosks</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Thin & Zero Clients</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Electronics')">Touch Table Computers</a></li>
+
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Electronics')" style="cursor: pointer;">View All</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-1 subheadcol p-sm-3 MechanicalCol" (click)="toggleOrderDetails(4)"
+      [ngClass]="{'borderOnClick': selectedOrderIndex === 4, 'noborderOnClick': selectedOrderIndex !== 4}">
+      <div class="imgIcon"><img src="../../assets/subheader/mechanical.jpg"
+          alt="Mechanical goods – tools, machinery, and industrial supplies " srcset="" class="subheadimage">
+        <i class="bi bi-chevron-down" style="font-size: 16px;"
+          [ngClass]="{'OpenIconShow': selectedOrderIndex === 4, 'OpenIconHide': selectedOrderIndex !== 4}"></i>
+      </div>
+      <div>
+        <p class="heading mt-2" style="font-size: 0.68em !important ;">
+          Mechanical Goods
+        </p>
+      </div>
+      <div class="MechanicalHovers" [ngClass]="{'isOpen': isOrderDetailsOpen(4)}">
+        <ul class="hovercol ">
+          <li class="hoverHeading"><a>Hardware Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Twine</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Chains</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Casters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Pull Chains</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Bungee Cords</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Utility Wire</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Tie Down Straps</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Chain Wire & Rope</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Ropes & Hardware Cable</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Business & Industrial')">Hardware Accessories</a>
+          </li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Direct Boxes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Nails</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Rivets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Screws</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Washers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Screw Posts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Nuts & Bolts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Threaded Rods</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Drywall Anchors</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Heating, Ventilation & Air Conditioning </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Air Ducts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Locks & Keys</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">HVAC Controls</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Vents & Flues</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Air & Filter Dryers</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Business & Industrial')">Tool Accessories </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Jigs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Tool Blades</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Tool Sockets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Axe Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Saw Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Driver Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Hammer Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Router Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Shaper Accessories</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Tool Handle Wedges</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Cutter Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Grinder Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Mixing Tool Paddles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Power Tool Chargers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Tool Safety Tethers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Welding Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Power Tool Batteries</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Industrial Staples</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Flashlight Accessories</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Paint Tool Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Soldering Iron Accessories</a>
+          </li>
+
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Magnetizers & Demagnetizers</a>
+          </li>
+
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Abrasive Blaster Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Mattock & Pickaxe Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Drill & Screwdriver Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Measuring Tool & Sensor Accessories</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Business & Industrial')">Plumbing </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Water Timers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Well Supplies</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Plumbing Pipes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Water Levelers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Plumbing Fixtures</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Plumbing Repair Kits</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Plumbing Fittings & Supports</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Plumbing Hoses & Supply Lines</a>
+          </li>
+
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Water Dispensing & Filtration</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Plumbing Fixture Hardware & Parts</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Work Safety Protective Gear </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Hardhats</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Safety Gloves</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Bullet Proof Vests</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Welding Helmets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Protective Masks</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Safety Knee Pads</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Protective Aprons</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Protective Eyewear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Work Safety Tethers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Work Safety Harnesses</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Business & Industrial')">Hazardous Material Suits</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Business & Industrial')">Gas Mask & Respirator Accessories</a>
+          </li>
+
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Business & Industrial')">View All</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="col-1 subheadcol p-sm-3 FabricCol toHide" (click)="toggleOrderDetails(5)"
+      [ngClass]="{'borderOnClick': selectedOrderIndex === 5, 'noborderOnClick': selectedOrderIndex !== 5}">
+      <div class="imgIcon"><img src="../../assets/subheader/fabric.jpg"
+          alt="Trendy apparel and accessories – clothing, footwear, and fashion " srcset="" class="subheadimage">
+        <i class="bi bi-chevron-down" style="font-size: 16px;"
+          [ngClass]="{'OpenIconShow': selectedOrderIndex === 5, 'OpenIconHide': selectedOrderIndex !== 5}"></i>
+      </div>
+      <div>
+        <p class="heading mt-2">
+          Apparel & Accessories
+        </p>
+      </div>
+      <div class="FabricHovers" [ngClass]="{'isOpen': isOrderDetailsOpen(5)}">
+        <ul class="hovercol ">
+          <li class="hoverHeading"><a>Activewear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">American Football Pants</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Bicycle Activewear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Boxing Shorts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Dance Dresses Skirts &
+              Costumes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Hunting Clothing</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Martial Arts Shorts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Motorcycle Protective
+              Clothing</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Paintball Clothing</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Clothing Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Button Studs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Collar Stays</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Cufflinks</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Eafmuffs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Gloves & Mittens</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Hand Muffs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Hanfkerchiefs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Headwear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Men Clothing Accessories</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Men Hair Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Sunglasses</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Ties</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Women Clothing Accessories</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Women Hair Accessories</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading">
+            <a>Handbag, Wallet & Cases</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Backpacks</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Badge & Pass Holders</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Briefcases</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Business Card Cases</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Handbags & Wallets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Money Clips</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Office Bags</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Jewelry</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Anklets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Body Jewelry</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Bracelets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Brooches & Lapel Pins</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Charms & Pendants</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Earrings</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Jewelry Sets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Necklaces</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Rings</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Watches</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Watch Accessories</a></li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Mens Clothing</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Bottom Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Ethnic Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Footwear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Footwear Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Innerwear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Outerwear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Sleepwear & Loungewear </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Suits</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Swim Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Top Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Wedding Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Winter Wear</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Traditional Clothing </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Dirndls</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Hakama Trousers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Japanese Black Formal Wear</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Kimonos</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Kimono Outerwear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Religious Ceremonial
+              Clothing</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Saris & Lehengas</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Traditional Leather Pants</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Yukata</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Uniforms</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Contractor Pants &
+              Coveralls</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Flight Suits</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Food Service Uniforms</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Military Uniforms</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">School Uniforms</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Sports Uniforms</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Security Uniforms</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">White Coats</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Womens Clothing</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Bottom Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Dresses</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Ethnic Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Footwear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Footwear Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Innerwear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Maternity Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Outerwear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Skirts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Sleepwear & Loungewear </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Suits</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Swim Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Top Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Wedding Wear</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Winter Wear</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Costume & Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Costume</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Costume Shoes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Costume Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Apparel & Accessories')">Masks</a></li>
+
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Apparel & Accessories')">View All</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-1 subheadcol p-sm-3 AutomobileCol toHide" (click)="toggleOrderDetails(6)"
+      [ngClass]="{'borderOnClick': selectedOrderIndex === 6, 'noborderOnClick': selectedOrderIndex !== 6}">
+      <div class="imgIcon"> <img src="../../assets/subheader/automobile.jpg"
+          alt="Automobile parts and accessories – car, bike, and vehicle components " srcset="" class="subheadimage"
+          width="60px">
+        <i class="bi bi-chevron-down" style="font-size: 16px;"
+          [ngClass]="{'OpenIconShow': selectedOrderIndex === 6, 'OpenIconHide': selectedOrderIndex !== 6}"></i>
+      </div>
+      <div>
+        <p class="heading mt-2">
+          Automobile
+        </p>
+      </div>
+      <div class="AutomobileHovers" [ngClass]="{'isOpen': isOrderDetailsOpen(6)}">
+        <ul class="hovercol ">
+          <li class="hoverHeading"><a>Motor Vehicle</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Speakers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Amplifiers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Subwoofers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Speakerphones</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Parking Cameras</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Cassette Players</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Cassette Adapters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Video Monitor Mounts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Equalizers & Crossovers</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Motor Vehicle Parts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')"> Vehicle Power</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')"> Vehicle Towing</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')"> Vehicle Engines</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')"> Vehicle Exhaust</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Mirrors</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Seating</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Controls</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Lighting</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Braking</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Engine Parts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Fuel Systems</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Transmission</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Window Parts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Wheel Systems</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Climate Control</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Sensors & Gauges</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Suspension Parts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Interior Fittings</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Frame & Body Parts</a></li>
+          <li class="hoverText"> <a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Carpet & Upholstery</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Engine Oil Circulation</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a>Vehicle Maintenance Decor</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Decor</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Paint</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Covers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Fluids</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Cleaning</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Portable Fuel Cans</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Repair & Specialty
+              Tools</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a>Vehicle Safety & Security </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Alarms & Locks</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Safety Equipment</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">Motorcycle Protective Gear</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">All-Terrain Vehicle Protective Gear</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading">
+            <a>Vehicle Storage & Cargo </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Organizers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Motor Vehicle Trailers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Motor Vehicle Cargo Nets</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">Motorcycle Bags & Panniers</a>
+          </li>
+
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">Motor Vehicle Loading Ramps</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Headrest Hangers & Hooks</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">Truck Bed Storage Boxes & Organizers</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">Motor Vehicle Carrying Rack Accessories</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Watercraft Parts </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Docking & Anchoring</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Sailboat Parts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Watercraft Care</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Watercraft Lighting</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Watercraft Engine Parts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Watercraft Fuel Systems</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Watercraft Exhaust Parts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Watercraft Steering Parts</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">Watercraft Engines & Motors</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Motor Vehicles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Golf Carts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Snowmobiles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Cars Trucks </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Recreational Vehicles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Motorcycles & Scooters</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Vehicles & Parts')">Off-Road and All-Terrain Vehicles</a>
+          </li>
+
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Vehicles & Parts')">View All</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-1 subheadcol p-sm-3 HealthCareCol" (click)="toggleOrderDetails(7)"
+      [ngClass]="{'borderOnClick': selectedOrderIndex === 7, 'noborderOnClick': selectedOrderIndex !== 7}">
+      <div class="imgIcon"><img src="../../assets/subheader/Healthcare.jpg"
+          alt="Healthcare products – medical supplies, wellness, and fitness " srcset="" class="subheadimage">
+        <i class="bi bi-chevron-down" style="font-size: 16px;"
+          [ngClass]="{'OpenIconShow': selectedOrderIndex === 7, 'OpenIconHide': selectedOrderIndex !== 7}"></i>
+      </div>
+      <div>
+        <p class="heading mt-2">
+          Healthcare
+        </p>
+      </div>
+      <div class="HealthCareHovers" [ngClass]="{'isOpen': isOrderDetailsOpen(7)}">
+        <ul class="hovercol ">
+          <li class="hoverHeading"><a>Biometric Monitor </a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Health & Beauty')">Activity Monitor Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Health & Beauty')">Blood Glucose Meter Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Health & Beauty')">Blood Pressure Monitor Accessories</a>
+          </li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Biometric Monitors</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Breathalyzers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Pulse Oximeters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Activity Monitors</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Body Fat Analyzers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Body Weight Scales</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Fertility Monitors</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Blood Glucose Meters</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Medical Thermometers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Cholesterol Analyzers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Blood Pressure Monitors</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Prenatal Heart Rate Monitors</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>First Aid</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">First Aid Kits</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Eye Wash Supplies</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Hot & Cold Therapies</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Medical Tape & Bandages</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Cast & Bandage Protectors</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Health & Beauty')">Antiseptics & Cleaning Supplies</a>
+          </li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Fitness & Nutrition </a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Nutrition Bars</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Nutrition Gels & Chews</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Vitamins & Supplements</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Nutritional Food PurÃ©es</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Tube Feeding Supplements</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Nutrition Drinks & Shakes</a></li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Health & Beauty')"> Medical Tests </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">HIV Tests</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Drug Tests</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Pregnancy Tests</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Allergy Test Kits</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Blood Typing Test Kits</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Health & Beauty')">Urinary Tract Infection Tests</a>
+          </li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a> Mobility & Accessibility </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Makeup</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Walking Aids</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Back Care</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Nail Care</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Skin Care</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Bath & Body</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Cosmetic Sets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Cosmetic Tool</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Perfume & Cologne</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Accessibility Equipment</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Accessibility Furniture</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Walking Aid Accessories</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Health & Beauty')">Accessibility Equipment Accessories</a>
+          </li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Massage & Relaxation </a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Massagers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Eye Pillows</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Massage Oil</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Massage Chairs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Massage Stones</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Massage Tables</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Back Scratchers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Massage Stone Warmers</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a> Oral Care </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Breath Spray</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Dentures</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Mouthwash</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Toothpaste</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Toothpicks</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Dental Floss</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Toothbrushes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Power Flossers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Teeth Whiteners</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Tongue Scrapers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Denture Cleaners</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Dental Water Jets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Denture Adhesives</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Dental Mouthguards</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Denture Repair Kits</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Toothbrush Accessories</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Health & Beauty')">Orthodontic Appliance Cases</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Health & Beauty')">Dental Water Jet Replacement Tips</a>
+          </li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a> Vision Care </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Eyeglasses</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Contact Lens Care</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Contact Lenses</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Eyeglass Lenses</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Sunglass Lenses</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Eyewear Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Eye Drops & Lubricants</a></li>
+          <li class="hoverHeading"><a (click)="RouteToCategoryPage('Health & Beauty')">View All</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-1 subheadcol p-sm-3 AllcategoriesCol" (click)="toggleOrderDetails(8)"
+      [ngClass]="{'borderOnClick': selectedOrderIndex === 8, 'noborderOnClick': selectedOrderIndex !== 8}">
+      <div class="imgIcon">
+        <img src="../../assets/subheader/all.jpg" alt="Explore all categories – a wide range of products " srcset=""
+          class="subheadimage">
+        <i class="bi bi-chevron-down" style="font-size: 16px;"
+          [ngClass]="{'OpenIconShow': selectedOrderIndex === 8, 'OpenIconHide': selectedOrderIndex !== 8}"></i>
+      </div>
+      <div>
+        <p class="heading mt-2">
+          All Categories
+        </p>
+      </div>
+
+      <div class="AllcategoriesHovers " [ngClass]="{'isOpen': isOrderDetailsOpen(8)}">
+        <ul class="hovercol ">
+          <li class="hoverHeading"><a>Arts & Entertainment</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Arts & Entertainment')">Arts & Crafts</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Arts & Entertainment')">Party Supplies</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Arts & Entertainment')">Craft Organization</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Arts & Entertainment')">Musical Instruments</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Arts & Entertainment')">Art & Crafting Tools</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Arts & Entertainment')">Art & Crafting Tool Accessories</a>
+          </li>
+          <li>
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Vehicles & Parts </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Motor Vehicle</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Motor Vehicles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Storage & Cargo</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Maintenance Decor</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Vehicles & Parts')">Vehicle Safety & Security</a></li>
+
+          <li>
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Sporting Goods </a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Sporting Goods')">Athletics</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Sporting Goods')">Indoor Games</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Sporting Goods')">Exercise & Fitness</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Sporting Goods')">Outdoor Recreation</a></li>
+
+          <li>
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading">
+            <a> Food & Beverages </a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Food & Beverages')">Beverages</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Food & Beverages')">Food Items</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Food & Beverages')">Dipps & Spreads</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Food & Beverages')">Dry Fruits & Vegetables</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Food & Beverages')">Grain, Rice, Cereal</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Food & Beverages')">Nuts & Seeds</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Food & Beverages')">Seasoniings & Spices</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Food & Beverages')">Snacks Foods</a></li>
+          <li>
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Home & Garden </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Decor</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Lighting</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Lawn & Garden</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Bathroom Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Kitchen & Dining</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Linens & Bedding</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Household Supplies</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Emergency Preparedness</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Home & Garden')">Business & Home Security</a></li>
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Camera & Optics </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Cameras & Optics')">Optics</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Cameras & Optics')">Cameras</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Cameras & Optics')">Optic Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Cameras & Optics')">Camera Lens Accessories</a></li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Cameras & Optics')">Camera Parts & Accessories</a>
+          </li>
+          <li class="hoverText">
+            <a (click)="RouteToCategoryPage('Cameras & Optics')">Tripod & Monopod Accessories</a>
+          </li>
+          <li>
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Hardware </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Tools</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Plumbing</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Hardware Pumps</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Building Consumables</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Tool Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Building Materials</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Fencing & Barriers</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Power & Electrical</a></li>
+
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Hardware')">Hardware Accessories</a></li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Health & Beauty </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Cosmetics</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Health Care</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Personal Care</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Health & Beauty')">Jewelry Cleaning & Care</a></li>
+          <li>
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Furniture </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Chairs</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Tables</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Shelving</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Baby Furniture</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Furniture Sets</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Office Furniture</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Outdoor Furniture</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Beds & Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Furniture')">Cabinets & Storage</a></li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Toys & Games </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Toys & Games')">Games</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Toys & Games')">Toys</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Toys & Games')">Puzzles</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Toys & Games')">Outdoor Play Equipment</a></li>
+          <li>
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a>Luggage & Bags </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Luggage & Bags')">Backpacks</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Luggage & Bags')">Suitcases</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Luggage & Bags')">Messenger Bags</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Luggage & Bags')">Shopping Totes</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Luggage & Bags')">Luggage Accessories</a></li>
+
+          <li class="hoverText">
+            <div class="hr"></div>
+          </li>
+          <li class="hoverHeading"><a>Religious & Ceremonial </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Religious & Ceremonial')">Puja Essentials</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Religious & Ceremonial')">Idols and Statues</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Religious & Ceremonial')">Spiritual Jewelry</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Religious & Ceremonial')">Festive Decorations</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Religious & Ceremonial')">Religious Books and CDs</a>
+          </li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Religious & Ceremonial')">Incense and Fragrances</a>
+          </li>
+
+          <li>
+            <div class="hr"></div>
+          </li>
+
+          <li class="hoverHeading"><a> Office Supplies </a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Office Supplies')">Book Accessories</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Office Supplies')">Paper Handling</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Office Supplies')">General Office Supplies</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Office Supplies')">Name Plates</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Office Supplies')">Office & Chair Mats</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Office Supplies')">Office Equipment</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Office Supplies')">Presentation Supplies</a></li>
+          <li class="hoverText"><a (click)="RouteToCategoryPage('Office Supplies')">Shipping Supplies</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

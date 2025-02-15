@@ -1,0 +1,825 @@
+<app-mainheader></app-mainheader>
+<app-subheader></app-subheader>
+<div class="container-fluid">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <div class="row">
+      <div class="col-12 mb-3 filter-head">
+        <p>Filters</p>
+      </div>
+
+      <div class="col-12 filter-subhead_rating">
+        <p>Costumer Reviews</p>
+        <ul>
+
+          <li class="filter-BrandPrice" [ngClass]="FilterByRating ==5?'activeradioli':''">
+
+            <p (click)="FilteRating(5)" (click)="FilterProductArray()"> <i class="bi bi-star-fill"></i> <i
+                class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                class="bi bi-star-fill"></i> <span class="abve">&nbsp; & ABOVE</span>
+            </p>
+            <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==5?'crossActive':''"
+              class="bi bi-x-circle cross"></i>
+          </li>
+
+          <li class="filter-BrandPrice" [ngClass]="FilterByRating ==4?'activeradioli':''">
+
+            <p (click)="FilteRating(4)" (click)="FilterProductArray()"> <i class="bi bi-star-fill"></i> <i
+                class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                class="bi bi-star-fill forcolor"></i> <span class="abve">&nbsp; & ABOVE</span>
+            </p>
+            <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==4?'crossActive':''"
+              class="bi bi-x-circle cross"></i>
+          </li>
+
+          <li class="filter-BrandPrice" [ngClass]="FilterByRating ==3?'activeradioli':''">
+
+            <p (click)="FilteRating(3)" (click)="FilterProductArray()"><i class="bi bi-star-fill"></i> <i
+                class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill forcolor"></i>
+              <i class="bi bi-star-fill forcolor"> </i> <span class="abve">&nbsp; & ABOVE</span>
+            </p>
+            <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==3?'crossActive':''"
+              class="bi bi-x-circle cross"></i>
+          </li>
+
+          <li class="filter-BrandPrice" [ngClass]="FilterByRating ==2?'activeradioli':''">
+
+            <p (click)="FilteRating(2)" (click)="FilterProductArray()"><i class="bi bi-star-fill"></i> <i
+                class="bi bi-star-fill"></i> <i class="bi bi-star-fill forcolor"></i>
+              <i class="bi bi-star-fill forcolor"></i> <i class="bi bi-star-fill forcolor"></i> <span
+                class="abve">&nbsp; & ABOVE</span>
+            </p>
+            <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==2?'crossActive':''"
+              class="bi bi-x-circle cross"></i>
+          </li>
+
+          <li class="filter-BrandPrice" [ngClass]="FilterByRating ==1?'activeradioli':''">
+
+            <p (click)="FilteRating(1)" (click)="FilterProductArray()"> <i class="bi bi-star-fill"></i> <i
+                class="bi bi-star-fill forcolor"></i> <i class="bi bi-star-fill forcolor"></i> <i
+                class="bi bi-star-fill forcolor"></i> <i class="bi bi-star-fill forcolor"></i> <span class="abve">&nbsp;
+                & ABOVE</span>
+            </p>
+            <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==1?'crossActive':''"
+              class="bi bi-x-circle cross"></i>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="col-12 filter-subhead_rating">
+        <p>Brands</p>
+        <ul>
+          <li *ngFor="let BrandName of BrandNameShow" class="filter-BrandPrice"
+            [class.activeradioli]="FilterByBrand === BrandName">
+            <p class="nameBrand" (click)="FilterByBrand = BrandName" (click)="FilterProductArray()">{{ BrandName }}
+            </p>
+            <i (click)="removeBrandFilter()" [class.crossActive]="FilterByBrand === BrandName"
+              class="bi bi-x-circle cross"></i>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="col-12 filter-subhead_rating">
+        <p>Price</p>
+        <ul>
+
+          <li class="filter-BrandPrice" [ngClass]="selectedPrice ==1?'activeradioli':''">
+            <p (click)="FilteBetweenPriceMaxMin(1)" (click)="FilterProductArray()">Under 10000</p>
+            <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+              [ngClass]="selectedPrice ==1?'crossActive':''"></i>
+          </li>
+
+          <li class="filter-BrandPrice" [ngClass]="selectedPrice ==2?'activeradioli':''">
+            <p (click)="FilteBetweenPriceMaxMin(2)" (click)="FilterProductArray()">From 10000-20000</p>
+            <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+              [ngClass]="selectedPrice ==2?'crossActive':''"></i>
+          </li>
+
+          <li class="filter-BrandPrice" [ngClass]="selectedPrice ==3?'activeradioli':''">
+            <p (click)="FilteBetweenPriceMaxMin(3)" (click)="FilterProductArray()">From 20000-30000</p>
+            <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+              [ngClass]="selectedPrice ==3?'crossActive':''"></i>
+          </li>
+
+          <li class="filter-BrandPrice" [ngClass]="selectedPrice ==4?'activeradioli':''">
+            <p (click)="FilteBetweenPriceMaxMin(4)" (click)="FilterProductArray()">From 30000-40000</p>
+            <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+              [ngClass]="selectedPrice ==4?'crossActive':''"></i>
+          </li>
+
+          <li class="filter-BrandPrice" [ngClass]="selectedPrice ==5?'activeradioli':''">
+            <p (click)="FilteBetweenPriceMaxMin(5)" (click)="FilterProductArray()">From 40000-500000</p>
+            <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+              [ngClass]="selectedPrice ==5?'crossActive':''"></i>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="col-12 filter-subhead_rating">
+        <p>Colour</p>
+        <ul>
+
+          <li *ngFor="let color of colorData" class="filter-BrandPrice"
+            [class.activeradioli]="FilterByColor === color.colourName">
+            <p class="nameBrand" (click)="FilterByColor = color.colourName" (click)="FilterProductArray()">{{
+              color.colourName
+              }}
+            </p>
+            <div class="clrbox border" [style.backgroundColor]="color.colorCode"></div>
+            <i (click)="removeColorFilter()" [class.crossActive]="FilterByColor === color.colourName"
+              class="bi bi-x-circle cross"></i>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div style="display: flex; justify-content: space-between;">
+    <p class="p-2 mt-3 pb-2 sidehead">{{this.Productscategory}} / <span>{{this.Productscategory}} </span> <span
+        *ngIf="search_query !=null" style="text-transform: capitalize">: "{{this.search_query}}"</span></p>
+    <button class="filterHide" (click)="openNav()"> Filter &#9776;</button>
+  </div>
+
+  <div class="row mt-2 pe-sm-3">
+
+    <div class="col-md-2 col-4 border pt-1 slidemenu">
+
+      <!-- <div class="row px-2">
+        <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(0)"
+          [ngClass]="activeCategory ==0?'activeradio':''">
+          <p>Audio Components</p>
+        </div>
+        <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(1)"
+          [ngClass]="activeCategory ==1?'activeradio':''">
+          <p>Audio Components</p>
+        </div>
+        <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(2)"
+          [ngClass]="activeCategory ==2?'activeradio':''">
+          <p>Audio Components</p>
+        </div>
+        <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(3)"
+          [ngClass]="activeCategory ==3?'activeradio':''">
+          <p>Audio Components</p>
+        </div>
+        <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(4)"
+          [ngClass]="activeCategory ==4?'activeradio':''">
+          <p>Audio Components</p>
+        </div>
+        <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(5)"
+          [ngClass]="activeCategory ==5?'activeradio':''">
+          <p>Audio Components</p>
+        </div>
+        <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(6)"
+          [ngClass]="activeCategory ==6?'activeradio':''">
+          <p>Audio Components</p>
+        </div>
+
+        <div class="col-12 mb-3 sideboxHeadbtn" (click)="toggleDiv()" *ngIf="!showDiv"> ------------- &nbsp;<p> Show
+            more </p>&nbsp; ----------------</div>
+        <div *ngIf="showDiv" class="extra-div">
+          <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(7)"
+            [ngClass]="activeCategory ==7? 'activeradio':''">
+            <p>Audio Components</p>
+          </div>
+          <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(8)"
+            [ngClass]="activeCategory ==8? 'activeradio':''">
+            <p>Audio Components</p>
+          </div>
+          <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(9)"
+            [ngClass]="activeCategory ==9? 'activeradio':''">
+            <p>Audio Components</p>
+          </div>
+          <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(10)"
+            [ngClass]="activeCategory ==10?'activeradio':''">
+            <p>Audio Components</p>
+          </div>
+          <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(11)"
+            [ngClass]="activeCategory ==11?'activeradio':''">
+            <p>Audio Components</p>
+          </div>
+          <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(12)"
+            [ngClass]="activeCategory ==12?'activeradio':''">
+            <p>Audio Components</p>
+          </div>
+          <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(13)"
+            [ngClass]="activeCategory ==13?'activeradio':''">
+            <p>Audio Components</p>
+          </div>
+          <div class="col-12 mb-3 sideboxHead" (click)="toggleCategory(14)"
+            [ngClass]="activeCategory ==14?'activeradio':''">
+            <p>Audio Components</p>
+          </div>
+
+          <div class="col-12 mb-3 sideboxHeadbtn" (click)="toggleDiv()" *ngIf="showDiv"> ------------- &nbsp;<p> Show
+              less </p>&nbsp; ------------------</div>
+        </div>
+      </div> -->
+
+      <div class="row">
+        <div class="col-12 mb-3 filter-head">
+          <p>Filters</p>
+        </div>
+
+        <div class="col-12 filter-subhead_rating">
+          <p>Costumer Reviews</p>
+          <ul>
+
+            <li class="filter-BrandPrice" [ngClass]="FilterByRating ==5?'activeradioli':''">
+
+              <p (click)="FilteRating(5)" (click)="FilterProductArray()"> <i class="bi bi-star-fill"></i> <i
+                  class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                  class="bi bi-star-fill"></i> <span class="abve">&nbsp; & ABOVE</span>
+              </p>
+              <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==5?'crossActive':''"
+                class="bi bi-x-circle cross"></i>
+            </li>
+
+            <li class="filter-BrandPrice" [ngClass]="FilterByRating ==4?'activeradioli':''">
+
+              <p (click)="FilteRating(4)" (click)="FilterProductArray()"> <i class="bi bi-star-fill"></i> <i
+                  class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                  class="bi bi-star-fill forcolor"></i> <span class="abve">&nbsp; & ABOVE</span>
+              </p>
+              <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==4?'crossActive':''"
+                class="bi bi-x-circle cross"></i>
+            </li>
+
+            <li class="filter-BrandPrice" [ngClass]="FilterByRating ==3?'activeradioli':''">
+
+              <p (click)="FilteRating(3)" (click)="FilterProductArray()"><i class="bi bi-star-fill"></i> <i
+                  class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill forcolor"></i>
+                <i class="bi bi-star-fill forcolor"> </i> <span class="abve">&nbsp; & ABOVE</span>
+              </p>
+              <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==3?'crossActive':''"
+                class="bi bi-x-circle cross"></i>
+            </li>
+
+            <li class="filter-BrandPrice" [ngClass]="FilterByRating ==2?'activeradioli':''">
+
+              <p (click)="FilteRating(2)" (click)="FilterProductArray()"><i class="bi bi-star-fill"></i> <i
+                  class="bi bi-star-fill"></i> <i class="bi bi-star-fill forcolor"></i>
+                <i class="bi bi-star-fill forcolor"></i> <i class="bi bi-star-fill forcolor"></i> <span
+                  class="abve">&nbsp; & ABOVE</span>
+              </p>
+              <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==2?'crossActive':''"
+                class="bi bi-x-circle cross"></i>
+            </li>
+
+            <li class="filter-BrandPrice" [ngClass]="FilterByRating ==1?'activeradioli':''">
+
+              <p (click)="FilteRating(1)" (click)="FilterProductArray()"> <i class="bi bi-star-fill"></i> <i
+                  class="bi bi-star-fill forcolor"></i> <i class="bi bi-star-fill forcolor"></i> <i
+                  class="bi bi-star-fill forcolor"></i> <i class="bi bi-star-fill forcolor"></i> <span
+                  class="abve">&nbsp; & ABOVE</span>
+              </p>
+              <i (click)="removeRatingFilter()" [ngClass]="FilterByRating ==1?'crossActive':''"
+                class="bi bi-x-circle cross"></i>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="col-12 filter-subhead_rating">
+          <p>Price</p>
+          <ul>
+
+            <li class="filter-BrandPrice" [ngClass]="selectedPrice ==1?'activeradioli':''">
+              <p (click)="FilteBetweenPriceMaxMin(1)" (click)="FilterProductArray()">Under 10000</p>
+              <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+                [ngClass]="selectedPrice ==1?'crossActive':''"></i>
+            </li>
+
+            <li class="filter-BrandPrice" [ngClass]="selectedPrice ==2?'activeradioli':''">
+              <p (click)="FilteBetweenPriceMaxMin(2)" (click)="FilterProductArray()">From 10000-20000</p>
+              <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+                [ngClass]="selectedPrice ==2?'crossActive':''"></i>
+            </li>
+
+            <li class="filter-BrandPrice" [ngClass]="selectedPrice ==3?'activeradioli':''">
+              <p (click)="FilteBetweenPriceMaxMin(3)" (click)="FilterProductArray()">From 20000-30000</p>
+              <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+                [ngClass]="selectedPrice ==3?'crossActive':''"></i>
+            </li>
+
+            <li class="filter-BrandPrice" [ngClass]="selectedPrice ==4?'activeradioli':''">
+              <p (click)="FilteBetweenPriceMaxMin(4)" (click)="FilterProductArray()">From 30000-40000</p>
+              <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+                [ngClass]="selectedPrice ==4?'crossActive':''"></i>
+            </li>
+
+            <li class="filter-BrandPrice" [ngClass]="selectedPrice ==5?'activeradioli':''">
+              <p (click)="FilteBetweenPriceMaxMin(5)" (click)="FilterProductArray()">From 40000-500000</p>
+              <i (click)="removePriceFilter()" class="bi bi-x-circle cross"
+                [ngClass]="selectedPrice ==5?'crossActive':''"></i>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="col-12 filter-subhead_rating" *ngIf="!loaderFilter">
+          <p>Brands</p>
+
+
+          <div class="ourTeamRow" [ngClass]="{'open': isOrderDetailsOpen('item2')}">
+            <ul>
+              <li *ngFor="let BrandName of BrandNameShow" class="filter-BrandPrice"
+                [class.activeradioli]="FilterByBrand === BrandName">
+                <p class="nameBrand" (click)="FilterByBrand = BrandName" (click)="FilterProductArray()">{{ BrandName }}
+                </p>
+                <i (click)="removeBrandFilter()" [class.crossActive]="FilterByBrand === BrandName"
+                  class="bi bi-x-circle cross"></i>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="row LoadMore">
+            <button class="LoadMore-btn" (click)="toggleOrderDetails('item2')">
+              <span [ngClass]="{'more': !isOrderDetailsOpen('item2'), 'less': isOrderDetailsOpen('item2')}">See More<i
+                  class="bi bi-chevron-down"></i> </span>
+              <span [ngClass]="{'more':  isOrderDetailsOpen('item2'),  'less': !isOrderDetailsOpen('item2')}">See Less<i
+                  class="bi bi-chevron-up"></i> </span>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="col-12 filter-subhead_rating" *ngIf="!loaderFilter">
+
+          <p>Colour</p>
+
+          <div class="ourTeamRow" [ngClass]="{'open': isOrderDetailsOpen('item1')}">
+            <ul>
+
+              <li *ngFor="let color of colorData" class="filter-BrandPrice"
+                [class.activeradioli]="FilterByColor === color.colourName">
+                <p class="nameBrand" (click)="FilterByColor = color.colourName" (click)="FilterProductArray()">{{
+                  color.colourName }}
+                </p>
+                <div class="clrbox border" [style.backgroundColor]="color.colorCode"></div>
+                <i (click)="removeColorFilter()" [class.crossActive]="FilterByColor === color.colourName"
+                  class="bi bi-x-circle cross"></i>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="row LoadMore">
+            <button class="LoadMore-btn" (click)="toggleOrderDetails('item1')">
+              <span [ngClass]="{'more': !isOrderDetailsOpen('item1'), 'less': isOrderDetailsOpen('item1')}">See More<i
+                  class="bi bi-chevron-down"></i> </span>
+              <span [ngClass]="{'more':  isOrderDetailsOpen('item1'), 'less': !isOrderDetailsOpen('item1')}">See Less<i
+                  class="bi bi-chevron-up"></i> </span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- SKELETON LOADING -->
+
+        <div class="col-12 filter-subhead_rating" *ngIf="loaderFilter">
+          <p>Brands</p>
+
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+
+        </div>
+
+        <div class="col-12 filter-subhead_rating" *ngIf="loaderFilter">
+          <p>Colour</p>
+
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+          <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SKELETON LOADING -->
+    <div class="col-md-10" *ngIf="loaderS">
+      <div class="row poster pt-0">
+
+        <div class="col-12">
+          <div class="shimmer" style="height: 340px; width: 100%;"></div>
+        </div>
+
+        <div class="col-12 mt-md-4 mt-3">
+          <div class="row Reviewdataheadrow">
+            <div class="col-8">
+              <h5>{{this.Productscategory}}</h5>
+
+            </div>
+            <div class="col-4">
+              <select class="form-select form-select-lg mb-3 selectedaa" aria-label=".form-select-md example"
+                style="border-radius: 0px;" [(ngModel)]="SortBy">
+                <option selected value="" disabled>Sort By</option>
+                <option value="asc" (click)="SortBy = 'asc'">Price Low To High</option>
+                <option value="dsc" (click)="SortBy = 'dsc'">Price High To Low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-md-4 mt-3">
+
+          <div class="row products p-sm-3 p-1">
+
+            <div class="col-12 products-col  mb-5">
+
+              <div class="shimmer" style="height: 200px; width: 100%;"></div>
+              <div class="shimmer mt-2" style="height: 200px; width: 100%;"></div>
+              <div class="shimmer mt-2" style="height: 200px; width: 100%;"></div>
+
+            </div>
+
+          </div>
+
+          <div class="row NoProduct mt-5" *ngIf="categoryResponse.length === 0 && pageLoading">
+            <div class="col-md-7">
+              <img src="assets/logo/NoData.webp" alt="">
+            </div>
+            <div class="col-md-5 data">
+              <div>
+                <h4><strong>Oops!</strong></h4>
+              </div>
+              <h3>
+                "Regrettably, there are no products available that match this specific requirement right now."
+              </h3>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="col-md-10 col-12" *ngIf="!loaderS">
+
+      <div class="row poster pt-0">
+
+        <div class="col-12">
+          <div class="poster-image" *ngIf="this.Productscategory === 'Electronics'">
+            <div class="text">
+              <h1>Electronic Goods</h1>
+              <span>Smart Watches | Headphones | Laptops</span>
+              <br><br>
+              <p>Discover a wide range of Electronic Goods below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/ElectronicEqupment/electroniccategory.webp" alt=" Shop electronic accessories – audio, cables, computers, and more . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Cameras & Optics'">
+            <div class="text" [ngClass]="Productscategory === 'Cameras & Optics'?'Camera_Optics':''">
+              <h1>Cameras & Optics</h1>
+              <span>Camera | Lens | Video Cam</span>
+              <br><br>
+              <p>Discover a wide range of Camera & Optics below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/CameraOptics/cameraopticcategory.webp" alt=" Discover camera and optics equipment – cameras, lenses, and accessories . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Vehicles & Parts'">
+            <div class="text" [ngClass]="Productscategory === 'Vehicles & Parts'?'Vehicles_Parts':''">
+              <h1>Automobiles</h1>
+              <span>Vehicle Parts | Gears | Accessories</span>
+              <br><br>
+              <p>Discover a wide range of Automobiles below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/vehiclePart/vechilecategory.webp" alt=" Auto parts and accessories – electronics, parts, and care products for vehicles . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Office Supplies'">
+            <div class="text">
+              <h1>Office Supplies</h1>
+              <span>Printers | Accessories | Files </span>
+              <br><br>
+              <p>Discover a wide range of Office Supplies below. Enjoy
+                exclusive benefits and amazing offers designed just for you</p>
+            </div>
+            <img src="assets/OfficeSupplies/officecategory.webp" alt=" Office supplies – stationery, book accessories, and office instruments . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Hardware'">
+            <div class="text" [ngClass]="Productscategory === 'Hardware'?'Hardware':''">
+              <h1>Hardware</h1>
+              <span>Tools | Locks | Plumbing</span>
+              <br><br>
+              <p>Discover a wide range of Hardware below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/hardware/hardwarecategory.webp" alt=" Building consumables – materials, hardware, and plumbing supplies . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Apparel & Accessories'">
+            <div class="text" [ngClass]="Productscategory === 'Apparel & Accessories'?'Apparel_Accessories':''">
+              <h1>Apparel & Accessories</h1>
+              <span>Kurti | Shoes | Watches</span>
+              <br><br>
+              <p>Discover a wide range of Apaprel & accessories below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/Apparel-Accessories/fabriccategory.webp" alt=" Apparel and accessories – clothing, footwear, bags, and jewelry . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Business & Industrial'">
+            <div class="text">
+              <h1>Business & Industrial</h1>
+              <span>Machines | Raw Material | Safety</span>
+              <br><br>
+              <p>Discover a wide range of Business & Industrial below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/Business/businesscategory1.webp" alt=" Business industrial supplies – dentistry, food services, and medical equipment . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Arts & Entertainment'">
+            <div class="text">
+              <h1>Art & Entertainment</h1>
+              <span>Paintings | Photography | DIY</span>
+              <br><br>
+              <p>Discover a wide range of Art & Entertainment below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/art/artcategory.webp" alt=" Arts and entertainment – crafting supplies, party essentials, and musical instruments . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Furniture'">
+            <div class="text">
+              <h1>Furniture</h1>
+              <span>Chair | Beds | Sofa</span>
+              <br><br>
+              <p>Discover a wide range of Furniture below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/furniture/furniturecategory.webp" alt=" Quality furniture – cabinets, chairs, office, and outdoor furniture . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Home & Garden'">
+            <div class="text">
+              <h1>Home Decor</h1>
+              <span>Wall Clock | Carpets | Lights</span>
+              <br><br>
+              <p>Discover a wide range of Home Decor below. Enjoy
+                exclusive benefits and amazing offers designed just for you.</p>
+            </div>
+            <img src="assets/HomeGarden/homegardencategory.webp" alt=" Home decor – decor, appliances, lawn and garden tools, and storage solutions . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Sporting Goods'">
+            <div class="text">
+              <h1>Sporting Goods</h1>
+              <span>Biclycle | Cricket Kits | Accessories</span>
+              <br><br>
+              <p>Discover a wide range of sporting Goods below.
+                Enjoy exclusive benefits and amazing offers designed just for you.
+              </p>
+            </div>
+            <img src="assets/sportsGood/sportcategory.webp" alt=" Sports goods – soccer, cricket, boxing, and other sports equipment . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Health & Beauty'">
+            <div class="text">
+              <h1>Health & Beauty</h1>
+              <span>Lipsicks | Dryers | Accessories</span>
+              <br><br>
+              <p>Discover a wide range of Health & Beauty below. Enjoy
+                exclusive benefits and amazing offers designed just for you.
+              </p>
+            </div>
+            <img src="assets/healthBeauty/healthbeautycategory.webp" alt=" Health and beauty products – personal care, healthcare, and fitness essentials . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Baby & Toddler'">
+            <div class="text">
+              <h1>Baby & Toddler</h1>
+              <span>Toys | Diapers | Chair</span>
+              <br><br>
+              <p>Discover a wide range of Baby & Toddler below.
+                Enjoy exclusive benefits and amazing offers designed just for you.
+              </p>
+            </div>
+            <img src="assets/BabyToddler/babycategory.webp" alt=" Baby and toddler essentials – nursing, diapering, toys, and safety products . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Luggage & Bags'">
+            <div class="text">
+              <h1>Luggage & Bags</h1>
+                <span>Luggage | Bags | Suitcase</span>
+                <br><br>
+                <p>Discover a wide range of Luggage & Bags below. Enjoy 
+                  exclusive benefits and amazing offers designed just for you.
+                </p>
+            </div>
+            <img src="assets/Footer/Luggagebagscategory.webp" alt="Browse luggage and bags – from travel essentials to everyday carry items." srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Animals & Pet Supplies'">
+            <div class="text">
+              <h1>Animal & Petcare</h1>
+              <span>Food | Pet Bags | Accessories</span>
+              <br><br>
+              <p>Discover a wide range of Animal & Petcare below. Enjoy
+                exclusive benefits and amazing offers designed just for you.
+              </p>
+            </div>
+            <img src="assets/AnimalSlider/animalcategory.webp" alt=" Animal and pet care – food, grooming, health, and accessories for pets . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Toys & Games'">
+            <div class="text" [ngClass]="Productscategory === 'Toys & Games'?'Toys_Games':''">
+              <h1>Toys & Games</h1>
+              <span>Toys | Puzzles | Action Figures</span>
+              <br><br>
+              <p>Discover a wide range of Toys & Games below. Enjoy
+                exclusive benefits and amazing offers designed just for you.
+              </p>
+            </div>
+            <img src="assets/games/gamescategory.webp" alt=" Toys and games – outdoor play, puzzles, games, and toy vehicles . " srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Religious & Ceremonial'">
+            <div class="text" [ngClass]="Productscategory === 'Religious & Ceremonial'?'Vehicles_Parts':''">
+              <h1>Religious & Ceremonial</h1>
+                <span>Diya Lamp | Murti & Idols | Candles</span>
+                <br><br>
+                <p>Discover a wide range of Religious & Ceremonial below. Enjoy 
+                  exclusive benefits and amazing offers designed just for you.
+                </p>
+            </div>
+            <img src="assets/Footer/ReligiousCeremonialCategory.webp" alt="Explore religious and ceremonial products, from spiritual accessories to festive decor." srcset="" loading="lazy">
+          </div>
+
+          <div class="poster-image" *ngIf="this.Productscategory === 'Food & Beverages'">
+            <div class="text">
+              <h1>Food & Beverages</h1>
+                <span>Spices | Vegetable | Seeds</span>
+                <br><br>
+                <p>Discover a wide range of Food & Beverages below. Enjoy 
+                  exclusive benefits and amazing offers designed just for you.
+                </p>
+            </div>
+            <img src="assets/Footer/FoodBeveragesCategory.webp" alt="Discover a range of food and beverages, including gourmet items, snacks, and beverages for every occasion." srcset="" loading="lazy">
+          </div>
+
+        </div>
+
+        <div class="col-12 mt-md-4 mt-3">
+          <div class="row Reviewdataheadrow">
+            <div class="col-8">
+              <h5>{{this.Productscategory}}</h5>
+
+            </div>
+            <div class="col-4">
+              <select class="form-select form-select-lg mb-3 selectedaa" aria-label=".form-select-md example"
+                style="border-radius: 0px;" [(ngModel)]="SortBy" (ngModelChange)="SortByPrice()">
+                <option selected value="" disabled>Sort By</option>
+                <option value="asc" (click)="SortBy = 'asc'">Price Low To High</option>
+                <option value="dsc" (click)="SortBy = 'dsc'">Price High To Low</option>
+              </select>
+              <h6>(Showing 1 - {{categoryResponsetotalItems}} products)</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-md-4 mt-3">
+
+          <div class="row products  p-sm-3 p-1" *ngIf="categoryResponse.length != 0">
+
+            <div class="col-12 products-col  mb-5"
+              *ngFor="let category of categoryResponse | paginate: { itemsPerPage: 10, currentPage: p }">
+
+              <div class="row">
+
+                <div class="col-lg-4 col-md-4 sss p-3" (click)="goToProduct(category.product_id)">
+                  <img src="{{category.product_image}}">
+                </div>
+
+                <div class="col-lg-8 col-md-8  p-sm-3 p-2 pt-3 pe-sm-4 ">
+
+                  <div class="row pt-3 px-sm-5">
+
+                    <div class="col-12 products-head ">
+                      <h2 (click)="goToProduct(category.product_id)">{{category.product_name}}</h2>
+                      <div *ngIf="this.userlogin === true">
+                        <div *ngIf="!spinnerBuyNow[category.product_id]">
+                          <i *ngIf="userlogin === true" class="bi bi-heart-fill"
+                            [ngClass]="category?.wishlisted == true?'iconColor':'icon'"
+                            (click)="add_remove_wishlist(category)"></i>
+                        </div>
+                        <div class="spinner-border spinner" style="color: rgb(255, 0, 0) !important; " role="status"
+                          *ngIf="spinnerBuyNow[category.product_id]">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mt-3 products-country " (click)="goToProduct(category.product_id)">
+                      <div class="row">
+                        <div class="col-7">
+                          <p>{{category.city}}</p>
+                        </div>
+                        <div class="col-5 countryFlag">
+                          <span>
+                            <img loading="lazy" class="country-img" src="{{category.flag}}" alt="" /><span
+                              class="country-text">{{category.country}}</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mt-3 products-country " (click)="goToProduct(category.product_id)">
+                      <div class="row">
+                        <div class="col-lg-5">
+                          <p class="rating">
+                            {{category.rating}}
+                            <i class="bi bi-star-fill"></i>
+                          </p>
+                        </div>
+                        <div class="col-lg-7 pt-1 price">
+                          <span class="previousPrice">({{category.discount}}% off)</span>
+                          <div class="productactualprice">
+                            <p>
+                              Rs.{{category.mrp}}
+                            </p>
+                            <div class="lineThrough"></div>
+                          </div>
+                          <span class="offerpri">Rs. {{category.price}}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mt-md-3 mt-1 products-detail" (click)="goToProduct(category.product_id)">
+                      <p>
+                        {{category.description.substring(0,350)}}....
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-12 d-flex justify-content-center  ">
+              <pagination-controls (pageChange)="p = $event"
+                style=" font-family: Montserrat; font-weight: 500;"></pagination-controls>
+            </div>
+
+          </div>
+
+          <div class="row NoProduct mt-5" *ngIf="categoryResponse.length === 0">
+            <div class="col-md-7">
+              <img src="assets/logo/NoData.webp" alt="">
+            </div>
+            <div class="col-md-5 data">
+              <div>
+                <h4><strong>Oops!</strong></h4>
+              </div>
+              <h3>
+                "Regrettably, there are no products available that match this specific requirement right now."
+              </h3>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-ourservices></app-ourservices>
+<app-footer></app-footer>
+
+<div *ngIf="showDiv" class="extra-div">
+  <!-- Your content here -->
+  This is the extra div content.
+</div>

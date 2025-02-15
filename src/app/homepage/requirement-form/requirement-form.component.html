@@ -1,0 +1,148 @@
+<div class="container-fluid">
+  <div class="mob">
+    <div class="row p-lg-0 p-2"> 
+
+      <div class="col-md-7 col-12 coll_animi">
+
+        <div class="coll_animi_col">
+
+            <div class="animate-on-scroll">
+                <img src="assets/logo/rfq_1.webp" alt="rfq image 1" srcset="" >
+              </div>
+            
+           
+              <div class="animate-on-scroll-two">
+                <img src="assets/logo/rfq_2.webp" alt="rfq image 2" srcset="" >
+              </div>
+
+              <div class="animate-on-scroll">
+                <img src="assets/logo/rfq_3.webp" alt="rfq image 3" srcset="" >
+              </div>
+
+        </div>
+        
+      </div>
+  
+      <div class="col-md-5 col-12 p-2 form_col">
+        <div class="row" style="display: flex; justify-content: center;">
+          <form #rfqsDetails="ngForm" class="ssss">
+            <div class="col-12">
+              <h4>Looking for Something?</h4>
+              <p>Tell Us What You’re Searching For, and Receive Custom Quotes Fast!</p>
+            </div>
+  
+            <div class="col-lg-6 col_width">
+              <div class="formcollabel">
+                <label for="validationCustom01" class="form-label">Your requirement</label>
+                <input
+                  type="text"
+                  placeholder="Enter your requirement"
+                  [(ngModel)]="RfqFormData.yourRequirement"
+                  name="yourRequirement"
+                  #yourRequirement="ngModel"
+                  id="validationCustom01"
+                  required
+                />
+                <div
+                  *ngIf="(yourRequirement.errors && yourRequirement.invalid && yourRequirement.touched) || rfqsDetails.submitted"
+                  class="error_message"
+                  style="color: #f54646; font-weight: 500;"
+                >
+                  <div *ngIf="yourRequirement.errors">Please enter your requirement.</div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col_width">
+              <div class="formcollabel">
+                <label for="validationCustom09" class="form-label">Delivery Date</label>
+                <input
+                  type="date"
+                  placeholder="dd/mm/yyyy"
+                  [(ngModel)]="RfqFormData.DeliveryDate"
+                  name="DeliveryDate"
+                  #DeliveryDate="ngModel"
+                  id="validationCustom9"
+                  required
+                />
+                <div
+                  *ngIf="(DeliveryDate.errors && DeliveryDate.invalid && DeliveryDate.touched) || rfqsDetails.submitted"
+                  class="error_message"
+                  style="color: #f54646; font-weight: 500;"
+                >
+                  <div *ngIf="DeliveryDate.errors">Please enter Delivery Date.</div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col_width">
+              <div class="formcollabel">
+                <label for="validationCustom04" class="form-label">Quantity</label>
+                <input
+                  type="number"
+                  placeholder="Enter required quantity"
+                  [(ngModel)]="RfqFormData.Quantity"
+                  name="Quantity"
+                  #Quantity="ngModel"
+                  id="validationCustom04"
+                  required
+                />
+                <div
+                  *ngIf="(Quantity.errors && Quantity.invalid && Quantity.touched) || rfqsDetails.submitted"
+                  class="error_message"
+                  style="color: #f54646; font-weight: 500;"
+                >
+                  <div *ngIf="Quantity.errors">Please enter Quantity.</div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col_width">
+              <div class="formcollabel">
+                <label for="validationCustom05" class="form-label">Target Price</label>
+                <input
+                  type="number"
+                  id="validationCustom05"
+                  placeholder="Enter Target Price"
+                  [(ngModel)]="RfqFormData.TargetPrice"
+                  name="TargetPrice"
+                  #TargetPrice="ngModel"
+                  required
+                />
+                <div
+                  *ngIf="(TargetPrice.errors && TargetPrice.invalid && TargetPrice.touched) || rfqsDetails.submitted"
+                  class="error_message"
+                  style="color: #f54646; font-weight: 500;"
+                >
+                  <div *ngIf="TargetPrice.errors">Please enter Target Price.</div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-12 d-flex justify-content-end">
+              <button
+                class="btnsubmit mt-5"
+                type="submit"
+                (click)="SubmitRfqs(rfqsDetails)"
+                *ngIf="spinnerBuyNow"
+              >
+                Submit Form
+              </button>
+  
+              <button
+                class="btnsubmit"
+                align="center"
+                type="button"
+                *ngIf="!spinnerBuyNow"
+              >
+                <div class="spinner-border" style="color: white !important;" role="status"></div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  

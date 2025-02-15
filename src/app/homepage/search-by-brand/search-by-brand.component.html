@@ -1,0 +1,20 @@
+<div class="container-fluid mt-3 pt-3 mb-5 citycont">
+  <h4>Search by Brands</h4>
+</div>
+
+<div class="container-fluid mt-5">
+
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)" 
+    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <div class="citycols" style="padding: 20px;">
+        <div class="imagediv" routerLink="negbuy-brand-sponsored-page">
+          <img src="{{ slide.path }}" [alt]="slide.heading">
+          <h2>{{slide.heading}}</h2>
+
+        </div>
+      </div>
+    </div>
+  </ngx-slick-carousel>
+
+</div>

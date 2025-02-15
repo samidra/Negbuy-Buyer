@@ -1,0 +1,558 @@
+<app-mainheader></app-mainheader>
+<!-- -------------------------------------------------------------------- -->
+<div class="container-fluid" style="background-color: white;" *ngIf="loaderS ">
+
+    <div class="row p-md-3 p-2 pt-3">
+
+        <div class="col-lg-8 p-3 pt-1">
+
+            <div class="row">
+
+                <div class="col-12 p-1 greeting">
+                    <div class="d-flex">
+                        <div class="shimmer mt-2" style="height: 50px; width: 51px; border-radius: 50%; margin-right: 10px;"></div>
+                          <h3>Hi.!! <br>
+                            <div class="shimmer mt-2" style="height: 20px; width: 100px;"></div>
+                          </h3>
+                      </div>
+
+                    <div class="col-2 p-1 greeting-order">
+                        <h3>
+                            My Wishlist
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="row products mt-4">
+
+                    <div class="col-12 products-wishheading p-3">
+                        My Wishlist
+                    </div>
+
+                    <div class="col-12 p-1">
+                        <div class="shimmer mt-2" style="height: 150px; width: 100%;"></div>
+                    </div>
+
+                    <div class="col-12 p-1">
+                        <div class="shimmer mt-2" style="height: 150px; width: 100%;"></div>
+                    </div>
+
+                    <div class="col-12 p-1">
+                        <div class="shimmer mt-2" style="height: 150px; width: 100%;"></div>
+                    </div>
+        
+                  </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-4 p-1 ">
+            <div class="row sticky-top">
+                <div class="col-12">
+                    <div class="FAq pb-5">
+                        <li class="faq-heading lifaq p-4">FAQs</li>
+
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne" (click)="toggleTextClass(0)"
+                                        [ngClass]="selectedFaq ==0?'red-text':''">
+                                        <p>What happens When I will Update my email address</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the first item's accordion body.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo" (click)="toggleTextClass(1)"
+                                        [ngClass]="selectedFaq ==1?'red-text':''">
+                                        <p>What will my email id will be verified on Negbuy</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the second item's accordion body.
+                                        Let's imagine this
+                                        being filled with some actual content.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree" (click)="toggleTextClass(2)"
+                                        [ngClass]="selectedFaq ==2?'red-text':''">
+                                        <p>Does my seller account will get affected when I will Change the mail id</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the second item's accordion body.
+                                        Let's imagine this
+                                        being filled with some actual content.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour" (click)="toggleTextClass(3)"
+                                        [ngClass]="selectedFaq ==3?'red-text':''">
+                                        <p>What happens When I will Update my email address</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the second item's accordion body.
+                                        Let's imagine this
+                                        being filled with some actual content.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive" (click)="toggleTextClass(4)"
+                                        [ngClass]="selectedFaq ==4?'red-text':''">
+                                        <p>What will my email id will be verified on Negbuy</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the second item's accordion body.
+                                        Let's imagine this
+                                        being filled with some actual content.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                        aria-controls="flush-collapseSix" (click)="toggleTextClass(5)"
+                                        [ngClass]="selectedFaq ==5?'red-text':''">
+                                        <p>Does my seller account will get affected when I will Change the mail id</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the second item's accordion body.
+                                        Let's imagine this
+                                        being filled with some actual content.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSeven">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                        aria-controls="flush-collapseSeven" (click)="toggleTextClass(6)"
+                                        [ngClass]="selectedFaq ==6?'red-text':''">
+                                        <p>What happens When I will Update my email address</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the second item's accordion body.
+                                        Let's imagine this
+                                        being filled with some actual content.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingEight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseEight" aria-expanded="false"
+                                        aria-controls="flush-collapseEight" (click)="toggleTextClass(7)"
+                                        [ngClass]="selectedFaq ==7?'red-text':''">
+                                        <p>What will my email id will be verified on Negbuy</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the second item's accordion body.
+                                        Let's imagine this
+                                        being filled with some actual content.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingNine">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseNine" aria-expanded="false"
+                                        aria-controls="flush-collapseNine" (click)="toggleTextClass(8)"
+                                        [ngClass]="selectedFaq ==8?'red-text':''">
+                                        <p>Does my seller account will get affected when I will Change the mail id</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Placeholder content for this accordion, which is
+                                        intended to demonstrate
+                                        the
+                                        <code>.accordion-flush</code> class. This is the second item's accordion body.
+                                        Let's imagine this
+                                        being filled with some actual content.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- -------------------------------------------------------------------- -->
+<div class="container-fluid mainFluid" style="background-color: white;"  *ngIf="!loaderS">
+
+    <div class="row p-md-3 p-2 pt-3">
+
+        <div class="col-lg-8 p-3 pt-1">
+
+            <div class="row">
+
+                <div class="col-12 p-1 greeting">
+                    <div class="d-flex">
+                        <img src="{{profile_pic}}" alt="">
+                        <h3>Hi.!! <br>
+                            <span>{{BuyerAddressDelivery.first_name}}</span>
+                           
+                        </h3>
+                    </div>
+
+                    <div class="col-2 p-1 greeting-order">
+                        <h3>
+                            My Wishlist
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="row products mt-4">
+
+                    <div class="col-12 products-wishheading p-3">
+                        My Wishlist
+                    </div>
+
+                    <div class="col-12 products-col mt-3" *ngFor="let category of GetWishlistProductResponse | paginate: { itemsPerPage: 8 , currentPage: p }">
+        
+                      <div class="row">
+        
+                        <div class="col-md-2 col-12 sss p-md-3 p-1 imgdiv" (click)="goToProduct(category.product_id)">
+                          <img  src="{{category.main_image}}">
+                        </div>
+        
+                        <div class="col-md-9  p-md-3 pt-3 pe-md-4 pe-2 p-1" (click)="goToProduct(category.product_id)">
+        
+                          <div class="row pt-3 px-md-5 px-2">
+        
+                            <div class="col-12 products-head ">
+                              <h2>{{category.title}}</h2>
+                            </div>
+        
+                            <div class="col-12 mt-1 products-country ">
+                             
+                                <div class="row">
+
+                                <div class="col-12 pt-1">
+                                  <p class="rating">
+                                  4.2  {{category.rating}}
+                                    <i class="bi bi-star-fill"></i>
+                                  </p>
+                                </div>
+
+                                <div class="col-md-10 price">
+                                 <span class="offerpri">Rs. {{category.selling_price}}</span>
+
+                                  <div class="productactualprice">
+                                    <p>
+                                      Rs.{{category.mrp}}
+                                    </p>
+                                    <div class="lineThrough"></div>
+                                  </div>
+                                  
+                                  <span class="previousPrice">({{category.discount}}% off)</span>
+                                </div>
+
+                              </div>
+
+                            </div>
+                            
+                          </div>
+
+                        </div>
+                    
+                        <div class="col-md-1 deleteCol">
+                            <i class="bi bi-trash3-fill" (click)="openModalToRemove(category.product_id)"></i>
+                        </div>
+
+                      </div>
+        
+                    </div>
+
+                    <div class="col-12 mt-5 d-flex justify-content-center  ">
+                        <pagination-controls (pageChange)="p = $event"
+                          style=" font-family: Montserrat; font-weight: 500;"></pagination-controls>
+                      </div>
+        
+                  </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4 p-1 ">
+            <div class="row sticky-top">
+                <div class="col-12">
+                    <div class="FAq pb-2">
+                        <li class="faq-heading lifaq p-4">FAQs</li>
+
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne" (click)="toggleTextClass(0)"
+                                        [ngClass]="selectedFaq ==0?'red-text':''">
+                                        <p>What is the Wishlist feature?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">The Wishlist is a personalized space where you can save 
+                                        products you're interested in but not ready to purchase yet.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo" (click)="toggleTextClass(1)"
+                                        [ngClass]="selectedFaq ==1?'red-text':''">
+                                        <p>How do I add items to my Wishlist?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">   To add items, simply click on the "Add to Wishlist" button on the product page. The product will then be saved in your Wishlist.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree" (click)="toggleTextClass(2)"
+                                        [ngClass]="selectedFaq ==2?'red-text':''">
+                                        <p>Can I share my Wishlist with others?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Yes, you can share your Wishlist with friends or family through email or social media. They won't be able to make changes to your Wishlist, though.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour" (click)="toggleTextClass(3)"
+                                        [ngClass]="selectedFaq ==3?'red-text':''">
+                                        <p>Can I move items from my Wishlist to my cart?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">   Definitely! When you're ready to purchase, you can easily move items from your Wishlist to your shopping cart for checkout.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive" (click)="toggleTextClass(4)"
+                                        [ngClass]="selectedFaq ==4?'red-text':''">
+                                        <p>How do I remove items from my Wishlist?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">To remove items, go to your Wishlist and click on the "Remove" button next to the product you want to remove.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                        aria-controls="flush-collapseSix" (click)="toggleTextClass(5)"
+                                        [ngClass]="selectedFaq ==5?'red-text':''">
+                                        <p>Do Wishlist items expire?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Wishlist items typically don't expire. However, availability and prices of items may change over time.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSeven">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                        aria-controls="flush-collapseSeven" (click)="toggleTextClass(6)"
+                                        [ngClass]="selectedFaq ==6?'red-text':''">
+                                        <p>Can I see if there's a discount on my Wishlist items?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Yes, if there's a discount or price change on an item in your Wishlist, we'll notify you through email or notifications on the platform.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingEight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseEight" aria-expanded="false"
+                                        aria-controls="flush-collapseEight" (click)="toggleTextClass(7)"
+                                        [ngClass]="selectedFaq ==7?'red-text':''">
+                                        <p>Is my Wishlist private?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Yes, your Wishlist is private and only visible to you when logged in to your account.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingNine">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseNine" aria-expanded="false"
+                                        aria-controls="flush-collapseNine" (click)="toggleTextClass(8)"
+                                        [ngClass]="selectedFaq ==8?'red-text':''">
+                                        <p>How do I access my Wishlist?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        You can access your Wishlist by logging in to your account and navigating to the "Wishlist" section on our platform.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <app-ourservices></app-ourservices>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+<div class="modal container-fluid" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog modal-md row" role="document">
+      <div class="modal-content">
+        <div class="modal-header col-12">
+          <div class="col-12 mdh4 mt-3">
+            <h4 class="modal-title">Confirm if you want to remove it from your Wishlist.</h4>
+          </div>
+         
+        </div>
+          <div class="modal-footer">
+               <div class="col-12 modalfooter mb-3">
+                <button type="button" class="noBtn" (click)="onCloseHandledToRemove()">No</button>
+                <button type="button" class="yesBtn" (click)="RemoveWishListProduct(this.ProductToRemoveFromWishlist)">Yes</button>
+               </div>
+          </div>
+  
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+$color_1: #ffffff;
+$border-color_1: linear-gradient( to left, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1) );
+
+
+.rForm{
+    padding: 2vmax 0vmax 2vmax 0vmax;
+}
+
+@media  (max-width:768px){
+
+	.postercar{
+        display: none;
+    }
+
+    .rForm{
+        padding:  0 0 0 0;
+       
+   }
+
+   .conFluid{
+    margin: 0 !important;
+    padding: 0 !important;
+   margin-top: 10px !important;
+  }
+}
+
+
+
+

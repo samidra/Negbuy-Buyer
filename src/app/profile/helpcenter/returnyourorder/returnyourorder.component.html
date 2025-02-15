@@ -1,0 +1,270 @@
+<app-mainheader></app-mainheader>
+
+<div class="container-fluid button-container" style="background-color: white;">
+
+    <div class="row m-sm-4 greeting">
+        <div class="col-12 greeting-col">
+            <h3 routerLink="/help-center">
+                Back to Help centre
+            </h3>
+        </div>
+    </div>
+
+    <div class="row p-md-4">
+
+        <div class="col-lg-8 col-md-6 p-1">
+            <div class="row pe-sm-3 mt-sm-0 mt-2">
+                <div class="col-12 DeliveryCenterData">
+                    <h3>Can we return the order ?</h3>
+                    <p>You may initiate a return for your order; however, specific conditions apply. Please ensure that
+                        the products you wish to return are eligible based on the product description or your "My Order"
+                        section, as they must be listed there for a return to be processed.</p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/returnorder1.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>What are terms and conditions for returning the order ?</h3>
+                    <p>Our terms and conditions assure customers that they will receive a full refund in case of product
+                        damage or defects. Furthermore, if any damage occurs during the logistics process, a full refund
+                        will still be provided. This guarantees a secure shopping experience for our valued customers.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/returnorder2.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>What is the process to return an order ?</h3>
+                    <p>
+                        To initiate a product return, please navigate to the "My Orders" section, select the relevant
+                        product, and click on the "Return Product" option. Subsequently, provide the reason for the
+                        return. Our dedicated team will promptly contact you to gather comprehensive details, assess the
+                        situation, and initiate the return process accordingly.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/returnorder3.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+                <div class="col-12 DeliveryCenterData mt-2">
+                    <h3>How much time does it takes to initiate the refund ?</h3>
+                    <p>
+                        The refund process typically takes 7 days for domestic transactions and 7-11 days for
+                        international transactions. Please note that the exact time frame may vary slightly depending on
+                        your payment method and banking institution. Rest assured, we strive to expedite the process to
+                        ensure you receive your refund as swiftly as possible.
+                    </p>
+                    <div class="DeliveryCenterData-img">
+                        <img src="assets/logo/returnorder4.png" alt="" srcset="" class="imgclass">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 pt-1 ">
+
+            <div class="row sticky-top">
+                <div class="col-12">
+                    <div class="FAq pb-2">
+                        <li class="faq-heading lifaq p-4">FAQs</li>
+
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne" (click)="toggleTextClass(0)"
+                                        [ngClass]="selectedFaq ==0?'red-text':''">
+                                        <p>How can I initiate a return? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        To start a return, log in to your account, go to the "My Orders" section, and select the order containing the item you want to return. Follow the provided instructions to initiate the return process. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo" (click)="toggleTextClass(1)"
+                                        [ngClass]="selectedFaq ==1?'red-text':''">
+                                        <p>What is your return policy?</p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Our return policy outlines the conditions for returns, including the time frame, item condition, and eligibility. You can find detailed information on our website under the "Returns and Refunds" section. 
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree" (click)="toggleTextClass(2)"
+                                        [ngClass]="selectedFaq ==2?'red-text':''">
+                                        <p>Can I return an item if I've changed my mind? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Yes, you can typically return an item within the specified return period if you've changed your mind. Check our return policy for any exceptions.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour" (click)="toggleTextClass(3)"
+                                        [ngClass]="selectedFaq ==3?'red-text':''">
+                                        <p>Is there a return shipping fee? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        The return shipping fee may vary depending on the reason for the return and your location. Review our return policy for details on return shipping costs. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive" (click)="toggleTextClass(4)"
+                                        [ngClass]="selectedFaq ==4?'red-text':''">
+                                        <p>How long does it take to process a return? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Returns are usually processed within [7-11] business days from the date we receive the returned item. You'll receive a confirmation email once the return is processed. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                        aria-controls="flush-collapseSix" (click)="toggleTextClass(5)"
+                                        [ngClass]="selectedFaq ==5?'red-text':''">
+                                        <p>Can I exchange an item for a different size or color? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Depending on product availability, you may be able to exchange an item for a different size or color. Check your order details for exchange options. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingSeven">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                        aria-controls="flush-collapseSeven" (click)="toggleTextClass(6)"
+                                        [ngClass]="selectedFaq ==6?'red-text':''">
+                                        <p>What should I do if I receive a damaged or defective item? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        If your item arrives damaged or defective, contact our customer support team immediately. We'll arrange for a replacement or a refund, based on your preference.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingEight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseEight" aria-expanded="false"
+                                        aria-controls="flush-collapseEight" (click)="toggleTextClass(7)"
+                                        [ngClass]="selectedFaq ==7?'red-text':''">
+                                        <p>Can I return an item without its original packaging? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        In most cases, items should be returned with their original packaging to be eligible for a refund. Refer to our return policy for specific requirements. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingNine">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseNine" aria-expanded="false"
+                                        aria-controls="flush-collapseNine" (click)="toggleTextClass(8)"
+                                        [ngClass]="selectedFaq ==8?'red-text':''">
+                                        <p>What happens if my return is not accepted? </p>
+                                    </button>
+                                </li>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        If your return does not meet our return policy criteria, we'll notify you and provide details. You may have the option to have the item shipped back to you at your expense. 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <li class="accordion-header lifaq" id="flush-headingTen">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTen" aria-expanded="false"
+                                        aria-controls="flush-collapseTen" (click)="toggleTextClass(9)"
+                                        [ngClass]="selectedFaq ==9?'red-text':''">
+                                        <p>How will I receive my refund? </p>
+                                    </button>
+                                </li>
+
+                                <div id="flush-collapseTen" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        Refunds are typically issued in the same payment method used for the original purchase. You'll receive an email confirmation once the refund is processed.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <app-ourservices></app-ourservices>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

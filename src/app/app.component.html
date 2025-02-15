@@ -1,0 +1,176 @@
+<div class="container-fluid">
+
+  <router-outlet></router-outlet>
+
+  <span class="chatNow " (click)="openModal()" onmouseover="showTooltip()" onmouseout="hideTooltip()" *ngIf="chat_main_spinner">
+    <div class="ep-tooltip__container">
+      <p>Need help? <br>
+        Chat with our support team.
+      </p>
+    </div>
+    <div class="ep-floating-button__bot">
+      <div class="ep-floating-button__bot-dots">
+        <span class="ep-floating-button__bot-dot"></span>
+        <span class="ep-floating-button__bot-dot"></span>
+        <span class="ep-floating-button__bot-dot"></span>
+      </div>
+      <svg class="ep-floating-button__bot-tail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+        <path d="M24,4.4C20,14.5,11.1,22.1,0.3,24.4c2-0.4,7.5-1.2,12.1-0.3c2.7,0.5,
+                6.7,1.1,10.1,0.7c1.7-0.2,2.4-2.2,1.2-3.4C21.9,19.4,21.1,14.9,24,4.4z"></path>
+      </svg>
+      <svg class="ep-floating-button__bot-smile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 12">
+        <path d="M17,12c-0.3,0-0.5,0-0.8,0C6.9,11.6,0.7,3.6,0.4,3.2c-0.7-0.9-0.5-2.1,
+                0.4-2.8c0.9-0.7,2.1-0.5,2.8,0.4C3.7,0.9,9,7.7,16.4,8c4.8,0.2,9.5-2.3,
+                14.1-7.3c0.7-0.8,2-0.9,2.8-0.1c0.8,0.7,0.9,2,0.1,2.8C28.3,9.1,22.7,12,17,12z" >
+        </path>
+      </svg>
+    </div>
+  </span>
+  <button class="chatNow " *ngIf="!chat_main_spinner">
+    <div class="spinner-border" style="color: #1b916d !important; " role="status">
+    </div>
+  </button>
+
+  <div id="google_translate_element" class="p-2"></div>
+
+  <div class="modal  modalDiv" [ngStyle]="{'display':display}">
+    <div class="modal-dialog modal-md row" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header col-12" *ngIf="no_keyword != true">
+
+          <div class="row mdh4_small">
+            <div class="col-11 d-flex">
+              <img src="assets/logo/chatbotlogo.png" alt="" srcset="">
+              <h4>Negbuy Chat Assistant</h4>
+            </div>
+            <div class="col-1  ccc"><i class="bi bi-x-circle" (click)="onCloseHandled()"></i></div>
+          </div>
+        </div>
+
+        <div class="modal-header col-12" *ngIf="no_keyword === true">
+
+          <div class="row mdh4_large">
+            <div class="mdh4_head">
+              <div class="col-12 cdcd">
+                <div class="row " style="width:100%">
+                  <div class="col-11 d-flex">
+                    <img src="assets/logo/chatbotlogo.png" alt="" srcset="">
+                   <div style="padding-left: 10px;">
+                    <h4>Hi, There👋🏻 </h4>
+                    <span>Facing an issue? </span> <br>
+                    <span> How can I assist you today?"</span>
+                   
+                   </div>
+                  </div>
+                  <div class="col-1  ccc"><i class="bi bi-x-circle" (click)="onCloseHandled()"></i></div>
+                </div>
+              </div>
+             
+              <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet"  >
+                <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none; fill:#1b916d;"></path>
+              </svg>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="modal-body col-12">
+
+          <!-- <div class="row HeadBodybox">
+            <h3>Hello from negbuy!</h3>
+          </div> -->
+
+          <div class="row scrolling" #scrollBottom>
+            <div class="col-12 conversationBox mt-3">
+
+              <div class="row" style="width: 100%; display: flex; justify-content: flex-start; align-items: center;">
+                <div *ngFor="let message of primarytags; let i=index;" style="width: auto; padding: 5px;">
+                  <div class="border key_bot_message" >
+                    <li (click)="forSubCat(message.id)" [class.selected-tag]="message.isSelected">
+                      {{ message.name }}
+                    </li>
+                    <i class="bi bi-x-circle" [ngClass]="{'iShow': message.isSelected, 'iHide': !message.isSelected }"
+                      (click)="unselectTag(message.id)"></i>
+                  </div>
+                </div>
+
+                <div class="spinner-border" style="color: #1b916d !important; " role="status" *ngIf="!spinnerBuyNow">
+                </div>
+
+
+                <div *ngIf="SubTagsApiRes.marking === false && no_keyword === true" class="key-message">
+                  <p>{{ SubTagsApiRes.data.response_key_1 }}</p>
+                </div>
+
+                <div class="bot-message-wrapper mt-3  " *ngIf="no_keyword != true">
+                  
+                  <img src="assets/logo/RectangleExwork.png" alt="" height="20px">
+                  <div class="bot-message">
+                    {{contact_message_chat.message}} <br><br>
+                     {{contact_message_chat.contact_message}}
+                    </div>
+                  
+                </div>
+
+              </div>
+
+              <div *ngFor="let message of messages">
+                <!-- <div [ngClass]="{'flexDone':!message.fromUser}">
+                  <img *ngIf="message.fromUser === false" src="assets/logo/RectangleExwork.png" alt="" srcset=""
+                    height="20px">
+                  <div [ngClass]="{'message': true, 'user-message': message.fromUser, 'bot-message': !message.fromUser}">
+                    {{ message.text }}
+                  </div>
+                </div> -->
+
+                <div [ngClass]="{'message-wrapper': true, 'user-message-wrapper': message.fromUser, 'bot-message-wrapper': !message.fromUser}">
+                  
+                  <img *ngIf="message.fromUser === false" src="assets/logo/RectangleExwork.png" alt="" height="20px">
+                  <div [ngClass]="{'message': true, 'user-message': message.fromUser, 'bot-message': !message.fromUser}">
+                      {{ message.text }}
+                    </div>
+                  
+                </div>
+                
+              </div>
+              
+
+            </div>
+
+            <div class="col-12 conversationBox" *ngIf="attachments.length > 0">
+              Selected file name: {{ fileName }}
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="modal-footer ">
+          <div class="col-12 modalfooter">
+            <div class="row" style="width: 100%;">
+              <div class="col-10"> <input [(ngModel)]="userInput" placeholder="Type a message..." (input)="cfdfdf()" />
+                <div class="error_message" style="color: #F54646; font-weight: 500; text-align: left; padding-top: 2px;"
+                  *ngIf="userInputValue">
+                  Please enter your message.
+                </div>
+              </div>
+
+              <div class="col-1 sendAttach">
+                <input type="file" accept="image/*" id="fileInput" style="display: none"
+                  (change)="handleFileInput($event)" />
+                <label for="fileInput" class="custom-file-upload">
+                  <i class="bi bi-paperclip"></i>
+                </label>
+              </div>
+              <!-- [ngStyle]="{'display': displaysendIcon}" -->
+              <div class="col-1 sendAttach "> <i class="bi bi-send" (click)="sendMessage()"></i></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

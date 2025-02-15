@@ -1,0 +1,638 @@
+<div class="container-fluid navbarPayment  p-3">
+    <div class="row ">
+        <div class="col-sm-4 navbarPayment-brand"><img src="../../assets/logo/Negbuylogo23.png" class="logo"
+                routerLink=""></div>
+        <div class="col-sm-4 col-6 navbarPayment-page">Order Summary</div>
+        <div class="col-sm-4 col-6 navbarPayment-secure"> <img class="me-2" src="assets/logo/securepayment.png" alt=""
+                srcset="">
+            Secure Checkout</div>
+    </div>
+</div>
+
+<!-- ------------------------------------------------------------------------- -->
+
+<div class="container-fluid">
+
+    <div class="row newDesign" *ngIf="!dataLoading">
+        <div class="col-md-10 newDesign-greeting">
+            <h3>Thanks you for your Order! <i class="bi bi-patch-check-fill"></i></h3>
+            <h4>Your order has been confirmed.</h4>
+            <h5 class="d-flex">Order Confirmation: <div class="shimmer mx-2" style="height: 20px; width: 30%;"></div>
+            </h5>
+
+            <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+
+            <button type="button" class="btn btn-outline-danger" (click)="downloadPDF2()">Download the receipt</button>
+        </div>
+
+        <div class="col-12  mt-3 newDesign-detailOrder">
+
+            <div class="row p-md-5 p-2">
+
+                <div class="col-lg-8 col-md-7 p-lg-5 p-2">
+
+                    <div class="row p-3" style="background-color: #A5A5A50D;">
+                        <div class="col-12 orderconfirmrowhead">
+                            <p>Order Details</p>
+                            <img src="assets/logo/checklist 1.png" alt="">
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <div class="row">
+                                <div class="col-md-6 orderDetails">
+                                    <h4>Shipping Method</h4>
+                                    <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                    <br>
+                                    <h4>Shipping Address</h4>
+                                    <h3>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div><br>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div> <br>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                    </h3>
+
+                                </div>
+
+                                <div class="col-md-6 orderDetails">
+                                    <h4>Courier Details</h4>
+                                    <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                    <br>
+                                    <h4>Billing Address</h4>
+                                    <h3>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div><br>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div> <br>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                    </h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row p-3" style="background-color: #A5A5A50D;">
+                        <div class="col-12 orderconfirmrowhead">
+                            <p>Payment Details</p>
+                            <img src="assets/logo/products 1.png" alt="">
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <div class="row">
+                                <div class="col-md-6 orderDetails">
+                                    <h4>Payment Type</h4>
+                                    <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                </div>
+
+                                <div class="col-md-6 orderDetails">
+                                    <h4>Billing Details</h4>
+                                    <h3>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div><br>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div><br>
+                                        <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                    </h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row buttonss mt-4">
+                        <div class=" d-flex justify-content-between">
+                            <p>Need help? <span>Contact us</span></p>
+                            <button type="button" routerLink="/" class="btn btn-danger">Continue Shopping</button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-5 p-lg-5 p-2 px-3">
+
+                    <div class="row newDesign-productDetail p-3">
+
+                        <div class="col-12 orderconfirmrowhead">
+                            <p>Order Summary</p>
+                            <img src="assets/logo/products 1.png" alt="">
+                        </div>
+
+                        <div class="col-12 mt-4 orderDetails">
+                            <h4>Item Name</h4>
+                        </div>
+
+                        <div class="col-12 productdetailCont">
+                            <div class="row productdetail">
+                                <div class="col-12 ">
+                                    <div class="row">
+                                        <div class="col-12 modalprofile">
+                                            <div class="row mt-2">
+                                                <div class="col-4 modalprofile-img">
+                                                    <div class="shimmer mt-2" style="height: 100px; width: 100px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-8 modalprofile-name">
+                                                    <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-3" *ngIf="detailsData.courier_name">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>Courier Name</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>Quantity</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>Product Price</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>GST 18%</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12" *ngIf="detailsData.service_charge">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>Service Charge</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12" *ngIf="detailsData.delivery_charge">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3> Delivery Charge</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <div class="shimmer mt-2" style="height: 20px; width: 70%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-12 total p-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3>Total Amount</h3>
+                                </div>
+                                <div class="col-6">
+                                    <div class="shimmer mt-2" style="height: 20px; width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row newDesign-productDetail mt-5 pt-5 p-3">
+
+                        <div class="col-12 orderconfirmrowhead">
+                            <p>Warehosue Details</p>
+                            <img src="assets/logo/RectangleExwork.png" alt="">
+                        </div>
+
+                        <div class="col-12 warehouseDetail mt-4">
+                            <h4>Warehouse Address</h4>
+                            <p>G-21, Sector 3, <br>
+                                Noida, Uttar Pradesh, <br>
+                                201301
+                            </p>
+                            <br>
+                            <hr>
+                            <br>
+                            <h4>Warehouse Incharge</h4>
+                            <p>Mr. Mohammad Asad <br>
+                                +91 96549 01606 <br>
+                                asad@negbuy.com</p>
+                        </div>
+
+                        <div class="col-12 warehouseDetail mt-4">
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row newDesign" *ngIf="dataLoading">
+        <div class="col-md-10 newDesign-greeting">
+            <h3>Thanks you for your Order! <i class="bi bi-patch-check-fill"></i></h3>
+            <h4>Your order has been confirmed.</h4>
+            <h5>Order Confirmation: {{shippingMode}}-{{Order_id}}</h5>
+
+            <p>A confirmation email has been sent to <strong>{{BuyerAddressDelivery.email}}</strong>. Order tracking
+                information will be sent when your order ships.</p>
+
+                <button type="button" class="btn btn-outline-danger" (click)="downloadPDF2()" *ngIf="spinnerInvoice">Download the receipt</button>
+                <button type="button" align="center" style="border: 1px solid red; background: transparent;" *ngIf="!spinnerInvoice">
+                    <div class="spinner-border" style="color: rgb(231, 54, 54) !important; " role="status"></div>
+                </button>
+        </div>
+
+        <div class="col-12  mt-3 newDesign-detailOrder">
+
+            <div class="row p-md-5 p-2">
+
+                <div class="col-lg-8 col-md-7 p-lg-5 p-2">
+
+                    <div class="row p-3" style="background-color: #A5A5A50D;">
+                        <div class="col-12 orderconfirmrowhead">
+                            <p>Order Details</p>
+                            <img src="assets/logo/checklist 1.png" alt="">
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <div class="row">
+                                <div class="col-md-6 orderDetails">
+                                    <h4>Shipping Method</h4>
+                                    <h3>{{shippingMode}}</h3>
+                                    <br>
+                                    <h4>Shipping Address</h4>
+                                    <h3>{{BuyerAddressDelivery.address_line1}},<br>
+                                        {{BuyerAddressDelivery.address_line2}}, {{BuyerAddressDelivery.city}} <br>
+                                        {{BuyerAddressDelivery.state}}, {{BuyerAddressDelivery.pincode}}</h3>
+
+                                </div>
+
+                                <div class="col-md-6 orderDetails">
+                                    <h4>Courier Details</h4>
+                                    <h3 *ngIf="detailsData.courier_name">{{detailsData.courier_name}}</h3>
+                                    <h3 *ngIf="!detailsData.courier_name">{{detailsData.courier_name}}</h3>
+                                    <br>
+                                    <h4>Billing Address</h4>
+                                    <h3>{{BuyerAddressDelivery.address_line1}},<br>
+                                        {{BuyerAddressDelivery.address_line2}}, {{BuyerAddressDelivery.city}} <br>
+                                        {{BuyerAddressDelivery.state}}, {{BuyerAddressDelivery.pincode}}</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row p-3" style="background-color: #A5A5A50D;">
+                        <div class="col-12 orderconfirmrowhead">
+                            <p>Payment Details</p>
+                            <img src="assets/logo/products 1.png" alt="">
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <div class="row">
+                                <div class="col-md-6 orderDetails">
+                                    <h4>Payment Type</h4>
+                                    <h3>{{detailsData.payment_details}}</h3>
+                                </div>
+
+                                <div class="col-md-6 orderDetails">
+                                    <h4>Billing Details</h4>
+                                    <h3>
+                                        {{BuyerAddressDelivery.first_name}} {{BuyerAddressDelivery.last_name}} <br>
+                                        {{detailsData.contact_details}}<br>
+                                        {{BuyerAddressDelivery.email}}
+                                    </h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row buttonss mt-4">
+                        <div class=" d-flex justify-content-between">
+                            <p>Need help? <span>Contact us</span></p>
+                            <button type="button" routerLink="/" class="btn btn-danger">Continue Shopping</button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-5 p-lg-5 p-2 px-3">
+
+                    <div class="row newDesign-productDetail p-3">
+
+                        <div class="col-12 orderconfirmrowhead">
+                            <p>Order Summary</p>
+                            <img src="assets/logo/products 1.png" alt="">
+                        </div>
+
+                        <div class="col-12 mt-4 orderDetails">
+                            <h4>Item Name</h4>
+                        </div>
+
+                        <div class="col-12 productdetailCont">
+                            <div class="row productdetail">
+                                <div class="col-12 ">
+                                    <div class="row">
+                                        <div class="col-12 modalprofile" (click)="toProduct(detailsData.product_id)">
+                                            <div class="row mt-2">
+                                                <div class="col-4 ">
+                                                    <div class="modalprofile-img">
+                                                        <img src={{imageUrl}} alt="" srcset="" height="100px">
+                                                    </div>
+                                                </div>
+                                                <div class="col-8 modalprofile-name">
+                                                    {{detailsData.product_title}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-3" *ngIf="detailsData.courier_name">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>Courier Name</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <h5>{{detailsData.courier_name}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>Quantity</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <h5>{{detailsData.quantity}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>Product Price</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <h5>{{detailsData.product_price}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>GST 18%</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <h5>{{detailsData.gst}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12" *ngIf="detailsData.service_charge">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3>Service Charge</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <h5>{{detailsData.service_charge}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12" *ngIf="detailsData.delivery_charge">
+                                    <div class="row">
+                                        <div class="col-6 productdetail-head1">
+                                            <h3> Delivery Charge</h3>
+                                        </div>
+                                        <div class="col-6 productdetail-head2">
+                                            <h5>{{detailsData.delivery_charge}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-12 total p-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h3>Total Amount</h3>
+                                </div>
+                                <div class="col-6">
+                                    <h5>{{detailsData.total_amount}}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row newDesign-productDetail mt-5 pt-5 p-3">
+
+                        <div class="col-12 orderconfirmrowhead">
+                            <p>Warehosue Details</p>
+                            <img src="assets/logo/RectangleExwork.png" alt="">
+                        </div>
+
+                        <div class="col-12 warehouseDetail mt-4">
+                            <h4>Warehouse Address</h4>
+                            <p>G-21, Sector 3, <br>
+                                Noida, Uttar Pradesh, <br>
+                                201301
+                            </p>
+                            <br>
+                            <hr>
+                            <br>
+                            <h4>Warehouse Incharge</h4>
+                            <p>Mr. Mohammad Asad <br>
+                                +91 96549 01606 <br>
+                                asad@negbuy.com</p>
+                        </div>
+
+                        <div class="col-12 warehouseDetail mt-4">
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ------------------------------------------------------------------------- -->
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-12">
+            <app-ourservices></app-ourservices>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+
+
+<div class="container-fluid p-5" id="content"  *ngIf="invoiceData" style="z-index: -1; position: fixed;">
+    <div class="row negbuyInvoice">
+
+        <img class="bg" src="../../assets/logo/Negbuylogo23.png" alt="Background image" />
+
+        <div class="col-12 header">
+            <img src="../../assets/logo/Negbuylogo23.png" alt="Company logo" />
+            <h3>Tax Invoice</h3>
+        </div>
+
+        <div class="col-12 companyinfo">
+            
+            <p><span>Sold by:</span> {{invoiceData.data.sold_by}}</p>
+            <p><span>Ship-from address:</span> {{invoiceData.data.ship_from_address}}</p>
+            <p><span>GSTIN:</span> {{invoiceData.data.gstin}}</p>
+
+        </div>
+
+        <div class="col-12 buyerDetail">
+            <div class="row">
+
+                <div class="col-4">
+                    <p><span>Order ID: {{invoiceData.data.order_type}}-{{invoiceData.data.order_id}}</span></p>
+                    <p><span>Order Date:</span> {{invoiceData.data.order_date}}</p>
+                    <p><span>Invoice Date:</span> {{invoiceData.data.invoice_date}}</p>
+                    <p><span>PAN:</span> {{invoiceData.data.pan}}</p>
+                    <p><span>CIN:</span> {{invoiceData.data.cin}}</p>
+                    <br>
+                    <p>Total item: {{invoiceData.data.total_item}}</p>
+                </div>
+
+                <div class="col-5">
+                    <p><span>Invoice To:</span></p>
+                    <p><span>Name: {{invoiceData.data.name}}</span></p>
+                    <p><span>Address:</span> {{invoiceData.data.address}}, </p>
+                    <p><span>State:</span> {{invoiceData.data.state}}, </p>
+                    <p><span>Pincode:</span> {{invoiceData.data.pincode}}</p>
+                </div>
+
+                <div class="col-3">
+                    <p class="dash"><span>Invoice Number </span>{{ invoiceData.data.invoice_number }}</p>
+                    <p class="note">*Keep this invoice and <br>manufacturer box for <br> warranty purpose.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-12 tableData">
+            <table class="table">
+                <thead>
+                    <tr style="border-bottom: 2px solid black;">
+                        <th scope="col">Title</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Gross Amount</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Taxable Amount</th>
+                        <th scope="col">IGST</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="tableProductName">
+                            {{ invoiceData.data.title }}
+                            <br>
+                            IGST: {{ invoiceData.data.igst }}
+                        </th>
+                        <td>{{ invoiceData.data.total_item }}</td>
+                        <td>{{ invoiceData.data.gross_amount }}</td>
+                        <td>{{ invoiceData.data.discount }}</td>
+                        <td>{{ invoiceData.data.taxable_amount }}</td>
+                        <td>{{ invoiceData.data.igst }}</td>
+                        <td>{{ invoiceData.data.total }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" class="tableProductName">
+                            Shipping and Handling Charges
+                        </th>
+                        <td>{{ invoiceData.data.total_item }}</td>
+                        <td>{{ invoiceData.data.shipping_charges }}</td>
+                        <td>{{ invoiceData.data.shipping_discount }}</td>
+                        <td>{{ invoiceData.data.final_taxable_amount }}</td>
+                        <td>{{ invoiceData.data.final_igst }}</td>
+                        <td>{{ invoiceData.data.final_total }}</td>
+                    </tr>
+
+                    <tr style="border-bottom: 2px solid black; border-top: 2px solid black;">
+                        <th scope="row">
+                            Total
+                        </th>
+                        <td class="totalPrice">{{ invoiceData.data.total_item }}</td>
+                        <td class="totalPrice">{{ invoiceData.data.final_gross_amount }}</td>
+                        <td class="totalPrice">{{ invoiceData.data.final_discount }}</td>
+                        <td class="totalPrice">{{ invoiceData.data.final_taxable_amount }}</td>
+                        <td class="totalPrice">{{ invoiceData.data.final_igst }}</td>
+                        <td class="totalPrice">{{ invoiceData.data.final_total }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-12 signature">
+            <h4>Authorised signature</h4>
+        </div>
+
+        <div class="col-12 termsCondition">
+            <h3>Terms & conditions:</h3>
+            <br>
+            <p>1. <span>Returns Policy:</span> At Negbuy, we aim for flawless deliveries. If you need to return an item,
+                please include the original brand box, price tag, packing, and invoice. These are essential for
+                processing your request. Thank you for helping us serve you better. Terms and conditions apply.</p>
+            <br>
+            <p>2. <span>Contact Us:</span> Please contact customer chat support through Negbuy platform or drop in email
+                at contactus@negbuy.com. If you have any issues or queries in respect of your order, please contact
+                customer chat support through Negbuy platform or drop in email at contactus@negbuy.com.</p>
+            <br>
+            <p>3. <span>Safety:</span> Please note that we never ask for bank account details such as CVV, account
+                number, UPI Pin, etc. across our support channels. For your safety, please do not share these details
+                with anyone over any medium.</p>
+        </div>
+
+
+    </div>
+</div>

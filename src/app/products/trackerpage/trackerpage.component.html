@@ -1,0 +1,1086 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-12 tracker">
+          <ul class="p-3">
+              <li><a (click)="toProduct()"> <i class="bi bi-check-circle"></i> Product </a></li>
+              <li class="lineLIs"><span></span></li>
+              <li><a> <i class="bi bi-2-circle-fill"></i> Address</a></li>
+              <li class="lineLI"><span></span></li>
+              <li><a (click)="toPaymentPage()" style="cursor: not-allowed;"> <i class="bi bi-3-circle"></i> Payment </a></li>
+          </ul>
+      </div>
+  </div>
+</div>
+<!-- ------------------------------------------------------------------------- -->
+
+<div class="container-fluid " name="Save" [ngClass]="[bntStyle]">
+  <div class="row p-2 px-4 pe-5">
+    <div class="col-12 checkstatusdiv">
+      <div class="row">
+        <div class="col-lg-8  pt-3">
+          <p>Estimated delivery time for your order would be {{estimatedDate}} Days </p>
+        </div>
+        <div class="col-lg-4 sDp" (click)="onClick('deliverybreakpoint')">
+         
+          <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-long-arrow-right arrow2" aria-hidden="true"></i>
+            <strong> View breakpoints to proceed</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------------------------------------------------------------- -->
+
+<div class="container-fluid  p-sm-4 p-1 map_Globe">
+
+  <div class="row rowmap" *ngIf="!MapGloble">
+    <div class="col-lg-4 col-md-5 globe" style="display: flex; justify-content: center; align-items: center">
+      <div class="globeMap"></div>
+    </div>
+
+    <div class="col-lg-8 col-md-7 mt-md-0 mt-4">
+      <div class="globes"   style="display: flex; justify-content: center;">
+        <div class="pin"></div>
+        <div class="pulse"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row rowmap" [ngClass]="MapGlobleMain">
+    <div class="col-lg-4 col-md-5 globe">
+        <figure class="highcharts-figure mt-4">
+          <div id="negbuy-globe"></div>
+      </figure>
+    </div>
+    <div class="col-lg-8 col-md-7 mt-md-0 mt-4">
+      <div class="globes">
+      <div id="negbuy-world"></div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<!-- --------------------------------DDP WORK TRACKER ----------------------------------------- -->
+
+<div class="container-fluid" *ngIf="trackingForm.trackingFormMode!='Ex-work'">
+  <form #trackingDDPdetail="ngForm">
+    <div class="row p-sm-2 formrow">
+
+      <div class="col-xl-6 mt-sm-5 mt-2">
+
+        <div class="shipingFormMode p-sm-3 p-2 pb-4"> 
+          <label for="trackingmodes">Choose your mode of Shiping</label>
+          <select id="trackingmodes" [(ngModel)]="trackingForm.trackingFormMode" [value]="trackingForm.trackingFormMode"
+            name="trackingFormMode" class="form-control form-select form-select-lg mb-3"
+            (change)="changeDeliveryMode($event)" required #trackingFormMode="ngModel">
+            <option value="" disabled>Chose your mode of delivey ex DDP or Ex-Work (incoterms)</option>
+            <option *ngFor="let modes of mode" [value]="modes.value">{{modes.name}}</option>
+          </select>
+          <div
+            *ngIf="trackingFormMode.errors && trackingFormMode.invalid && trackingFormMode.touched || trackingDDPdetail.submitted">
+            <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="trackingFormMode.errors">
+              Please select mode of shipping.
+            </div>
+          </div>
+
+          <label for="trackingroute">Selection of Route</label>
+          <select id="trackingroute" [(ngModel)]="trackingForm.selectRoute" name="selectRoute" #selectRoute="ngModel"
+            class="form-select form-select-lg" [value]="trackingForm.selectRoute" required>
+            <option value="" disabled>Chose your mode of route Air or Water</option>
+            <option value="By Air">By Air</option>
+            <option value="" disabled>By Water</option>
+            <!-- <option *ngFor="let route of routes" [value]="route.value">{{route.name}}</option> -->
+          </select>
+          <div *ngIf="selectRoute.errors && selectRoute.invalid && selectRoute.touched || trackingDDPdetail.submitted">
+            <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="selectRoute.errors">
+              Please select delivery route
+            </div>
+          </div>
+        </div>
+
+        <div class="FAq mt-5">
+          <li class="faq-heading lifaq">Frequently Asked Question</li>
+
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <li class="accordion-header lifaq" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  <p>What is the mode of shipping? </p>
+                </button>
+              </li>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  The mode of shipping refers to the method used to transport and deliver your order to your specified
+                  location.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <li class="accordion-header lifaq" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  <p>What is the Selection of Route?</p>
+                </button>
+              </li>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Selection of route refers to the process of choosing the optimal path for the
+                  movement of goods or services from their source to the destination.
+                  It involves evaluating various factors such as distance, transportation modes, cost, time,
+                  accessibility,
+                  and potential risks to determine the most efficient and effective route.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <li class="contactli">
+            <p>
+              We are happy to solve your query reach us at given detail (24*7)
+            </p>
+            <em><br><br></em>
+            <p style="font-size: 14px;"><strong>Email ID-</strong> rfq@negbuy.com</p>
+            <span><strong>Contact Number-</strong> +91-7836803051</span>
+          </li>
+
+          <!-- </ul> -->
+        </div>
+
+      </div>
+
+      <div class="col-xl-6 mt-5">
+
+        <div class="deliveryAddres pb-3">
+          <div class="delivery-form">
+            <p>Confirm Delivery Address</p>
+
+            <div class="form-input row ">
+              <div class="col-sm-5 mt-md-0 mt-1">
+                <label for="Addpincode">Pincode</label> <br />
+                <input id="Addpincode" type="text" class="w-100" placeholder="  Pin code of your area"
+                  [(ngModel)]="trackingForm.addressDetail.pincode" #pincode="ngModel" (change)="getAddByPin()" required
+                  name="pincode" minlength="3" maxlength="6" />
+                <div *ngIf="pincode.errors && pincode.invalid && pincode.touched || trackingDDPdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="pincode.errors">
+                    Please enter a valid 6-digit pincode.
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="spinneraddpin">
+                <label for="Addcity">City</label> <br />
+                <input id="Addcity" type="text" class="w-100" placeholder="  Enter your city name"
+                  [(ngModel)]="trackingForm.addressDetail.city" #city="ngModel" name="city" required />
+
+                <div *ngIf="city.errors && city.invalid && city.touched || trackingDDPdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="city.errors">
+                    Please enter city.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="!spinneraddpin">
+                <label for="Addcity">City</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(12 111 81) !important; " role="status"></div>
+              </div>
+            </div>
+
+            <div class="form-input row ">
+              <div class="col-sm-5 mt-md-0 mt-1" *ngIf="spinneraddpin">
+                <label for="Addstate">State</label> <br />
+                <input id="Addstate" type="text" class="w-100" placeholder="  Enter name of your state"
+                  [(ngModel)]="trackingForm.addressDetail.state" #state="ngModel" name="state" required />
+
+                <div *ngIf="state.errors && state.invalid && state.touched || trackingDDPdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="state.errors">
+                    Please enter state.
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="!spinneraddpin">
+                <label for="Addcity">State</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(12 111 81) !important; " role="status"></div>
+              </div>
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="spinneraddpin">
+                <label for="Addcountry">Country</label> <br />
+                <select id="Addcountry" class="form-select form-select-lg mb-3" (change)="onCountrySelect($event)"
+                  [(ngModel)]="trackingForm.addressDetail.country" name="country"
+                  [value]="trackingForm.addressDetail.country" #country="ngModel" required>
+
+                  <option value="" disabled>Select your Country</option>
+                  <option *ngFor="let country of countries" [value]="country.name" 
+                    [selected]="countryfetch(trackingForm.addressDetail.country,country.name)">{{country.name}}
+                  </option>
+                </select>
+
+                <div *ngIf="country.errors && country.invalid && country.touched || trackingDDPdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="country.errors">
+                    Please select country.
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="!spinneraddpin">
+                <label for="Addcity">Country</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(12 111 81) !important; " role="status"></div>
+              </div>
+            </div>
+
+            <div class="form-input row mt-3 ">
+              <div class="col-sm-9 mt-md-0 mt-1">
+                <label for="full-address">Enter Full Address</label>
+                <textarea id="full-address" rows="8" cols="57" name="comment" form="usrform"
+                  [(ngModel)]="trackingForm.addressDetail.FullAddress" #FullAddress="ngModel" name="FullAddress"
+                  required></textarea>
+
+                <div
+                  *ngIf="FullAddress.errors && FullAddress.invalid && FullAddress.touched || trackingDDPdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="FullAddress.errors">
+                    Please enter FullAddress.
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mt-md-0 mt-1 checkstatus" *ngIf="spinnerCheck">
+                
+                <button (click)="check()" [disabled]="!DeliveryDateformValid()" >Check Avaliablity</button>
+              </div>
+              
+              <div class="col-sm-3 mt-md-0 mt-1 checkstatus" *ngIf="!spinnerCheck">
+                <button class="mt-5 " align="center" type="button" >
+                  <div class="spinner-border" style="color: white !important; " role="status"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="FAq2 mt-5">
+        <li class="faq-heading lifaq">Frequently Asked Question</li>
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <li class="accordion-header lifaq" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <p>What is the mode of shipping? </p>
+              </button>
+            </li>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                The mode of shipping refers to the method used to transport and deliver your order to your specified
+                location.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <li class="accordion-header lifaq" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                <p>What is the Selection of Route?</p>
+              </button>
+            </li>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                Selection of route refers to the process of choosing the optimal path for the
+                movement of goods or services from their source to the destination.
+                It involves evaluating various factors such as distance, transportation modes, cost, time,
+                accessibility,
+                and potential risks to determine the most efficient and effective route.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <li class="contactli">
+          <p>
+            We are happy to solve your query reach us at given detail (24*7)
+          </p>
+          <em><br><br></em>
+          <p style="font-size: 14px;"><strong>Email ID- &nbsp;</strong> <a style=" color: rgb(39, 37, 37);" href="mailto:rfq@negbuy.com">rfq@negbuy.com</a></p>
+          <p><strong>Contact Number- &nbsp;</strong> <a style=" color: rgb(39, 37, 37);" href="tel:+917836803051">+91 7836803051</a></p>
+        </li>
+
+        <!-- </ul> -->
+      </div>
+      <div class="col-12 mt-5 mb-5" *ngIf="ShowDeliveryPartner">
+        <div class="location-container" id="deliverybreakpoint">
+          <div class="headerDiv">Your location overview in key points</div>
+          
+          <div class="row location-address32">
+            
+           
+          
+            <div class="col-2 colBoxes">
+              <div class="img_Div">
+             <img src="assets/logo/1(2).png" alt="" srcset="">
+             </div>
+            
+            </div>
+            <hr>
+            <div class="col-2 colBoxes">
+              <div class="img_Div">
+               <img src="assets/logo/2(2).png" alt="" srcset="">
+               </div>
+            
+            </div>
+            <hr>
+            <div class="col-2 colBoxes">
+              <div class="img_Div">
+              <img src="assets/logo/3(2).png" alt="" srcset="">
+              </div>
+            
+            </div>
+            <hr>
+            <div class="col-2 colBoxes">
+              <div class="img_Div">
+               <img src="assets/logo/4.png" alt="" srcset="">
+               </div>
+            </div>
+           
+          </div>
+
+          <div class="row location-address">
+            <div class="col-lg-2 col-3 colBoxes">
+              <p>{{this.DomesticCouriersPartner.delivery_breakpoints.seller_warehouse}}</p>
+              <span>Seller's Warehouse</span>
+            </div>
+            
+            <div class="col-lg-2 col-3 colBoxes">
+              <p>{{this.DomesticCouriersPartner.delivery_breakpoints.seller_nearest_port}}</p>
+              <span>Seller's Nearest Air Hub</span>
+            </div>
+            
+            <div class="col-lg-2 col-3 colBoxes">
+              <p>{{this.DomesticCouriersPartner.delivery_breakpoints.buyer_nearest_port}}</p>
+              <span>Air Hub Near You</span>
+            </div>
+            
+            <div class="col-lg-2 col-3 colBoxes">  
+              <p>{{this.DomesticCouriersPartner.delivery_breakpoints.buyer_address}}</p>
+              <span>your Address</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 buttonproceed mb-3">
+              <button class="mt-5 " align="center" type="submit" (click)="SendDDPOrderDetails(trackingDDPdetail)"
+                *ngIf="spinnerBuyNow" [disabled]="proceedValidate === false">Proceed to Checkout
+              </button>
+      
+              <button class="mt-5 " align="center" type="button" *ngIf="!spinnerBuyNow">
+                <div class="spinner-border" style="color: white !important; " role="status"></div>
+              </button>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12 p-3"  *ngIf="this.delivery_not_available === true" >
+        <div class="row mb-5 delivery_not_available">
+          <div class="col-12 delivery_not_available_oops">
+            <img src="assets/logo/not deliver 6.png" alt="" srcset="">
+            <h3>Oops!</h3>
+            <h4>Delivery unavailable in your area</h4>
+            <h4>Delivery unavailable at this zip code. Enter a different address to see options.</h4>
+          </div>
+
+          <div class="col-12 buttonproceed mb-3">
+            <button class="mt-5 " id="not_available" align="center" routerLink="/help-center">Help Center</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 buttonproceed2 mb-3">
+        <button  align="center" type="submit" (click)="SendDDPOrderDetails(trackingDDPdetail)"
+          *ngIf="spinnerBuyNow" [disabled]="proceedValidate === false">Proceed to Checkout
+        </button>
+
+        <button align="center" type="button" *ngIf="!spinnerBuyNow">
+          <div class="spinner-border" style="color: white !important; " role="status"></div>
+        </button>
+
+      </div>
+      <!-- <div class="col-12" *ngIf="ShowDeliveryPartner">
+        <div class="delivertPartner" id="DeliveryPartnerChoice">
+          <div class="heading">Select a Delivery Partner of your choice</div>
+          <div class="partners row">
+            <div class="col-md-6 checkboxcol" *ngFor="
+            let CouriersPartner of DomesticCouriersPartner">
+
+              <div class="col-11 border" [ngClass]=" DeliveryPartner == CouriersPartner?'activeradio':''">
+                <input [id]="CouriersPartner.courier_company_id" [value]="CouriersPartner" type="radio"
+                  [(ngModel)]="DeliveryPartner" name="DeliveryPartner">
+                <label style="cursor: pointer;"
+                  [for]="CouriersPartner.courier_company_id">{{CouriersPartner.courier_name}}<span>{{CouriersPartner.freight_charge}}</span></label>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+      
+    </div>
+  </form>
+</div>
+<!-- disabled [disabled]="!AddressDetailDDPformValid()" -->
+<!----------------------------- EX - WORK TRACKER --------------------------------->
+
+<div class="container-fluid" *ngIf="trackingForm.trackingFormMode=='Ex-work'">
+  <form #trackingEXWORKdetail="ngForm">
+    <div class="row p-2 formrow">
+
+      <div class="col-xl-6 mt-sm-5 mt-2">
+
+        <div class="shipingFormMode p-sm-3 p-2 pb-4">
+          <label for="trackingmodes">Choose your mode of Shiping</label>
+          <select id="trackingmodes" [(ngModel)]="trackingForm.trackingFormMode" [value]="trackingForm.trackingFormMode"
+            name="trackingFormMode" class="form-control form-select form-select-lg mb-3" required
+            #trackingFormMode="ngModel">
+            <option value="" disabled>Chose your mode of delivey ex DDP or Ex-Work (incoterms)</option>
+            <option *ngFor="let modes of mode" [value]="modes.value">{{modes.name}}</option>
+          </select>
+          <div
+            *ngIf="trackingFormMode.errors && trackingFormMode.invalid && trackingFormMode.touched || trackingEXWORKdetail.submitted">
+            <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="trackingFormMode.errors">
+              Please select mode of shipping.
+            </div>
+          </div>
+
+          <label for="trackingroute">Selection of Route</label>
+          <select id="trackingroute" [(ngModel)]="trackingForm.selectRoute" name="selectRoute" #selectRoute="ngModel"
+            class="form-select form-select-lg" [value]="trackingForm.selectRoute" required>
+            <option value="" disabled>Chose your mode of delivey ex DDP or Ex-Work (incoterms)</option>
+            <option value="By Air">By Air</option>
+            <option value="" disabled>By Water</option>
+            <!-- <option *ngFor="let route of routes" [value]="route.value">{{route.name}}</option> -->
+          </select>
+          <div
+            *ngIf="selectRoute.errors && selectRoute.invalid && selectRoute.touched || trackingEXWORKdetail.submitted">
+            <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="selectRoute.errors">
+              Please select delivery route
+            </div>
+          </div>
+        </div>
+
+        <div class="deliveryAddres pb-3 mt-4">
+          <div class="delivery-form">
+            <p>Confirm Delivery Address</p>
+
+            <div class="form-input row ">
+              <div class="col-sm-5 mt-md-0 mt-1">
+                <label for="Addpincode">Pincode</label> <br />
+                <input id="Addpincode" type="text" class="w-100" placeholder="  Pin code of your area"
+                  [(ngModel)]="trackingForm.addressDetail.pincode" #pincode="ngModel" (change)="getAddByPin()" required
+                  name="pincode" minlength="3" maxlength="6" />
+                <div *ngIf="pincode.errors && pincode.invalid && pincode.touched || trackingEXWORKdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="pincode.errors">
+                    Please enter a valid 6-digit pincode.
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="spinneraddpin">
+                <label for="Addcity">City</label> <br />
+                <input id="Addcity" type="text" class="w-100" placeholder="  Enter your city name"
+                  [(ngModel)]="trackingForm.addressDetail.city" #city="ngModel" name="city" required />
+
+                <div *ngIf="city.errors && city.invalid && city.touched || trackingEXWORKdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="city.errors">
+                    Please enter city.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="!spinneraddpin">
+                <label for="Addcity">City</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(12 111 81) !important; " role="status"></div>
+              </div>
+            </div>
+
+            <div class="form-input row ">
+              <div class="col-sm-5 mt-md-0 mt-1" *ngIf="spinneraddpin">
+                <label for="Addstate">State</label> <br />
+                <input id="Addstate" type="text" class="w-100" placeholder="  Enter name of your state"
+                  [(ngModel)]="trackingForm.addressDetail.state" #state="ngModel" name="state" required />
+
+                <div *ngIf="state.errors && state.invalid && state.touched || trackingEXWORKdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="state.errors">
+                    Please enter state.
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="!spinneraddpin">
+                <label for="Addcity">State</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(12 111 81) !important; " role="status"></div>
+              </div>
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="spinneraddpin">
+                <label for="Addcountry">Country</label> <br />
+                <select id="Addcountry" class="form-select form-select-lg mb-3"
+                  [(ngModel)]="trackingForm.addressDetail.country" name="country"
+                  [value]="trackingForm.addressDetail.country" #country="ngModel" required>
+
+                  <option value="" disabled>Select your Country</option>
+                  <option *ngFor="let country of countries" [value]="country.name"
+                    [selected]="countryfetch(trackingForm.addressDetail.country,country.name)">{{country.name}}</option>
+                </select>
+
+                <div *ngIf="country.errors && country.invalid && country.touched || trackingEXWORKdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="country.errors">
+                    Please select country.
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 mt-md-0 mt-3" *ngIf="!spinneraddpin">
+                <label for="Addcity">Country</label> <br />
+                <div class="spinner-border mt-3" style="color: rgb(12 111 81) !important; " role="status"></div>
+              </div>
+            </div>
+
+            <div class="form-input row mt-3 ">
+              <div class="col-sm-9 mt-md-0 mt-1">
+                <label for="full-address">Enter Full Address</label>
+                <textarea id="full-address" rows="8" cols="57" name="comment" form="usrform"
+                  [(ngModel)]="trackingForm.addressDetail.FullAddress" #FullAddress="ngModel" name="FullAddress"
+                  required></textarea>
+
+                <div
+                  *ngIf="FullAddress.errors && FullAddress.invalid && FullAddress.touched || trackingEXWORKdetail.submitted">
+                  <div class="error_message" style="color: #F54646; font-weight: 500;" *ngIf="FullAddress.errors">
+                    Please enter FullAddress.
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mt-md-0 mt-1 checkstatus">
+                <button [disabled]="!AddressDetailEXworkformValid()"  (click)="showcontent('Confirm to Proceed')">Confirm</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="FAq mt-5">
+          <li class="faq-heading">Frequently Asked Question</li>
+
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <li class="accordion-header lifaq" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  <p>What is Ex-Works (EXW) Delivery?</p>
+                </button>
+              </li>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Ex-Works (EXW) is an international trade term where the seller's responsibility ends once the goods
+                  are made available at their premises.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <li class="accordion-header lifaq" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  <p>How can I arrange a delivery partner for Ex-Works shipments?</p>
+                </button>
+              </li>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  If you've chosen Ex-Works shipping terms, it means that the responsibility for transportation lies
+                  with you,
+                  Simply coordinate with a reputable shipping company or logistics provider to
+                  ensure a smooth and efficient delivery process for your Ex-Works shipments.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <li class="accordion-header lifaq" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  <p>What are the benefits of Ex-Works delivery? </p>
+                </button>
+              </li>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Ex-Works gives you control over the shipping process, allowing you to choose a trusted
+                  delivery partner and negotiate favorable shipping rates. It also provides
+                  flexibility in managing transportation and delivery timelines according to your needs.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- </ul> -->
+        </div>
+
+      </div>
+
+      <div class=" col-xl-6 exworkprocess mt-sm-5 mt-2">
+
+        <div class="row">
+          <div class="co-12 exworkprocesscol px-3 pt-3">
+            <h3>
+              Ex-Work Order Process -
+            </h3>
+            <div class="exworkcirclemaindiv">
+
+              <div class="circleimgandhead">
+                <div class="circleimg">
+                  <img src="assets/logo/exworkicon1.png" alt="" srcset="">
+                </div>
+                <h4 class="mt-3">Order <br> Booked</h4>
+              </div>
+
+              <div class="vl">---------</div>
+
+              <div class="circleimgandhead">
+                <div class="circleimg">
+                  <img src="assets/logo/exworkicon1.png" alt="" srcset="">
+                </div>
+                <h4 class="mt-3">Add docket <br> Number</h4>
+              </div>
+
+              <div class="vl">---------</div>
+
+              <div class="circleimgandhead">
+                <div class="circleimg">
+                  <img src="assets/logo/exworkicon1.png" alt="" srcset="">
+                </div>
+                <h4 class="mt-3">Order <br> Verification</h4>
+              </div>
+
+              <div class="vl">---------</div>
+
+              <div class="circleimgandhead">
+                <div class="circleimg">
+                  <img src="assets/logo/exworkicon1.png" alt="" srcset="">
+                </div>
+                <h4 class="mt-3">Payment <br> Confirmation</h4>
+              </div>
+
+              <div class="vl">---------</div>
+
+              <div class="circleimgandhead">
+                <div class="circleimg">
+                  <img src="assets/logo/exworkicon1.png" alt="" srcset="">
+                </div>
+                <h4 class="mt-3">Order <br> Shipped</h4>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-12 exworkprocessulcol px-3 pt-3">
+            <ul>
+              <li>
+                Order without paying now and pay when your delivery partner arrives to pick up the order.
+              </li>
+              <li>
+                After placing the order you have submit Docket number <a routerLink="../docket-detail-page" target="_blank">(How to add docket number)</a>
+              </li>
+              <li>
+                After verification of the Docket Number we will share a document with you which you can share with your
+                delivery partner only then they can receive the order
+              </li>
+              <li>
+                And then , you can pay the amount when your delivery partner arrives at the warehouse.
+              </li>
+              <li>
+                Negbuy team will be at your side at every stage; contact us with any problems.
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 exworkprocessulcolh3 px-3 pt-3">
+            <h3>
+              We have provided 100+ successful Ex-work orders
+            </h3>
+          </div>
+
+          <div class="col-12 howexworkworks px-3 pt-3">
+            <div class="row px-sm-4 px-2">
+              <div class="col-2 howexworkworks-img">
+                <img src="assets/logo/Rectangle932.png" alt="" srcset="">
+              </div>
+              <div class="col-xsm-10 col-12 howexworkworks-data pt-3 px-sm-3 px-2">
+                <h3>What is Ex-work & how it works ?</h3>
+                <p>Ex-Works (EXW) is an international trade term where the seller's responsibility ends once the goods are made available at their premises.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 warehouse px-3 pt-3">
+            <div class="row px-sm-4 px-2">
+              <div class="col-2 warehouse-img">
+                <img src="assets/logo/Rectangle933.png" alt="" srcset="">
+              </div>
+              <div class="col-10 warehouse-address px-sm-3 px-2">
+                <h3>Negbuy Warehouse Details</h3>
+                <span (click)="openModal()">Check Full Details</span>
+              </div>
+
+              <div class="col-md-4 mt-4 addresscont">
+                <p>
+                  <strong>Address</strong> <br>
+                  G-21, Sector 3, <br>
+                  Noida, Uttar Pradesh,  <br>
+                  India, <br>
+                  Pin code - 201301
+                </p>
+              </div>
+              <div class="col-md-8 mt-xsm-4 mt-2 contactcont">
+                <ul *ngFor="let warehouseData of warehouseDetailData">
+                  <li>Store Manager Details - <span>{{warehouseData.store_manager_details}}</span></li>
+                  <li>Contact Number - <span>{{warehouseData.contact_number}}</span></li>
+                  <li>Employee ID - <span>{{warehouseData.employee_id}}</span></li>
+                  <li>Negbuy GST Number - <span>{{warehouseData.company_gst_number}}</span></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-12 locateusonmap px-3 pt-1">
+            <h3>
+              Locate on Google Map
+            </h3>
+          </div>
+          <div class="col-12">
+            <div class="FAqsss">
+              <li class="contactli">
+                <p>
+                  We are happy to solve your query reach us at given detail (24 x 7)
+                </p>
+                <br><br>
+                <p style="font-size: 14px;"><strong>Email ID- &nbsp;</strong> <a style=" color: rgb(39, 37, 37);" href="mailto:rfq@negbuy.com">rfq@negbuy.com</a></p>
+                <span><strong>Contact Number- &nbsp;</strong> <a style=" color: rgb(39, 37, 37);" href="tel:+917836803051">+91 7836803051</a></span>
+              </li>
+
+              <!-- </ul> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12 mt-5">
+        <div class="location-container" id="deliverybreakpoint">
+          <div class="headerDiv">Your location overview in key points</div>
+          
+          <div class="row location-address32">
+            
+           
+          
+            <div class="col-2 colBoxes">
+              <div class="img_Div">
+             <img src="assets/logo/1(2).png" alt="" srcset="">
+             </div>
+            
+            </div>
+            <hr>
+            <div class="col-2 colBoxes">
+              <div class="img_Div">
+               <img src="assets/logo/2(2).png" alt="" srcset="">
+               </div>
+            
+            </div>
+            <hr>
+            <div class="col-2 colBoxes">
+              <div class="img_Div">
+              <img src="assets/logo/3(2).png" alt="" srcset="">
+              </div>
+            
+            </div>
+            <hr>
+            <div class="col-2 colBoxes">
+              <div class="img_Div">
+               <img src="assets/logo/4.png" alt="" srcset="">
+               </div>
+            </div>
+           
+          </div>
+
+          <div class="row location-address">
+            <div class="col-lg-2 col-3 colBoxes">
+              <p>Noida, Uttar Pradesh</p>
+              <span>Seller's Warehouse</span>
+            </div>
+            
+            <div class="col-lg-2 col-3 colBoxes">
+              <p>Noida Delivery Hub</p>
+              <span>Seller's Nearest Air Hub</span>
+            </div>
+            
+            <div class="col-lg-2 col-3 colBoxes">
+              <p>{{trackingForm.addressDetail.state}} Delivery Hub</p>
+              <span>Air Hub Near You</span>
+            </div>
+            
+            <div class="col-lg-2 col-3 colBoxes">  
+              <p>{{this.cityname}}, {{trackingForm.addressDetail.state}}, {{selectedCountryCode}} </p>
+              <span>your Address</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 buttonproceed mb-3" id="Confirm to Proceed">
+              <button class="mt-5" align="center" type="submit" *ngIf="spinnerBuyNow"
+          (click)="SendExWorkOrderDetails(trackingEXWORKdetail)">Proceed</button>
+
+        <button class="mt-5 " align="center" type="button" *ngIf="!spinnerBuyNow">
+          <div class="spinner-border" style="color: white !important; " role="status"></div>
+        </button>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </form>
+</div>
+
+<!-- ------------------------MODAL WAREHOUSE EX WORK ----------------------------- -->
+
+<div class="modal container-fluid" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog modal-xl row" role="document">
+    <div class="modal-content">
+      <div class="modal-header col-12">
+        <div class="col-11 mdh4">
+          <h4 class="modal-title">Negbuy Warehouse Details</h4>
+        </div>
+        <div class="col-1 mdh4"><span aria-hidden="true" class="close" aria-label="Close" (click)="onCloseHandled()">
+            &times;</span></div>
+      </div>
+      <div class="modal-body col-12">
+        <div class="row" *ngFor="let warehouseData of warehouseDetailData">
+          <div class="col-lg-8">
+            <div class="row ">
+              <div class="col-lg-5 gallery mt-3">
+                <div class="row">
+                  <div class="col-12 gallery-head">
+                    <h5>1 Photos <span style="color: #F54646; cursor: pointer; font-size: 15px;" (click)="unselectBigImageFun()">(see all)</span></h5>
+                  </div>
+                  <div class="col-12" *ngIf="!selectBigImage">
+                    <div class="row">
+                      <div class="col-8" style=" padding:3px; height: 200px;">
+                        <div class="modaliMAGE">
+                          <img src="{{warehouseData.warehouse_image1}}" (click)="selectBigImageFun(warehouseData.warehouse_image1)" alt="" srcset="">
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="row">
+                          <div class="col-12" style=" padding:3px; height: 100px;">
+                            <div class="modaliMAGE2">
+                              <img src="{{warehouseData.warehouse_image2}}" (click)="selectBigImageFun(warehouseData.warehouse_image2)" alt="" srcset="">
+                            </div>
+                          </div>
+                          <div class="col-12" style=" padding:3px; height: 100px;">
+                            <div class="modaliMAGE2">
+                              <img src="{{warehouseData.warehouse_image3}}" (click)="selectBigImageFun(warehouseData.warehouse_image4)" alt="" srcset="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-4" style=" padding:3px; height: 100px;">
+                            <div class="modaliMAGE2">
+                              <img src="{{warehouseData.warehouse_image4}}" (click)="selectBigImageFun(warehouseData.warehouse_image4)" alt="" srcset="">
+                            </div>
+                          </div>
+                          <div class="col-4" style=" padding:3px; height: 100px;">
+                            <div class="modaliMAGE2">
+                              <img src="{{warehouseData.warehouse_image5}}" (click)="selectBigImageFun(warehouseData.warehouse_image5)" alt="" srcset="">
+                            </div>
+                          </div>
+                          <div class="col-4" style=" padding:3px; height: 100px;">
+                            <div class="modaliMAGE2">
+                              <img src="{{warehouseData.warehouse_image6}}" (click)="selectBigImageFun(warehouseData.warehouse_image6)" alt="" srcset="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12" *ngIf="selectBigImage">
+                    <div class="row">
+                      <div class="col-12" style=" padding:3px; height: 323px;">
+                        <div class="modaliMAGE">
+                          <img src="{{selectedImge}}" alt="" srcset="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 addresscont mt-5 pt-3">
+                    <p>
+                      <strong>Address</strong> <br>
+                      G-21 Sector 3 <br>
+                      Noida , Uttar Pradesh <br>
+                      India, 201301
+                    </p>
+                    <a href="https://maps.app.goo.gl/kEsLPca8v2xNkYFe8" target="_blank" style="color: #F54646;">Locate on Google Map</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-7 pt-5 mt-5">
+                <div class="row">
+                  <div class="col-12 sucesshead p-3">We have provided 100+ successful Ex-work orders</div>
+                  <div class="col-12 mt-5 p-4">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1700">
+                      <!-- Indicators -->
+
+
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner border">
+                        <div class="item active">
+                          <img src="assets/Carousel/new hopepage 4.png" alt="Los Angeles" style="width:100%;">
+                        </div>
+
+                        <div class="item">
+                          <img src="assets/Carousel/new hopepage 4.png" alt="Chicago" style="width:100%;">
+                        </div>
+
+                        <div class="item">
+                          <img src="assets/Carousel/new hopepage 4.png" alt="New york" style="width:100%;">
+                        </div>
+                      </div>
+
+                      <ol class="carousel-indicators mt-5">
+                        <li data-target="#myCarousel" data-slide-to="0"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                      </ol>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 border ">
+            <div class="row p-4">
+              <div class="col-12 modalcontactcont">
+                <ul>
+                  <li>Store Manager Details - <span>{{warehouseData.store_manager_details}}</span></li>
+                  <li>Contact Number - <span>{{warehouseData.contact_number}}</span></li>
+                  <li>Employee ID - <span>{{warehouseData.employee_id}}</span></li>
+                </ul>
+              </div>
+              <div class="col-12 modalprofile mt-3">
+                <div class="row">
+                  <div class="col-4 modalprofile-img">
+                    <img src="{{warehouseData.person_profile_img}}" alt="" srcset="">
+                  </div>
+                  <div class="col-8 modalprofile-name">
+                    Person Profile Image
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 modalmanager mt-4">
+                <div class="row">
+                  <div class="col-12 modalmanager-name">
+                    Store Manager Id Proof
+                  </div>
+                  <div class="col-12 modalmanager-proof mt-4">
+                    <img src="{{warehouseData.store_manager_id_proof}}" alt="" srcset="">
+                  </div>
+                  <div class="col-8 p-3 modalmanager-proofdetail">
+                    <ul>
+                      <li>Identification Type - <span>{{warehouseData.identification_type}}</span></li>
+                      <li>{{warehouseData.identification_type}} Number - <span>{{warehouseData.identification_number}}</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-3 border modalcompany">
+            <div class="row">
+              <div class="col-md-6 modalcompany-name">
+                <ul>
+                  <li>Company Name - <span>{{warehouseData.company_name}}</span></li>
+                  <li>Contact Number - <span>+91-7836803051</span></li>
+                  <li>Email ID - <span>{{warehouseData.email}}</span></li>
+                </ul>
+              </div>
+              <div class="col-md-6 modalcompany-gst">
+                <ul>
+                  <li>Company Gst Number - <span>{{warehouseData.company_gst_number}}</span></li>
+                  <li>Total Deliveries - <span>{{warehouseData.total_deliveries}}</span></li>
+                  <li style="color: #F5464696;">Company’s Terms and Conditions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-12 modalfooter">
+            <div class="row">
+              <div class="col-12 modalfooter-head">
+                <h3>Certifications and Supports</h3>
+              </div>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-2 modalfooter-certificate ">
+                    <img src="assets/logo/security.png" alt="">
+                    <h4>SSL Certification</h4>
+                  </div>
+                  <div class="col-2 modalfooter-certificate ">
+                    <img src="assets/logo/security.png" alt="">
+                    <h4>Security Badge</h4>
+                  </div>
+                  <div class="col-2 modalfooter-certificate ">
+                    <img src="assets/logo/card_travel.png" alt="">
+                    <h4>Trade assurance</h4>
+                  </div>
+                  <div class="col-2 modalfooter-certificate ">
+                    <img src="assets/logo/verified.png" alt="">
+                    <h4>Verified Seller</h4>
+                  </div>
+                  <div class="col-2 modalfooter-certificate ">
+                    <img src="assets/logo/support_agent.png" alt="">
+                    <h4>24*7 Support</h4>
+                  </div>
+                  <div class="col-2 modalfooter-certificate ">
+                    <img src="assets/logo/support_agent.png" alt="">
+                    <h4>24*7 Support</h4>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,517 @@
+.slick-slider {
+  margin: auto;
+}
+
+body .slick-prev,
+body .slick-next {
+  display: none;
+}
+
+* {
+  overflow: hidden;
+}
+
+.slick-current {
+  transition: transform 1s ease-in;
+  transform: scale(1.08);
+}
+
+.mainSlideDiv {
+  position: relative;
+  padding: 20px;
+
+  .SlideData {
+    position: absolute;
+    display: flex;
+    top: 0;
+    height: 100%;
+    left: 2.5vmax;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 60%;
+
+    h2 {
+      width: 65%;
+      font-weight: 600;
+
+      font-size: 2vmax;
+      line-height: 1em;
+      letter-spacing: 0em;
+      text-align: left;
+      color: whitesmoke;
+      text-shadow: 30px #262626;
+    }
+
+    p {
+      width: 65%;
+      font-weight: 500;
+
+      font-size: 0.9em;
+      line-height: 1.3em;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    button {
+      width: 140px;
+      border: none;
+      border-radius: 5px;
+      font-weight: 500;
+      padding: 7px;
+
+      font-size: 1em;
+      line-height: 1.3em;
+      letter-spacing: 0em;
+      box-shadow: 2px 5px 5px 5px #8887873b;
+      color: #262626;
+      cursor: pointer;
+    }
+
+
+  }
+
+  .EngineeringGoods {
+
+    h2 {
+      font-weight: 600;
+
+      color: whitesmoke;
+    }
+
+    p {
+      color: #ffff;
+
+    }
+
+    button {
+      background-color: white;
+      color: crimson;
+    }
+  }
+
+  .Fabrics {
+
+    h2 {
+      font-weight: 600;
+
+      color: rgba(49, 161, 137, 0.815);
+    }
+
+    p {
+      color: rgba(49, 161, 137, 0.815);
+
+    }
+
+    button {
+      background-color: rgba(49, 161, 137, 0.815);
+      color: white;
+    }
+  }
+
+  .Gems {
+
+    h2 {
+      font-weight: 600;
+
+
+      color: rgb(116, 0, 145);
+    }
+
+    p {
+      color: rgb(116, 0, 145);
+
+    }
+
+    button {
+
+      background-color: rgb(116, 0, 145);
+      color: white;
+    }
+  }
+
+  .Electronics {
+
+    h2 {
+      font-weight: 600;
+
+      color: rgba(11, 8, 177, 0.842);
+    }
+
+    p {
+      color: rgba(11, 8, 177, 0.842);
+
+    }
+
+    button {
+
+      background-color: rgba(11, 8, 177, 0.842);
+      color: white;
+    }
+  }
+}
+
+@media (max-width:739px) {
+
+
+  .mainSlideDiv {
+    padding: 5px;
+
+    .SlideData {
+      margin-left: 5%;
+
+      h2 {
+        width: 70%;
+        font-weight: 600;
+
+        font-size: 2vmax;
+        line-height: 1.3em;
+        letter-spacing: 0em;
+        text-align: left;
+        color: whitesmoke;
+        text-shadow: 30px #262626;
+      }
+
+      p {
+        display: none;
+      }
+
+      button {
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+        padding: 7px;
+        width: 90px;
+
+        font-size: 1em;
+        line-height: 1.3em;
+        letter-spacing: 0em;
+        box-shadow: 2px 5px 5px 5px #8887873b;
+        color: #262626;
+        cursor: pointer;
+      }
+    }
+
+    .EngineeringGoods {
+
+      h2 {
+        font-weight: 600;
+
+        color: whitesmoke;
+      }
+
+      p {
+        color: #ffff;
+
+      }
+
+      button {
+        background-color: white;
+        color: crimson;
+      }
+    }
+
+    .Fabrics {
+
+      h2 {
+        font-weight: 600;
+
+        color: rgba(49, 161, 137, 0.815);
+      }
+
+      p {
+        color: rgba(49, 161, 137, 0.815);
+
+      }
+
+      button {
+        background-color: rgba(49, 161, 137, 0.815);
+        color: white;
+      }
+    }
+
+    .Gems {
+
+      h2 {
+        font-weight: 600;
+
+
+        color: rgb(116, 0, 145);
+      }
+
+      p {
+        color: rgb(116, 0, 145);
+
+      }
+
+      button {
+
+        background-color: rgb(116, 0, 145);
+        color: white;
+      }
+    }
+
+    .Electronics {
+
+      h2 {
+        font-weight: 600;
+
+        color: rgba(11, 8, 177, 0.842);
+      }
+
+      p {
+        color: rgba(11, 8, 177, 0.842);
+
+      }
+
+      button {
+
+        background-color: rgba(11, 8, 177, 0.842);
+        color: white;
+      }
+    }
+
+  }
+}
+
+@media (max-width:412px) {
+  .mainSlideDiv {
+    padding: 5px;
+
+    .SlideData {
+      margin-left: 2.5%;
+
+      h2 {
+        width: 70%;
+        font-weight: 600;
+
+        font-size: 1.6vmax;
+        line-height: 1.3em;
+        letter-spacing: 0em;
+        text-align: left;
+        color: whitesmoke;
+        text-shadow: 30px #262626;
+      }
+
+      p {
+        display: none;
+      }
+
+      button {
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+        padding: 4px;
+        width: 70px;
+
+        font-size: 0.8em;
+        line-height: 1.3em;
+        letter-spacing: 0em;
+        box-shadow: 2px 5px 5px 5px #8887873b;
+        color: #262626;
+        cursor: pointer;
+      }
+    }
+
+    .EngineeringGoods {
+
+      h2 {
+        font-weight: 600;
+
+        color: whitesmoke;
+      }
+
+      p {
+        color: #ffff;
+
+      }
+
+      button {
+        background-color: white;
+        color: crimson;
+      }
+    }
+
+    .Fabrics {
+
+      h2 {
+        font-weight: 600;
+
+        color: rgba(49, 161, 137, 0.815);
+      }
+
+      p {
+        color: rgba(49, 161, 137, 0.815);
+
+      }
+
+      button {
+        background-color: rgba(49, 161, 137, 0.815);
+        color: white;
+      }
+    }
+
+    .Gems {
+
+      h2 {
+        font-weight: 600;
+
+
+        color: rgb(116, 0, 145);
+      }
+
+      p {
+        color: rgb(116, 0, 145);
+
+      }
+
+      button {
+
+        background-color: rgb(116, 0, 145);
+        color: white;
+      }
+    }
+
+    .Electronics {
+
+      h2 {
+        font-weight: 600;
+
+        color: rgba(11, 8, 177, 0.842);
+      }
+
+      p {
+        color: rgba(11, 8, 177, 0.842);
+
+      }
+
+      button {
+
+        background-color: rgba(11, 8, 177, 0.842);
+        color: white;
+      }
+    }
+
+  }
+}
+
+@media (max-width:300px) {
+  .mainSlideDiv {
+    padding: 5px;
+
+    .SlideData {
+      margin-left: 2%;
+
+      h2 {
+        width: 70%;
+        font-weight: 600;
+
+        font-size: 10px;
+        line-height: 1.3em;
+        letter-spacing: 0em;
+        text-align: left;
+        color: whitesmoke;
+        text-shadow: 30px #262626;
+      }
+
+      p {
+        display: none;
+      }
+
+      button {
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+        padding: 4px;
+        width: 60px;
+
+        font-size: 0.68em;
+        line-height: 1.3em;
+        letter-spacing: 0em;
+        box-shadow: 2px 5px 5px 5px #8887873b;
+        color: #262626;
+        cursor: pointer;
+      }
+    }
+
+    .EngineeringGoods {
+
+      h2 {
+        font-weight: 600;
+
+        color: whitesmoke;
+      }
+
+      p {
+        color: #ffff;
+
+      }
+
+      button {
+        background-color: white;
+        color: crimson;
+      }
+    }
+
+    .Fabrics {
+
+      h2 {
+        font-weight: 600;
+
+        color: rgba(49, 161, 137, 0.815);
+      }
+
+      p {
+        color: rgba(49, 161, 137, 0.815);
+
+      }
+
+      button {
+        background-color: rgba(49, 161, 137, 0.815);
+        color: white;
+      }
+    }
+
+    .Gems {
+
+      h2 {
+        font-weight: 600;
+
+
+        color: rgb(116, 0, 145);
+      }
+
+      p {
+        color: rgb(116, 0, 145);
+
+      }
+
+      button {
+
+        background-color: rgb(116, 0, 145);
+        color: white;
+      }
+    }
+
+    .Electronics {
+
+      h2 {
+        font-weight: 600;
+
+        color: rgba(11, 8, 177, 0.842);
+      }
+
+      p {
+        color: rgba(11, 8, 177, 0.842);
+
+      }
+
+      button {
+
+        background-color: rgba(11, 8, 177, 0.842);
+        color: white;
+      }
+    }
+
+  }
+}

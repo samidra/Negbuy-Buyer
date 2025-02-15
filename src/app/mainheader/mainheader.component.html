@@ -1,0 +1,603 @@
+<div (click)="clearSuggestions()" [ngClass]=" suggest_for_search_response_status == true?'dark-overlay':'dark-overlay2'">
+
+  <nav class="navbar navbar-expand-sm navbar-light bg-light" [ngClass]="{'fixed': isScrolled}">
+    <div class="container-fluid mainconta">
+      <a class="navbar-brand" routerLink=""> <img src="../../assets/menu_icons/Negbuy banner logo.png" class="logo"
+          alt="Negbuy e-commerce logo – India-based platform for global export and delivery services"></a>
+      <!-- data-top="0" data-scroll="300" -->
+      <button (click)="toggleNav()" class="Tbutton">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navbarSupportedContent" [ngClass]="navBarShow?'navShow':'navHide'">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu">
+          <li class="nav-item search_border">
+            <form action="" class="p-search">
+              <div style="position: relative;">
+                <button type="button" class="btn-All" (click)="this.showDropdown = !this.showDropdown">
+                  All
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <ul class="CategoryDropdown" *ngIf="showDropdown">
+                  <!-- Your dropdown content goes here -->
+                  <li *ngFor="let list of categoryDropdownList" (click)="selectCategoryToSearchProduct(list)">{{list}}
+                  </li>
+                </ul>
+              </div>
+              <div class="search-container">
+                <div class="d-flex">
+                  <input class="search-pro bb" type="text" [placeholder]="placeholderSelectedShow" name="first"
+                    [(ngModel)]="search_query" (input)="onInputChange()" (click)="presearch()" />
+                  <button type="btn" class="btn-Find" (click)="findSearch()">Find</button>
+
+                </div>
+
+                <ul class="suggestions-list" *ngIf="suggest_for_search_response_status == true">
+
+                  <li (click)="findSearch()"> Search results for "{{ search_query }}"</li>
+
+                  <li *ngFor="let suggestion of suggest_for_search_response.corrections"  (click)="onInputChange_two(suggestion)">
+                    <div><i class="bi bi-search" style="
+                      padding: 5px;
+                      font-size: 18px;
+                      font-weight: 600;
+                      width: 100%;
+                  "></i> <span style="color: rgb(155, 155, 155);  font-weight: 500;">Search instead for</span> "{{suggestion}}" </div> 
+                  </li>
+                  <li *ngFor="let suggestion of suggest_for_search_response.past_searches"  (click)="onInputChange_two(suggestion)">
+                    <div><i class="bi bi-search" style="
+                      padding: 5px;
+                      font-size: 18px;
+                      font-weight: 600;
+                      width: 100%;
+                  "></i>  {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                  </li>
+                  <li *ngFor="let suggestion of suggest_for_search_response.autocorrect1"  (click)="onInputChange_two(suggestion)">
+                    <div> <i class="bi bi-search" style="
+                      padding: 5px;
+                      font-size: 18px;
+                      font-weight: 600;
+                      width: 100%;
+                  "></i> {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                  </li>
+                  <li *ngFor="let suggestion of suggest_for_search_response.autocorrect2"  (click)="onInputChange_two(suggestion)">
+                    <div><i class="bi bi-search" style="
+                      padding: 5px;
+                      font-size: 18px;
+                      font-weight: 600;
+                      width: 100%;
+                  "></i> {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                  </li>
+
+                  <li *ngFor="let suggestion of suggestionsCategory?.category"
+                    (click)="RouteToSubcategoryBySearch(suggestion.name)">
+                    <div><i class="bi bi-search" style="
+                      padding: 5px;
+                      font-size: 18px;
+                      font-weight: 600;
+                  "></i> {{suggestion.name }} </div> <span style="color: rgb(1, 51, 1);">(In Categories)</span>
+                  </li>
+                  <li class="productsuggest" *ngFor="let suggestion of suggestions"
+                    (click)="RouteToProductcategoryBySearch(suggestion.category_id__name,suggestion.id)">
+                    <i class="bi bi-search" style="
+                    padding: 5px;
+                    font-size: 18px;
+                    font-weight: 600;
+                "></i> {{suggestion.product_title }}
+                    <!-- <span>({{suggestion.category_id__name}})</span> -->
+                  </li>
+                </ul>
+
+              </div>
+
+            </form>
+
+          </li>
+          <li class="nav-item btn-submit">
+            <a (click)="onClick('requirementForm')"> Submit your Requirement </a>
+          </li>
+
+          <li class="nav-item btn-Sell">
+            <a href="https://seller.negbuy.com" target="_blank" class="">
+              <img loading="lazy" class="sell-img" src="../../assets/header/trial_img/Icon_Logo-removebg-preview 1.png"
+                alt="Wanna Sell" srcset="" />
+              <span class="wanna"> <a>Wanna Sell ?</a></span>
+            </a>
+          </li>
+
+          <li class="nav-item likeItem" style="position: relative;" *ngIf="!loadingLogInIcon">
+            <a (click)="gotoChats()">
+              <img src="assets/menu_icons/chat-left-text-fill.png" alt="All Chats" srcset="" class="chatImage">
+              <span *ngIf="navbar_numbers_res.unopened_chats_counts != 0" class="countnumber">
+                {{navbar_numbers_res.unopened_chats_counts }} </span>
+            </a>
+          </li>
+
+
+          <li class="nav-item likeItem" style="position: relative;" *ngIf="!loadingLogInIcon">
+            <a (click)="GoToWishlist()" class="">
+              <i class="bi bi-heart-fill"></i>
+              <span *ngIf="navbar_numbers_res.wishlisted_counts != 0" class="countnumber">
+                {{navbar_numbers_res.wishlisted_counts}} </span>
+            </a>
+          </li>
+
+          <li class="nav-item likeItem" *ngIf="userlogin && !loadingLogInIcon">
+            <a (click)="navigateToSignPage()" class="">
+              <i class="bi bi-box-arrow-in-right"></i>
+            </a>
+          </li>
+
+          <li class="nav-item likeItem" style="margin-left: 2.8vmax;" *ngIf="loadingLogInIcon">
+            <div class="loader1"></div>
+          </li>
+
+          <li class="nav-item likeItem dropdown" *ngIf=" !userlogin">
+            <a (click)="openMenu()" [ngClass]="{'menu-opened': openMenudisplay, 'aaaa': !openMenudisplay}">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-down" style="font-size: 16px;"
+                [ngClass]="{'rotated': openMenudisplay, 'rotatedNot': !openMenudisplay}"></i>
+            </a>
+            <div class="dropdown-content" [ngClass]="{'dropdown-content-Show': openMenudisplay}">
+              <a routerLink="/profile-page">
+                <img src="assets/menu_icons/Profileicon.png" alt="My Profile" srcset="">
+                My Profile
+              </a>
+              <a routerLink="/my-order">
+                <img src="assets/menu_icons/ordericon.png" alt="My Orders" srcset="">
+                <span style="position: relative;"> My Orders <span *ngIf="navbar_numbers_res.undelieverd_ordered != 0"
+                    class="countnumberOrder"> {{navbar_numbers_res.undelieverd_ordered}} </span> </span>
+              </a>
+              <a (click)="gotoChats()">
+                <img src="assets/menu_icons/chat-left-text-fill.png" alt="All Chats" srcset="">
+                <span style="position: relative;"> All Chats <span *ngIf="navbar_numbers_res.unopened_chats_counts != 0"
+                    class="countnumberOrder"> {{navbar_numbers_res.unopened_chats_counts }} </span> </span>
+              </a>
+              <a routerLink="/my-Wishlist">
+                <img src="assets/menu_icons/wishlishicon.png" alt="My Wishlist" srcset="">
+                <span style="position: relative;"> My Wishlist <span *ngIf="navbar_numbers_res.wishlisted_counts != 0"
+                    class="countnumberOrder"> {{navbar_numbers_res.wishlisted_counts}} </span> </span>
+              </a>
+              <a routerLink="/my-Notification">
+                <img src="assets/menu_icons/notificationicon.png" alt="My Notification" srcset="">
+                My Notification
+              </a>
+              <a (click)="RouteToProductPages()">
+                <img src="assets/menu_icons/Recommendation.png" alt="My Recommendation" srcset="">
+                My Recommendation
+              </a>
+              <a routerLink="/my-rfq">
+                <img src="assets/menu_icons/RFQ.png" alt="My RFQ" srcset="">
+                My RFQ
+              </a>
+              <a routerLink="/blogs">
+                <img src="assets/menu_icons/blog.png" alt="Blogs" srcset="">
+                Blog
+              </a>
+              <a routerLink="/return-center">
+                <img src="assets/menu_icons/Product-return.png" alt=" Return Center" srcset="">
+                Return Center
+              </a>
+              <a routerLink="/help-center">
+                <img src="assets/menu_icons/call-center.png" alt="Help Center" srcset="">
+                Help Center
+              </a>
+              <a (click)="openModal()">
+                <img src="assets/menu_icons/logouticon.png" alt="Log Out" srcset="">
+                Log Out
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="row menu2">
+          <div class="col-12">
+            <form action="" class="p-search">
+              <button type="btn" class="btn-All">
+                All
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div class="search-container search_border">
+                <input class="search-pro bb" type="text" [placeholder]="placeholderSelectedShow" name="first"
+                  [(ngModel)]="search_query" (input)="onInputChange()" (click)="presearch()" />
+
+                
+                  <ul class="suggestions-list" *ngIf="suggest_for_search_response_status == true">
+
+                    <li (click)="findSearch()"> Search results for "{{ search_query }}"</li>
+  
+                    <li *ngFor="let suggestion of suggest_for_search_response.corrections"  (click)="onInputChange_two(suggestion)">
+                      <div><i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        width: 100%;
+                    "></i> <span style="color: rgb(155, 155, 155);  font-weight: 500;">Search instead for</span> "{{suggestion}}" </div> 
+                    </li>
+                    <li *ngFor="let suggestion of suggest_for_search_response.past_searches"  (click)="onInputChange_two(suggestion)">
+                      <div><i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        width: 100%;
+                    "></i>  {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                    </li>
+                    <li *ngFor="let suggestion of suggest_for_search_response.autocorrect1"  (click)="onInputChange_two(suggestion)">
+                      <div> <i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        width: 100%;
+                    "></i> {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                    </li>
+                    <li *ngFor="let suggestion of suggest_for_search_response.autocorrect2"  (click)="onInputChange_two(suggestion)">
+                      <div><i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        width: 100%;
+                    "></i> {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                    </li>
+  
+                    <li *ngFor="let suggestion of suggestionsCategory?.category"
+                      (click)="RouteToSubcategoryBySearch(suggestion.name)">
+                      <div><i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                    "></i> {{suggestion.name }} </div> <span style="color: rgb(1, 51, 1);">(In Categories)</span>
+                    </li>
+                    <li class="productsuggest" *ngFor="let suggestion of suggestions"
+                      (click)="RouteToProductcategoryBySearch(suggestion.category_id__name,suggestion.id)">
+                      <i class="bi bi-search" style="
+                      padding: 5px;
+                      font-size: 18px;
+                      font-weight: 600;
+                  "></i> {{suggestion.product_title }}
+                      <!-- <span>({{suggestion.category_id__name}})</span> -->
+                    </li>
+                  </ul>
+
+              </div>
+              <button type="btn" class="btn-Find">Find</button>
+            </form>
+
+          </div>
+          <div class="col-12 mt-3">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="col-sm-6 col-7 pt-1">
+                    <li class="nav-item btn-submit">
+                      <a (click)="onClick('requirementForm')"> Submit your Requirement </a>
+                    </li>
+                  </div>
+                  <div class="col-sm-6 col-5">
+                    <li class="nav-item btn-Sell">
+                      <a href="https://seller.negbuy.com" target="_blank" class="">
+                        <img loading="lazy" class="sell-img"
+                          src="../../assets/header/trial_img/Icon_Logo-removebg-preview 1.png" alt="Wanna Sell" srcset="" />
+                        <span class="wanna"> <a>Wanna Sell ?</a></span>
+                      </a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="col-6">
+                    <li class="nav-item likeItem" *ngIf="!loadingLogInIcon">
+                      <a (click)="GoToWishlist()" class="">
+                        <i class="bi bi-heart-fill"></i>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="col-6">
+                    <li class="nav-item likeItem" *ngIf="userlogin  && !loadingLogInIcon">
+                      <a (click)="navigateToSignPage()" class="">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item likeItem" *ngIf="loadingLogInIcon">
+                      <div class="loader1"></div>
+                    </li>
+
+                    <li class="nav-item likeItem dropdown" *ngIf=" !userlogin">
+                      <a class="aaaa">
+                        <i class="bi bi-person-circle" style="color: black;"></i>
+                      </a>
+                      <div class="dropdown-content">
+                        <a routerLink="/profile-page">
+                          <img src="assets/menu_icons/Profileicon.png" alt="My Profile" srcset="">
+                          My Profile
+                        </a>
+                        <a routerLink="/my-order">
+                          <img src="assets/menu_icons/ordericon.png" alt="My Orders" srcset="">
+                          <span style="position: relative;"> My Orders <span
+                              *ngIf="navbar_numbers_res.undelieverd_ordered != 0" class="countnumberOrder">
+                              {{navbar_numbers_res.undelieverd_ordered}} </span> </span>
+                        </a>
+
+                        <a (click)="gotoChats()">
+                          <img src="assets/menu_icons/chat-left-text-fill.png" alt="All Chats" srcset="">
+                          <span style="position: relative;"> All Chats <span
+                              *ngIf="navbar_numbers_res.unopened_chats_counts != 0" class="countnumberOrder">
+                              {{navbar_numbers_res.unopened_chats_counts }} </span> </span>
+                        </a>
+
+                        <a routerLink="/my-Wishlist">
+                          <img src="assets/menu_icons/wishlishicon.png" alt="My Wishlist" srcset="">
+                          <span style="position: relative;"> My Wishlist <span
+                              *ngIf="navbar_numbers_res.wishlisted_counts != 0" class="countnumberOrder">
+                              {{navbar_numbers_res.wishlisted_counts}} </span> </span>
+                        </a>
+                        <a routerLink="/my-Notification">
+                          <img src="assets/menu_icons/notificationicon.png" alt="My Notification" srcset="">
+                          My Notification
+                        </a>
+                        <a (click)="RouteToProductPages()">
+                          <img src="assets/menu_icons/Recommendation.png" alt="My Recommendation" srcset="">
+                          My Recommendation
+                        </a>
+                        <a routerLink="/my-rfq">
+                          <img src="assets/menu_icons/RFQ.png" alt="My RFQ" srcset="">
+                          My RFQ
+                        </a>
+                        <a routerLink="/blogs">
+                          <img src="assets/menu_icons/blog.png" alt="Blogs" srcset="">
+                          Blog
+                        </a>
+                        <a routerLink="/all-chats">
+                          <img src="assets/menu_icons/chat-left-text-fill.png" alt="All Chats" srcset="">
+                          All Chats
+                        </a>
+                        <a routerLink="/return-center">
+                          <img src="assets/menu_icons/Product-return.png" alt=" Return Center" srcset="">
+                          Return Center
+                        </a>
+                        <a routerLink="/help-center">
+                          <img src="assets/menu_icons/call-center.png" alt="Help Center" srcset="">
+                          Help Center
+                        </a>
+                        <a (click)="openModal()">
+                          <img src="assets/menu_icons/logouticon.png" alt="Log Out" srcset="">
+                          Log Out
+                        </a>
+                      </div>
+                    </li>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-fluid menu2">
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-3 forCol">
+              <a class="navbar-brand" routerLink="/"> <img src="../../assets/menu_icons/Negbuy banner logo.png" class="logo"
+                  alt="Negbuy e-commerce logo – India-based platform for global export and delivery services"></a>
+            </div>
+            <div class="col-7 forCol1">
+              <form action="" class="p-search">
+                <div class="search-container search_border">
+
+                  <div class="d-flex" style="width: 100%;">
+                    <input class="search-pro bb" type="text" placeholder="Search" name="first"
+                      [(ngModel)]="search_query" (input)="onInputChange()" (click)="presearch()" />
+                    <button type="btn" class="btn-Find" (click)="findSearch()">Find</button>
+
+                  </div>
+
+                  <ul class="suggestions-list" *ngIf="suggest_for_search_response_status == true">
+
+                    <li (click)="findSearch()"> Search results for "{{ search_query }}"</li>
+  
+                    <li *ngFor="let suggestion of suggest_for_search_response.corrections"  (click)="onInputChange_two(suggestion)">
+                      <div><i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        width: 100%;
+                    "></i> <span style="color: rgb(155, 155, 155);  font-weight: 500;">Search instead for</span> "{{suggestion}}" </div> 
+                    </li>
+                    <li *ngFor="let suggestion of suggest_for_search_response.past_searches"  (click)="onInputChange_two(suggestion)">
+                      <div><i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        width: 100%;
+                    "></i>  {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                    </li>
+                    <li *ngFor="let suggestion of suggest_for_search_response.autocorrect1"  (click)="onInputChange_two(suggestion)">
+                      <div> <i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        width: 100%;
+                    "></i> {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                    </li>
+                    <li *ngFor="let suggestion of suggest_for_search_response.autocorrect2"  (click)="onInputChange_two(suggestion)">
+                      <div><i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        width: 100%;
+                    "></i> {{suggestion}} </div> <span style="color: rgb(1, 51, 1);">(Recent Search)</span>
+                    </li>
+  
+                    <li *ngFor="let suggestion of suggestionsCategory?.category"
+                      (click)="RouteToSubcategoryBySearch(suggestion.name)">
+                      <div><i class="bi bi-search" style="
+                        padding: 5px;
+                        font-size: 18px;
+                        font-weight: 600;
+                    "></i> {{suggestion.name }} </div> <span style="color: rgb(1, 51, 1);">(In Categories)</span>
+                    </li>
+                    <li class="productsuggest" *ngFor="let suggestion of suggestions"
+                      (click)="RouteToProductcategoryBySearch(suggestion.category_id__name,suggestion.id)">
+                      <i class="bi bi-search" style="
+                      padding: 5px;
+                      font-size: 18px;
+                      font-weight: 600;
+                  "></i> {{suggestion.product_title }}
+                      <!-- <span>({{suggestion.category_id__name}})</span> -->
+                    </li>
+                  </ul>
+                  
+                  
+                </div>
+
+              </form>
+            </div>
+            <div class="col-2 forCol">
+              <button (click)="toggleNav()" class="Tbutton">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <div id="navbarSupportedContent" [ngClass]="navBarShow?'navShow':'navHide'">
+
+          <li class="nav-item">
+            <a (click)="onClick('requirementForm')"> Submit your Requirement </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="https://seller.negbuy.com" target="_blank">
+              <img loading="lazy" class="sell-img" src="../../assets/header/trial_img/Icon_Logo-removebg-preview 1.png"
+                alt="Wanna Sell" srcset="" />
+              Wanna Sell ?
+            </a>
+          </li>
+
+
+          <li class="nav-item" *ngIf="!loadingLogInIcon">
+            <a (click)="GoToWishlist()" class="">
+              <i class="bi bi-heart-fill"></i> Wishlist
+            </a>
+          </li>
+
+
+          <li class="nav-item" *ngIf="userlogin">
+            <a (click)="navigateToSignPage()" class="">
+              <i class="bi bi-box-arrow-in-right"></i> Log in
+            </a>
+          </li>
+
+
+          <li class="nav-item" *ngIf=" !userlogin">
+            <a (click)="ShowProfileToggle()"> <i class="bi bi-person-circle"></i>
+              Profile <i class="bi bi-chevron-down"></i>
+            </a>
+          </li>
+          <div class="profileShow" *ngIf="profileShow">
+            <a routerLink="/profile-page">
+              <img src="assets/menu_icons/Profileicon.png" alt="My Profile" srcset="">
+              My Profile
+            </a>
+            <a routerLink="/my-order">
+              <img src="assets/menu_icons/ordericon.png" alt="My Orders" srcset="">
+              <span style="position: relative;"> My Orders <span *ngIf="navbar_numbers_res.undelieverd_ordered != 0"
+                  class="countnumberOrder"> {{navbar_numbers_res.undelieverd_ordered}} </span> </span>
+            </a>
+
+            <a (click)="gotoChats()">
+              <img src="assets/menu_icons/chat-left-text-fill.png" alt="All Chats" srcset="">
+              <span style="position: relative;"> All Chats <span *ngIf="navbar_numbers_res.unopened_chats_counts != 0"
+                  class="countnumberOrder"> {{navbar_numbers_res.unopened_chats_counts }} </span> </span>
+            </a>
+
+            <a routerLink="/my-Wishlist">
+              <img src="assets/menu_icons/wishlishicon.png" alt="My Wishlist" srcset="">
+              <span style="position: relative;"> My Wishlist <span *ngIf="navbar_numbers_res.wishlisted_counts != 0"
+                  class="countnumberOrder"> {{navbar_numbers_res.wishlisted_counts}} </span> </span>
+            </a>
+            <a routerLink="/my-Notification">
+              <img src="assets/menu_icons/notificationicon.png" alt="My Notification" srcset="">
+              My Notification
+            </a>
+            <a (click)="RouteToProductPages()">
+              <img src="assets/menu_icons/Recommendation.png" alt="My Recommendation" srcset="">
+              My Recommendation
+            </a>
+            <a routerLink="/my-rfq">
+              <img src="assets/menu_icons/RFQ.png" alt="My RFQ" srcset="">
+              My RFQ
+            </a>
+            <a routerLink="/blogs">
+              <img src="assets/menu_icons/blog.png" alt="Blogs" srcset="">
+              Blog
+            </a>
+            <a routerLink="/all-chats">
+              <img src="assets/menu_icons/chat-left-text-fill.png" alt="All Chats" srcset="">
+              All Chats
+            </a>
+            <a routerLink="/return-center">
+              <img src="assets/menu_icons/Product-return.png" alt=" Return Center" srcset="">
+              Return Center
+            </a>
+            <a routerLink="/help-center">
+              <img src="assets/menu_icons/call-center.png" alt="Help Center" srcset="">
+              Help Center
+            </a>
+            <a (click)="openModal()">
+              <img src="assets/menu_icons/logouticon.png" alt="Log Out" srcset="">
+              Log Out
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </nav>
+
+</div>
+
+<div class="modal container-fluid" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog modal-sm row" role="document">
+    <div class="modal-content">
+      <div class="modal-header col-12">
+        <div class="col-12 mdh4">
+          <h4 class="modal-title">Logging Out
+            <span>Are you sure you want to logout?</span>
+          </h4>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <div class="col-12 modalfooter">
+          <button type="button" class="noBtn" (click)="onCloseHandled()">No, Back</button>
+          <button type="button" class="yesBtn" (click)="logOut()">Yes, Log Out</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div>
+  <div class="loader-container" *ngIf="loadingHoleScreen">
+    <div class="loader"></div>
+    <div class="mt-2">
+      <h4 style="color: white; text-align: center;">Logging Out
+      </h4>
+    </div>
+  </div>
+</div>

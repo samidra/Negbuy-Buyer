@@ -1,0 +1,464 @@
+<app-mainheader></app-mainheader>
+<!-- -------------------------------------------------------------------- -->
+<div class="container-fluid" style="background-color: white;" *ngIf="loaderS">
+
+  <div class="row p-md-3 p-2 pt-3">
+
+    <div class="col-lg-7 p-3 pt-1">
+
+      <div class="row">
+
+        <div class="col-12 p-1 greeting">
+          <div class="d-flex">
+            <div class="shimmer mt-2" style="height: 50px; width: 51px; border-radius: 50%; margin-right: 10px;"></div>
+            <h3>Hi.!! <br>
+              <div class="shimmer mt-2" style="height: 20px; width: 100px;"></div>
+
+            </h3>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="row products mt-4">
+
+          <div class="col-12 products-wishheading p-3">
+            My Notification
+          </div>
+
+          <div class="col-12 p-1">
+            <div class="shimmer mt-2" style="height: 150px; width: 100%;"></div>
+          </div>
+
+          <div class="col-12 p-1">
+            <div class="shimmer mt-2" style="height: 150px; width: 100%;"></div>
+          </div>
+
+          <div class="col-12 p-1">
+            <div class="shimmer mt-2" style="height: 150px; width: 100%;"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="col-lg-5 p-3 ">
+      <div class="row sticky-top">
+        <div class="col-12">
+          <div class="FAq pb-2">
+            <li class="faq-heading lifaq p-4">FAQs</li>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
+                    (click)="toggleTextClass(0)" [ngClass]="selectedFaq ==0?'red-text':''">
+                    <p>What are notifications on this platform?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Notifications are alerts or messages that inform you about various activities and updates related to
+                    your account and activities on our platform.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"
+                    (click)="toggleTextClass(1)" [ngClass]="selectedFaq ==1?'red-text':''">
+                    <p>How do I receive notifications?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    You'll receive notifications through email and within your account on our platform. Make sure your
+                    notification preferences are set to your liking.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"
+                    (click)="toggleTextClass(2)" [ngClass]="selectedFaq ==2?'red-text':''">
+                    <p>Can I customize my notification preferences?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, you can customize which types of notifications you want to receive and how you receive them in
+                    your account settings.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour"
+                    (click)="toggleTextClass(3)" [ngClass]="selectedFaq ==3?'red-text':''">
+                    <p>What types of activities trigger notifications?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Notifications can be triggered by events like order updates, special offers, account activity,
+                    product restocks, and more.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive"
+                    (click)="toggleTextClass(4)" [ngClass]="selectedFaq ==4?'red-text':''">
+                    <p>Can I mark notifications as read or unread?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, you can mark notifications as read or unread to keep track of which ones you've already seen.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix"
+                    (click)="toggleTextClass(5)" [ngClass]="selectedFaq ==5?'red-text':''">
+                    <p>How long are notifications stored?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Notifications are usually stored for a reasonable period, allowing you to review recent updates and
+                    actions.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven"
+                    (click)="toggleTextClass(6)" [ngClass]="selectedFaq ==6?'red-text':''">
+                    <p>Are notifications secure and private?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, your notifications are secure and private. We take measures to protect your personal
+                    information.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingEight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight"
+                    (click)="toggleTextClass(7)" [ngClass]="selectedFaq ==7?'red-text':''">
+                    <p>How do I know if I missed a notification?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    If you missed a notification, it will remain in your notification history, which you can access to
+                    catch up on any updates.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingNine">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine"
+                    (click)="toggleTextClass(8)" [ngClass]="selectedFaq ==8?'red-text':''">
+                    <p>Can I clear all my notifications at once?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, there is usually an option to clear all your notifications at once in the notification history.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- -------------------------------------------------------------------- -->
+<div class="container-fluid" *ngIf="!loaderS ">
+  <div class="row p-md-3 p-2 pt-3">
+    <div class="col-lg-8 p-3">
+
+      <div class="row">
+        <div class="col-12  p-1 greeting">
+          <div class="d-flex">
+            <img src="{{profile_pic}}" alt="">
+            <h3>Hi.!! <br>
+              <span>{{BuyerAddressDelivery.first_name}}</span>
+
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="row products mt-4">
+
+        <div class="col-12 products-wishheading p-3">
+          My Notification
+        </div>
+
+        <div class="col-12 products-col mt-1 " *ngFor="let data of MyNotificationResponse | paginate: { itemsPerPage: 8 , currentPage: p }">
+
+          <div class="row mt-1 p-3">
+
+            <div class="col-md-2 sss p-md-3 p-1">
+              <img src="{{data.img}}">
+            </div>
+
+            <div class="col-md-10 products-head">
+
+              <div class="row px-md-5 px-2">
+
+                <div class="col-12">
+                  <h2>{{data.subject}}</h2>
+                </div>
+                <div class="col-12">
+                  <p>{{data.message}}</p>
+
+                  <a [href]="data.link" target="_blank"> Click <span>here</span> to check more details. </a>
+
+                </div>
+
+                <div class="col-12 products-date">
+                  <p class="mt-2">{{data.time_ago}}</p>
+                </div>
+
+              </div>
+
+            </div>
+
+           
+
+          </div>
+
+        </div>
+
+        <div class="col-12 mt-5 d-flex justify-content-center  ">
+          <pagination-controls (pageChange)="p = $event"
+            style=" font-family: Montserrat; font-weight: 500;"></pagination-controls>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-lg-4 p-3 ">
+      <div class="row sticky-top">
+        <div class="col-12">
+          <div class="FAq pb-2">
+            <li class="faq-heading lifaq p-4">FAQs</li>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
+                    (click)="toggleTextClass(0)" [ngClass]="selectedFaq ==0?'red-text':''">
+                    <p>What are notifications on this platform?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Notifications are alerts or messages that inform you about various activities and updates related to
+                    your account and activities on our platform.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"
+                    (click)="toggleTextClass(1)" [ngClass]="selectedFaq ==1?'red-text':''">
+                    <p>How do I receive notifications?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    You'll receive notifications through email and within your account on our platform. Make sure your
+                    notification preferences are set to your liking.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"
+                    (click)="toggleTextClass(2)" [ngClass]="selectedFaq ==2?'red-text':''">
+                    <p>Can I customize my notification preferences?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, you can customize which types of notifications you want to receive and how you receive them in
+                    your account settings.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour"
+                    (click)="toggleTextClass(3)" [ngClass]="selectedFaq ==3?'red-text':''">
+                    <p>What types of activities trigger notifications?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Notifications can be triggered by events like order updates, special offers, account activity,
+                    product restocks, and more.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive"
+                    (click)="toggleTextClass(4)" [ngClass]="selectedFaq ==4?'red-text':''">
+                    <p>Can I mark notifications as read or unread?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, you can mark notifications as read or unread to keep track of which ones you've already seen.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix"
+                    (click)="toggleTextClass(5)" [ngClass]="selectedFaq ==5?'red-text':''">
+                    <p>How long are notifications stored?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Notifications are usually stored for a reasonable period, allowing you to review recent updates and
+                    actions.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven"
+                    (click)="toggleTextClass(6)" [ngClass]="selectedFaq ==6?'red-text':''">
+                    <p>Are notifications secure and private?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, your notifications are secure and private. We take measures to protect your personal
+                    information.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingEight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight"
+                    (click)="toggleTextClass(7)" [ngClass]="selectedFaq ==7?'red-text':''">
+                    <p>How do I know if I missed a notification?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    If you missed a notification, it will remain in your notification history, which you can access to
+                    catch up on any updates.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingNine">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine"
+                    (click)="toggleTextClass(8)" [ngClass]="selectedFaq ==8?'red-text':''">
+                    <p>Can I clear all my notifications at once?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, there is usually an option to clear all your notifications at once in the notification history.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <app-ourservices></app-ourservices>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

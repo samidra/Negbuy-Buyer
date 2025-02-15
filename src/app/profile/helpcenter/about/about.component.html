@@ -1,0 +1,381 @@
+<app-mainheader></app-mainheader>
+
+<div class="container-fluid button-container" style="background-color: white;">
+
+  <div class="row m-sm-4 greeting">
+    <div class="col-12 greeting-col">
+      <h3 routerLink="/help-center">
+        Back to Help centre
+      </h3>
+    </div>
+  </div>
+
+  <div class="row p-md-4">
+
+    <div class="col-lg-8 col-md-6 p-1">
+      <div class="row pe-sm-3 mt-sm-0 mt-2">
+        <div class="col-12 DeliveryCenterData">
+          <h3>What is Negbuy ?</h3>
+          <p>Negbuy company specializes in internet marketplace and supply chain solutions. We offer
+            comprehensive services aimed at optimizing online marketplaces and enhancing supply chain
+            operations, providing businesses with efficient and effective solutions to streamline their
+            e-commerce processes and drive growth in the digital marketplace.</p>
+          <div class="DeliveryCenterData-img">
+            <img src="assets/logo/aboutnegbuy1.png" alt="" srcset="" class="imgclass">
+          </div>
+        </div>
+
+        <div class="col-12 DeliveryCenterData mt-2">
+          <h3>What services Negbuy can offer you ?</h3>
+          <p>Negbuy offers a versatile platform where users can not only make purchases but also establish
+            themselves as sellers, initiating their own businesses from their chosen locations. Sellers have
+            the opportunity to market their products globally through Negbuy without incurring any fees.
+            Buyers benefit from features such as Request for Quotations (RFQs) and the freedom to select
+            their preferred mode of delivery, among other advantages.</p>
+          <div class="DeliveryCenterData-img">
+            <img src="assets/logo/aboutnegbuy2.png" alt="" srcset="" class="imgclass">
+          </div>
+        </div>
+
+        <div class="col-12 DeliveryCenterData mt-2">
+          <h3>Negbuy is available in how many countries ?</h3>
+          <p>While Negbuy offers its services globally, we encourage you to verify product availability in
+            your area by visiting our tracker page and inputting your postal code. Your location's
+            accessibility will be confirmed through this process.
+          </p>
+          <div class="DeliveryCenterData-img">
+            <img src="assets/logo/aboutnegbuy3.png" alt="" srcset="" class="imgclass">
+          </div>
+        </div>
+
+        <div class="col-12 DeliveryCenterData mt-2">
+          <h3>Why you should place order at Negbuy ?</h3>
+          <p>Negbuy stands out as a highly reliable platform, prioritizing niche product availability and
+            authenticity. With a global reach, Negbuy sources products from any country, ensuring top-notch
+            quality. Our dedicated 24/7 customer support ensures a seamless experience, and our streamlined
+            delivery process guarantees efficiency.</p>
+          <div class="DeliveryCenterData-img">
+            <img src="assets/logo/aboutnegbuy4.png" alt="" srcset="" class="imgclass">
+          </div>
+        </div>
+
+        <div class="col-12 DeliveryCenterData mt-2">
+          <h3>What user says about us ?</h3>
+          <p>Clients who have engaged with our services consistently express high satisfaction levels, leading
+            to repeat utilization of our offerings. Their confidence in our service stems from our quality
+            offerings and dedicated customer support, resulting in a worry-free experience.z</p>
+          <div class="DeliveryCenterData-img">
+            <img src="assets/logo/aboutnegbuy5.png" alt="" srcset="" class="imgclass">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 pt-1 ">
+
+      <div class="row sticky-top">
+        <div class="col-12">
+          <div class="FAq pb-2">
+            <li class="faq-heading lifaq p-4">FAQs</li>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
+                    (click)="toggleTextClass(0)" [ngClass]="selectedFaq ==0?'red-text':''">
+                    <p>Is my personal information safe on your platform?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Absolutely. We have implemented robust security measures to ensure the confidentiality of your
+                    personal details.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"
+                    (click)="toggleTextClass(1)" [ngClass]="selectedFaq ==1?'red-text':''">
+                    <p>How do you use my email address?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Your email address is used solely for communication purposes related to your account and platform
+                    updates. We never share it with third parties.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"
+                    (click)="toggleTextClass(2)" [ngClass]="selectedFaq ==2?'red-text':''">
+                    <p>What about my contact number? Is it secure?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, your contact number is secure. It is only used for account-related notifications and
+                    verification purposes.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour"
+                    (click)="toggleTextClass(3)" [ngClass]="selectedFaq ==3?'red-text':''">
+                    <p>Can others see my address and personal details?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    No, your personal information, including your address, is completely private. Only authorized
+                    personnel have access to such information.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive"
+                    (click)="toggleTextClass(4)" [ngClass]="selectedFaq ==4?'red-text':''">
+                    <p>How is my address used?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Your address is primarily used for shipping purposes if you make purchases
+                    on our platform. It is never shared with anyone else.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix"
+                    (click)="toggleTextClass(5)" [ngClass]="selectedFaq ==5?'red-text':''">
+                    <p>Do you sell or share my information with advertisers?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    No, we do not sell or share your personal information with any advertisers or third parties for
+                    marketing purposes.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven"
+                    (click)="toggleTextClass(6)" [ngClass]="selectedFaq ==6?'red-text':''">
+                    <p>Is my data covered by a privacy policy?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    Yes, we have a comprehensive privacy policy that outlines how your data is collected, used, and
+                    protected. You can find it on our website.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingEight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight"
+                    (click)="toggleTextClass(7)" [ngClass]="selectedFaq ==7?'red-text':''">
+                    <p>How can I update or modify my personal details?*</p>
+                  </button>
+                </li>
+                <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    You can easily update or modify your personal details by navigating to your profile settings on the
+                    platform.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <li class="accordion-header lifaq" id="flush-headingNine">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine"
+                    (click)="toggleTextClass(8)" [ngClass]="selectedFaq ==8?'red-text':''">
+                    <p>What should I do if I suspect any unauthorized activity on my account?</p>
+                  </button>
+                </li>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body"> If you notice any unusual activity, contact our support team immediately.
+                    We take swift action to address security concerns.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="container sss p-3">
+  <div class="d-flex flex-column justify-content-center">
+    <span class="section-title mb-3">Team Negbuy </span>
+    <span class="underline line-1"></span>
+</div>
+  <div class="row p-1 ourTeamRow" [ngClass]="{'open': isOrderDetailsOpen('item1')}">
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Amir.jpeg">
+        <h5>Mohammad Amir</h5>
+        <h6>CEO & Founder</h6>
+        <p>Leadership is not about the title, it's about the impact you make.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Shezaad.jpeg">
+        <h5>Shahzad Khan</h5>
+        <h6>COO & Founder</h6>
+        <p>Passion fuels purpose, and purpose fuels progress.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Sameer.jpeg">
+        <h5>Sameer Akhter</h5>
+        <h6>Tech Lead</h6>
+        <p>In the coding arena, innovation is my language, and creativity gives life to my algorithms.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Deepak.jpeg">
+        <h5>Deepak Ray</h5>
+        <h6>Procurement Manager</h6>
+        <p>Don't just aim to grow your business, aim to cultivate a legacy.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Asad.jpeg">
+        <h5>Mohammad Asad</h5>
+        <h6>Procurement Manager</h6>
+        <p>In procurement, quality is not a one-time action; it's a consistent practice.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Piyush.jpeg">
+        <h5>Piyush Chaudhary</h5>
+        <h6>Sales Manager</h6>
+        <p>Every challenge is an opportunity for growth in business.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Mahi.jpeg">
+        <h5>Mahi Goel</h5>
+        <h6>HR</h6>
+        <p>We're not just managing resources; we're nurturing the heartbeat of a thriving workplace.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Anas.jpeg">
+        <h5>Mohammad Anas</h5>
+        <h6>Digital Marketing Executive</h6>
+        <p>I convert clicks into conversions and transform ideas into impactful campaigns that resonate.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Vikas.jpeg">
+        <h5>Vikas</h5>
+        <h6>Procurement Purchaser</h6>
+        <p>Dream big, work hard, and watch your business grow beyond imagination.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Ishika.jpeg">
+        <h5>Ishika</h5>
+        <h6>Digital Marketing Executive</h6>
+        <p>I embrace the chaos of the online world, turning challenges into opportunities.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Bhupendra.jpeg">
+        <h5>Bhupendra</h5>
+        <h6>Procurement Purchaser</h6>
+        <p>Growth is the heartbeat of every successful business.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6  p-1">
+      <div class="border teamDetail p-2">
+        <img src="assets/TeamImage/Bipin.jpeg">
+        <h5>Bipin Singh</h5>
+        <h6>Sales Executive </h6>
+        <p>Success is the symphony created by passion, persistence, and purpose.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row LoadMore">
+    <button class="LoadMore-btn" (click)="toggleOrderDetails('item1')">
+      <span [ngClass]="more">Load More <i class="bi bi-chevron-down"></i> </span>
+      <span [ngClass]="less">Show Less <i class="bi bi-chevron-up"></i> </span>
+    </button>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <app-ourservices></app-ourservices>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
